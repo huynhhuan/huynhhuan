@@ -38,7 +38,7 @@
       }
     }
     .stat {
-      font: 600 14px 'Plus Jakarta Sans', 'Segoe UI', Sans-Serif; fill: #E2E8F0;
+      font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: #E2E8F0;
     }
     @supports(-moz-appearance: auto) {
       /* Selector detects Firefox */
@@ -267,5 +267,7 @@
     </g>
   
     </svg>
+  
         </g>
       </svg>
+    
