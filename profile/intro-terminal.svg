@@ -1,27 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="230" viewBox="0 0 1200 230" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="190" viewBox="0 0 1200 190" role="img" aria-labelledby="title desc">
   <title id="title">Hi, I'm Huỳnh Bá Huân</title>
-  <desc id="desc">Backend and Web Developer, DevOps and Cloud Operations, presented with an AI response typing animation.</desc>
+  <desc id="desc">Web Developer and DevOps / Cloud Operations roles presented with a typing animation.</desc>
   <defs>
-    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0f172a" />
-      <stop offset="0.62" stop-color="#111827" />
-      <stop offset="1" stop-color="#1e293b" />
-    </linearGradient>
     <linearGradient id="warm" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#f59e0b" />
       <stop offset="0.55" stop-color="#fb923c" />
       <stop offset="1" stop-color="#ef4444" />
     </linearGradient>
-    <radialGradient id="orange-glow">
-      <stop offset="0" stop-color="#f59e0b" stop-opacity=".2" />
-      <stop offset="1" stop-color="#f59e0b" stop-opacity="0" />
-    </radialGradient>
-    <radialGradient id="blue-glow">
-      <stop offset="0" stop-color="#3b82f6" stop-opacity=".12" />
-      <stop offset="1" stop-color="#3b82f6" stop-opacity="0" />
-    </radialGradient>
     <filter id="soft-glow" x="-80%" y="-80%" width="260%" height="260%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feGaussianBlur stdDeviation="3" result="blur" />
       <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
     </filter>
     <style>
@@ -31,55 +18,58 @@
         font-weight:800;
         letter-spacing:-1.6px;
       }
-      .mono {
+      .role {
+        fill:url(#warm);
         font-family:'JetBrains Mono',Consolas,'Courier New',monospace;
+        font-size:28px;
+        font-weight:600;
       }
-      .typing {
-        clip-path:inset(0 100% 0 0);
-        animation:type-response 6.2s steps(55,end) infinite;
+      .typed { clip-path:inset(0 100% 0 0); }
+      .web-text { animation:type-web 10s steps(13,end) infinite; }
+      .cloud-text { animation:type-cloud 10s steps(24,end) infinite; }
+      .web-cursor { animation:cursor-web 10s steps(13,end) infinite, blink .72s step-end infinite; }
+      .cloud-cursor { animation:cursor-cloud 10s steps(24,end) infinite, blink .72s step-end infinite; }
+      .static-role { display:none; }
+      @keyframes type-web {
+        0%,4% { clip-path:inset(0 100% 0 0); }
+        28%,42% { clip-path:inset(0 0 0 0); }
+        47%,100% { clip-path:inset(0 100% 0 0); }
       }
-      .cursor {
-        transform-box:fill-box;
-        transform-origin:center;
-        animation:cursor-travel 6.2s steps(55,end) infinite, cursor-blink .72s step-end infinite;
-      }
-      .pulse { animation:pulse 1.8s ease-in-out infinite; }
-      @keyframes type-response {
-        0%,8% { clip-path:inset(0 100% 0 0); }
-        76%,94% { clip-path:inset(0 0 0 0); }
+      @keyframes type-cloud {
+        0%,50% { clip-path:inset(0 100% 0 0); }
+        78%,94% { clip-path:inset(0 0 0 0); }
         100% { clip-path:inset(0 100% 0 0); }
       }
-      @keyframes cursor-travel {
-        0%,8% { transform:translateX(0); }
-        76%,94% { transform:translateX(790px); }
-        100% { transform:translateX(0); }
+      @keyframes cursor-web {
+        0%,4% { opacity:1; transform:translateX(0); }
+        28%,42% { opacity:1; transform:translateX(222px); }
+        47%,100% { opacity:0; transform:translateX(0); }
       }
-      @keyframes cursor-blink { 50% { opacity:0; } }
-      @keyframes pulse { 50% { opacity:.35; } }
+      @keyframes cursor-cloud {
+        0%,50% { opacity:0; transform:translateX(0); }
+        51% { opacity:1; transform:translateX(0); }
+        78%,94% { opacity:1; transform:translateX(408px); }
+        100% { opacity:0; transform:translateX(0); }
+      }
+      @keyframes blink { 50% { opacity:0; } }
       @media (prefers-reduced-motion: reduce) {
-        .typing { animation:none; clip-path:none; }
-        .cursor { display:none; }
-        .pulse { animation:none; }
+        .animated-role { display:none; }
+        .static-role { display:inline; }
       }
     </style>
   </defs>
 
-  <rect x="1" y="1" width="1198" height="228" rx="20" fill="url(#panel)" stroke="#f59e0b" stroke-opacity=".32" stroke-width="2" />
-  <circle cx="1070" cy="22" r="220" fill="url(#orange-glow)" />
-  <circle cx="80" cy="220" r="180" fill="url(#blue-glow)" />
+  <text class="title" x="600" y="76" text-anchor="middle" fill="url(#warm)">Hi, I'm Huỳnh Bá Huân</text>
+  <text x="965" y="76" font-family="'Segoe UI Emoji','Apple Color Emoji',sans-serif" font-size="48">👋</text>
 
-  <g class="mono" font-size="12" font-weight="700" letter-spacing="2">
-    <circle class="pulse" cx="52" cy="35" r="5" fill="#22c55e" />
-    <text x="66" y="39" fill="#94a3b8">ASSISTANT · STREAMING PROFILE</text>
+  <g class="animated-role role">
+    <text class="typed web-text" x="486" y="139">Web Developer</text>
+    <rect class="web-cursor" x="488" y="116" width="3" height="29" rx="1.5" fill="#f59e0b" filter="url(#soft-glow)" />
+
+    <text class="typed cloud-text" x="393" y="139">DevOps / Cloud Operations</text>
+    <rect class="cloud-cursor" x="395" y="116" width="3" height="29" rx="1.5" fill="#ef4444" filter="url(#soft-glow)" />
   </g>
 
-  <text class="title" x="600" y="104" text-anchor="middle" fill="url(#warm)">Hi, I'm Huỳnh Bá Huân</text>
-
-  <g class="mono" font-size="28" font-weight="500">
-    <text x="72" y="164" fill="#f59e0b" font-weight="700">›</text>
-    <text class="typing" x="104" y="164" fill="#e2e8f0">Backend &amp; Web Developer · DevOps &amp; Cloud Operations</text>
-    <rect class="cursor" x="105" y="142" width="3" height="28" rx="1.5" fill="#f59e0b" filter="url(#soft-glow)" />
-  </g>
-
-  <rect x="48" y="203" width="1104" height="2" rx="1" fill="url(#warm)" opacity=".7" />
+  <text class="static-role role" x="600" y="139" text-anchor="middle">Web Developer · DevOps / Cloud Operations</text>
+  <rect x="350" y="170" width="500" height="3" rx="1.5" fill="url(#warm)" opacity=".82" />
 </svg>

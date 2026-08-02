@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./profile/intro-terminal.svg" width="100%" alt="Hi, I'm Huỳnh Bá Huân — Backend and Web Developer, DevOps and Cloud Operations" />
+<img src="./profile/intro-terminal.svg" width="100%" alt="Hi, I'm Huỳnh Bá Huân — Web Developer and DevOps / Cloud Operations" />
 
 <p>Building practical web services and reliable cloud infrastructure — from code to production.</p>
 
@@ -97,6 +97,6 @@ An animated study of the Orthodox line — central pressure, controlled developm
 
 ### 3D contribution terrain
 
-<img src="./profile-3d-contrib/profile-night-orange.svg" width="100%" alt="Three-dimensional GitHub contribution activity in navy, orange, and red" />
+<img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="Three-dimensional GitHub contribution activity" />
 
 </details>
