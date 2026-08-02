@@ -8,14 +8,13 @@ Building practical web applications and reliable cloud infrastructure — from c
 
 </div>
 
-## About me
+## Engineering profile
 
-- 🎓 Final-year Information Technology student with a **3.46/4 GPA**.
-- 💻 Backend-focused developer building RESTful APIs with **Node.js/Express** and **PHP/Laravel**.
-- 🌐 Comfortable working across web applications with **JavaScript, PHP, Python, React, SQL, and NoSQL**.
-- ☁️ DevOps Engineer Intern with hands-on experience in **AWS, Terraform, CI/CD, Docker, Kubernetes, and GitOps**.
-- 🔐 Interested in secure authentication, payment integrations, cloud governance, observability, and reliable delivery.
-- 🌱 I enjoy connecting application development with the infrastructure that runs it.
+I connect application engineering with the systems that deliver and operate it.
+
+- 🧩 **Product:** Backend APIs and full-stack applications with JavaScript, PHP, Python, Node.js, Laravel, and React.
+- ☁️ **Platform:** AWS infrastructure, Terraform, containers, Kubernetes, CI/CD, and GitOps.
+- 🛡️ **Reliability:** Cloud security, observable delivery, and maintainable production workflows.
 
 ## Tech stack
 
@@ -57,7 +56,11 @@ Building practical web applications and reliable cloud infrastructure — from c
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 
-## Featured web projects
+## Selected work
+
+Four builds across one engineering path: **🧩 Product → 🚀 Delivery → 🛡️ Governance → ⚙️ Operations.**
+
+### Web engineering
 
 ### [Badminton Shop E-commerce Backend](https://github.com/huynhhuan/badminton-shop-be)
 
@@ -77,12 +80,7 @@ Full-stack e-commerce project using the **MERN stack**:
 - Added seller workflows, request metrics, health checks, Docker packaging, and AWS CloudWatch metrics.
 - Live demo: [bahuan-greencart.vercel.app](https://bahuan-greencart.vercel.app/)
 
-### More web work
-
-- [Estate App](https://github.com/huynhhuan/estate-app) — Express, Prisma, MongoDB, JWT, and Socket.IO for property listings and real-time messaging.
-- [Movie Trailer](https://github.com/huynhhuan/movie-trailer) — React, Vite, Tailwind CSS, and the TMDB API for movie discovery and search.
-
-## Featured cloud & DevOps work
+### Cloud & DevOps
 
 ### [AWS Accelerator Cloud Platform](https://github.com/huynhhuan/bahuan-aws-accelerator-p2)
 
