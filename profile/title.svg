@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="92" viewBox="0 0 760 92" role="img" aria-labelledby="title desc">
+  <title id="title">Hi, I'm Huỳnh Bá Huân</title>
+  <desc id="desc">Profile heading in an orange-to-red gradient.</desc>
+  <defs>
+    <linearGradient id="warm" x1="145" y1="0" x2="615" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f59e0b" />
+      <stop offset="0.52" stop-color="#f97316" />
+      <stop offset="1" stop-color="#ef4444" />
+    </linearGradient>
+  </defs>
+  <text x="380" y="62" text-anchor="middle" font-family="'Segoe UI','Noto Sans',Arial,sans-serif" font-size="46" font-weight="800" letter-spacing="-1" fill="url(#warm)">Hi, I'm Huỳnh Bá Huân <tspan font-family="'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif" font-size="42" letter-spacing="0">👋</tspan></text>
+</svg>
