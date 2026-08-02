@@ -52,21 +52,27 @@ Final-year Information Technology student and backend-focused developer who enjo
 
 ## Selected work
 
-Projects where I connect application code with secure and observable delivery.
+Four builds across the same engineering path: create the product, automate delivery, govern the platform, and observe it in production.
+
+<img src="./profile/project-orbit.svg" width="100%" alt="Four selected projects mapped from web engineering through cloud delivery and governance" />
 
 ### Web engineering
 
-- [**Badminton Shop API**](https://github.com/huynhhuan/badminton-shop-be) — Laravel and MySQL backend with structured REST APIs, authentication, orders, and VNPay payments.
-- [**GreenCart**](https://github.com/huynhhuan/W6-BE-greencart) — MERN e-commerce application with Stripe, Cloudinary, Docker, health checks, and CloudWatch metrics.
+> [**Badminton Shop API**](https://github.com/huynhhuan/badminton-shop-be) — Laravel commerce API with authentication, orders, and VNPay.
+>
+> [**GreenCart**](https://github.com/huynhhuan/W6-BE-greencart) — Containerized MERN shop with payments and cloud health signals.
 
 ### Cloud and DevOps
 
-- [**AWS Accelerator Platform**](https://github.com/huynhhuan/bahuan-aws-accelerator-p2) — Terraform, CI/CD, containers, Kubernetes, GitOps, Prometheus, and Grafana in one delivery path.
-- [**EKS Governance Platform**](https://github.com/TF4-Phase3-TechX) — AWS Config, immutable audit evidence, least-privilege IAM, CloudTrail, and EKS audit logging.
+> [**AWS Accelerator Platform**](https://github.com/huynhhuan/bahuan-aws-accelerator-p2) — Infrastructure-to-GitOps delivery with Terraform, EKS, and observability.
+>
+> [**EKS Governance Platform**](https://github.com/TF4-Phase3-TechX) — Audit-ready controls with AWS Config, CloudTrail, and least-privilege IAM.
 
 ## GitHub activity
 
-An automatically refreshed view of my public coding activity and language mix.
+A live view of my public work — code first, cloud next, always improving.
+
+<img src="./profile/aws-cloud-atlas.svg" width="100%" alt="AWS Cloud Atlas connecting contribution cells with Infrastructure as Code, CI/CD, Amazon EKS, and observability" />
 
 <p align="center">
   <img width="74%" src="./profile/stats.svg" alt="Huynh Ba Huan's GitHub activity statistics" />

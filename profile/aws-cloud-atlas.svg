@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+  <title id="title">AWS Cloud Atlas contribution artwork</title>
+  <desc id="desc">An AWS wordmark sits at the center of a contribution-cell cloud connected to Infrastructure as Code, CI/CD, Amazon EKS, and observability nodes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#050b14"/>
+      <stop offset=".55" stop-color="#0b1526"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop stop-color="#ff9900" stop-opacity=".23"/>
+      <stop offset=".48" stop-color="#2f81f7" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#0b1526" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="orbit" x1="180" y1="100" x2="1020" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2f81f7"/>
+      <stop offset=".45" stop-color="#ff9900"/>
+      <stop offset="1" stop-color="#22c55e"/>
+    </linearGradient>
+    <pattern id="contribution-grid" width="22" height="22" patternUnits="userSpaceOnUse">
+      <rect x="3" y="3" width="14" height="14" rx="3" fill="#334155" opacity=".34"/>
+    </pattern>
+    <filter id="soft-shadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000" flood-opacity=".55"/>
+    </filter>
+    <filter id="node-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .eyebrow{font:700 15px Inter,Segoe UI,sans-serif;letter-spacing:3px;fill:#8da2be}
+      .headline{font:700 30px Inter,Segoe UI,sans-serif;fill:#f8fafc}
+      .subhead{font:400 17px Inter,Segoe UI,sans-serif;fill:#9eafc7}
+      .node-title{font:700 14px Inter,Segoe UI,sans-serif;letter-spacing:1.5px;fill:#f8fafc}
+      .node-sub{font:500 13px Inter,Segoe UI,sans-serif;fill:#91a3ba}
+      .micro{font:700 11px Inter,Segoe UI,sans-serif;letter-spacing:1.6px;fill:#71839c}
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="1198" height="428" rx="26" fill="url(#bg)" stroke="#334155" stroke-width="2"/>
+  <rect x="16" y="16" width="1168" height="398" rx="20" fill="url(#contribution-grid)" opacity=".7"/>
+  <ellipse cx="600" cy="235" rx="455" ry="185" fill="url(#halo)"/>
+
+  <text x="52" y="56" class="eyebrow">AWS CLOUD ATLAS</text>
+  <text x="52" y="91" class="headline">Every contribution becomes part of the platform</text>
+  <text x="52" y="119" class="subhead">Code, automation, infrastructure and signals orbit one reliable cloud.</text>
+
+  <g opacity=".78" fill="none" stroke-linecap="round">
+    <ellipse cx="600" cy="238" rx="400" ry="142" stroke="#31445f" stroke-width="2" stroke-dasharray="5 13"/>
+    <ellipse cx="600" cy="238" rx="304" ry="184" stroke="#23334b" stroke-width="2" stroke-dasharray="3 12"/>
+    <path d="M210 243C330 110 456 119 526 165M676 165c102-62 229-54 314 56M674 309c110 50 218 40 307-54M522 309c-104 56-222 44-313-38" stroke="url(#orbit)" stroke-width="2.5"/>
+  </g>
+
+  <g opacity=".9">
+    <g fill="#2f81f7">
+      <rect x="154" y="181" width="13" height="13" rx="3"/><rect x="176" y="181" width="13" height="13" rx="3"/><rect x="198" y="181" width="13" height="13" rx="3"/>
+      <rect x="176" y="203" width="13" height="13" rx="3"/><rect x="198" y="203" width="13" height="13" rx="3"/><rect x="220" y="203" width="13" height="13" rx="3"/>
+      <rect x="198" y="225" width="13" height="13" rx="3"/>
+    </g>
+    <g fill="#7c3aed">
+      <rect x="318" y="116" width="13" height="13" rx="3"/><rect x="340" y="116" width="13" height="13" rx="3"/><rect x="362" y="116" width="13" height="13" rx="3"/>
+      <rect x="340" y="138" width="13" height="13" rx="3"/><rect x="362" y="138" width="13" height="13" rx="3"/><rect x="384" y="138" width="13" height="13" rx="3"/>
+    </g>
+    <g fill="#ff9900">
+      <rect x="809" y="107" width="13" height="13" rx="3"/><rect x="831" y="107" width="13" height="13" rx="3"/><rect x="853" y="107" width="13" height="13" rx="3"/>
+      <rect x="831" y="129" width="13" height="13" rx="3"/><rect x="853" y="129" width="13" height="13" rx="3"/><rect x="875" y="129" width="13" height="13" rx="3"/>
+    </g>
+    <g fill="#22c55e">
+      <rect x="974" y="275" width="13" height="13" rx="3"/><rect x="996" y="275" width="13" height="13" rx="3"/><rect x="1018" y="275" width="13" height="13" rx="3"/>
+      <rect x="952" y="297" width="13" height="13" rx="3"/><rect x="974" y="297" width="13" height="13" rx="3"/><rect x="996" y="297" width="13" height="13" rx="3"/>
+    </g>
+    <g fill="#38bdf8">
+      <rect x="285" y="329" width="13" height="13" rx="3"/><rect x="307" y="329" width="13" height="13" rx="3"/><rect x="329" y="329" width="13" height="13" rx="3"/>
+      <rect x="307" y="351" width="13" height="13" rx="3"/><rect x="329" y="351" width="13" height="13" rx="3"/>
+    </g>
+  </g>
+
+  <g filter="url(#soft-shadow)">
+    <rect x="492" y="146" width="216" height="184" rx="34" fill="#f8fafc" stroke="#ffb13b" stroke-width="3"/>
+    <rect x="507" y="161" width="186" height="154" rx="26" fill="#fff" stroke="#e2e8f0"/>
+    <g transform="translate(536 173) scale(1)">
+      <path fill="#252f3e" d="M36.379 53.64c0 1.56.168 2.825.465 3.75.336.926.758 1.938 1.347 3.032.207.336.293.672.293.969 0 .418-.254.84-.8 1.261l-2.653 1.77c-.379.25-.758.379-1.093.379-.422 0-.844-.211-1.266-.59a13.28 13.28 0 0 1-1.516-1.98 34.153 34.153 0 0 1-1.304-2.485c-3.282 3.875-7.41 5.813-12.38 5.813-3.535 0-6.355-1.012-8.421-3.032-2.063-2.023-3.114-4.718-3.114-8.086 0-3.578 1.262-6.484 3.833-8.671 2.566-2.192 5.976-3.286 10.316-3.286 1.43 0 2.902.125 4.46.336 1.56.211 3.161.547 4.845.926v-3.074c0-3.2-.676-5.43-1.98-6.734C26.061 32.633 23.788 32 20.546 32c-1.473 0-2.988.168-4.547.547a33.416 33.416 0 0 0-4.547 1.433c-.676.293-1.18.461-1.473.547-.296.082-.507.125-.675.125-.59 0-.883-.422-.883-1.304v-2.063c0-.676.082-1.18.293-1.476.21-.293.59-.586 1.18-.883 1.472-.758 3.242-1.39 5.304-1.895 2.063-.547 4.254-.8 6.57-.8 5.008 0 8.672 1.136 11.032 3.41 2.316 2.273 3.492 5.726 3.492 10.359v13.64Zm-17.094 6.403c1.387 0 2.82-.254 4.336-.758 1.516-.508 2.863-1.433 4-2.695.672-.8 1.18-1.684 1.43-2.695.254-1.012.422-2.23.422-3.665v-1.765a34.401 34.401 0 0 0-3.871-.719 31.816 31.816 0 0 0-3.961-.25c-2.82 0-4.883.547-6.274 1.684-1.387 1.136-2.062 2.734-2.062 4.84 0 1.98.504 3.453 1.558 4.464 1.012 1.051 2.485 1.559 4.422 1.559Zm33.809 4.547c-.758 0-1.262-.125-1.598-.422-.34-.254-.633-.84-.887-1.64L40.715 29.98c-.25-.843-.38-1.39-.38-1.687 0-.672.337-1.05 1.013-1.05h4.125c.8 0 1.347.124 1.644.421.336.25.59.84.84 1.64l7.074 27.876 6.57-27.875c.208-.84.462-1.39.797-1.64.34-.255.93-.423 1.688-.423h3.367c.8 0 1.348.125 1.684.422.336.25.633.84.8 1.64l6.653 28.212 7.285-28.211c.25-.84.547-1.39.84-1.64.336-.255.887-.423 1.644-.423h3.914c.676 0 1.055.336 1.055 1.051 0 .21-.043.422-.086.676-.043.254-.125.59-.293 1.05L80.801 62.57c-.254.84-.547 1.387-.887 1.64-.336.255-.883.423-1.598.423h-3.62c-.801 0-1.348-.13-1.684-.422-.34-.297-.633-.844-.801-1.684l-6.527-27.16-6.485 27.117c-.21.844-.46 1.391-.8 1.684-.337.297-.926.422-1.684.422Zm54.105 1.137c-2.187 0-4.379-.254-6.484-.758-2.106-.504-3.746-1.055-4.84-1.684-.676-.379-1.137-.8-1.305-1.18a2.919 2.919 0 0 1-.254-1.18v-2.148c0-.882.336-1.304.97-1.304.25 0 .503.043.757.129.25.082.629.25 1.05.418a23.102 23.102 0 0 0 4.634 1.476c1.683.336 3.324.504 5.011.504 2.653 0 4.715-.465 6.145-1.39 1.433-.926 2.191-2.274 2.191-4 0-1.18-.379-2.145-1.136-2.946-.758-.8-2.192-1.516-4.254-2.191l-6.106-1.895c-3.074-.969-5.348-2.398-6.734-4.293-1.39-1.855-2.106-3.918-2.106-6.105 0-1.77.38-3.328 1.137-4.676a10.829 10.829 0 0 1 3.031-3.453c1.262-.965 2.696-1.684 4.38-2.188 1.683-.504 3.452-.715 5.304-.715.926 0 1.894.043 2.82.168.969.125 1.852.293 2.738.461.84.211 1.641.422 2.399.676.758.254 1.348.504 1.77.758.59.336 1.011.672 1.261 1.05.254.34.379.802.379 1.391v1.98c0 .884-.336 1.348-.969 1.348-.336 0-.883-.171-1.597-.507-2.403-1.094-5.098-1.641-8.086-1.641-2.399 0-4.293.379-5.598 1.18-1.309.797-1.98 2.02-1.98 3.746 0 1.18.421 2.191 1.261 2.988.844.8 2.403 1.602 4.633 2.316l5.98 1.895c3.032.969 5.22 2.316 6.524 4.043 1.305 1.727 1.938 3.707 1.938 5.895 0 1.812-.38 3.453-1.094 4.882-.758 1.434-1.77 2.696-3.074 3.707-1.305 1.051-2.864 1.809-4.672 2.36-1.895.586-3.875.883-6.024.883Z"/>
+      <path fill="#f90" d="M118 73.348c-4.432.063-9.664 1.052-13.621 3.832-1.223.883-1.012 2.062.336 1.894 4.508-.547 14.44-1.726 16.21.547 1.77 2.23-1.976 11.62-3.663 15.79-.504 1.26.59 1.769 1.726.8 7.41-6.231 9.348-19.242 7.832-21.137-.757-.925-4.388-1.79-8.82-1.726zM1.63 75.859c-.927.116-1.347 1.236-.368 2.121 16.508 14.902 38.359 23.872 62.613 23.872 17.305 0 37.43-5.43 51.281-15.66 2.273-1.688.297-4.254-2.02-3.204-15.534 6.57-32.421 9.77-47.788 9.77-22.778 0-44.8-6.273-62.653-16.633-.39-.231-.755-.304-1.064-.266z"/>
+    </g>
+    <text x="600" y="299" text-anchor="middle" class="micro" fill="#475569">CLOUD FOUNDATION</text>
+  </g>
+
+  <g>
+    <g transform="translate(126 215)">
+      <circle cx="44" cy="44" r="43" fill="#101d31" stroke="#2f81f7" stroke-width="2"/>
+      <g transform="translate(24 24)" fill="none" stroke="#79b8ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 2 38 12 20 22 2 12 20 2Z"/><path d="m2 20 18 10 18-10M2 28l18 10 18-10"/>
+      </g>
+      <text x="44" y="104" class="node-title" text-anchor="middle">IaC</text><text x="44" y="124" class="node-sub" text-anchor="middle">Terraform</text>
+    </g>
+
+    <g transform="translate(325 130)">
+      <circle cx="44" cy="44" r="43" fill="#17152e" stroke="#7c3aed" stroke-width="2"/>
+      <g transform="translate(22 23)" fill="none" stroke="#a78bfa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 13h28M24 5l8 8-8 8M40 31H12M20 23l-8 8 8 8"/>
+      </g>
+      <text x="44" y="104" class="node-title" text-anchor="middle">CI/CD</text><text x="44" y="124" class="node-sub" text-anchor="middle">GitHub Actions</text>
+    </g>
+
+    <g transform="translate(787 126)">
+      <circle cx="44" cy="44" r="43" fill="#2d210f" stroke="#ff9900" stroke-width="2"/>
+      <g transform="translate(21 21)" fill="none" stroke="#ffbd63" stroke-width="3" stroke-linejoin="round">
+        <path d="m23 2 19 11v22L23 46 4 35V13L23 2Z"/><circle cx="23" cy="24" r="7"/><path d="M23 10v7M35 17l-6 4M35 31l-6-4M23 38v-7M11 31l6-4M11 17l6 4"/>
+      </g>
+      <text x="44" y="104" class="node-title" text-anchor="middle">EKS</text><text x="44" y="124" class="node-sub" text-anchor="middle">Kubernetes</text>
+    </g>
+
+    <g transform="translate(975 218)">
+      <circle cx="44" cy="44" r="43" fill="#102b22" stroke="#22c55e" stroke-width="2"/>
+      <g transform="translate(21 22)" fill="none" stroke="#73df9e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 36h40M6 30l9-10 8 6 14-17"/><circle cx="15" cy="20" r="2" fill="#73df9e"/><circle cx="23" cy="26" r="2" fill="#73df9e"/><circle cx="37" cy="9" r="2" fill="#73df9e"/>
+      </g>
+      <text x="44" y="104" class="node-title" text-anchor="middle">OBSERVE</text><text x="44" y="124" class="node-sub" text-anchor="middle">Prometheus · Grafana</text>
+    </g>
+  </g>
+
+  <g filter="url(#node-glow)">
+    <circle cx="210" cy="243" r="5" fill="#2f81f7"/><circle cx="526" cy="165" r="5" fill="#ff9900"/>
+    <circle cx="676" cy="165" r="5" fill="#ff9900"/><circle cx="990" cy="221" r="5" fill="#22c55e"/>
+    <circle cx="674" cy="309" r="5" fill="#38bdf8"/><circle cx="522" cy="309" r="5" fill="#7c3aed"/>
+  </g>
+</svg>
