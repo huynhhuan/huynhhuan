@@ -74,7 +74,7 @@ Four builds across one engineering path: product, delivery, governance, and oper
 
 A live view of my public work — code first, cloud next, always improving.
 
-<img src="https://raw.githubusercontent.com/huynhhuan/huynhhuan/cf5361c/profile/aws-cloud-atlas.svg" width="100%" alt="Animated GitHub contribution graph assembling into the AWS logo" />
+<img src="./profile/aws-cloud-atlas.svg" width="100%" alt="Animated GitHub contribution graph assembling into the AWS logo" />
 
 <p align="center">
   <img width="74%" src="./profile/stats.svg?v=20260802" alt="Huynh Ba Huan's GitHub activity statistics" />
