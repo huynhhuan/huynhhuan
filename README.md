@@ -30,9 +30,21 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" width="44" height="44" alt="Grafana" title="Grafana" />
 </p>
 
+<p align="center">
+  <img src="./profile/tech-banner.svg" width="100%" alt="From code to cloud: develop, build, deploy, and observe" />
+</p>
+
 <h2 align="center">GitHub Stats</h2>
 
 <p align="center">
   <img height="170" src="./profile/stats.svg" alt="Huynh Ba Huan's GitHub stats" />
   <img height="170" src="./profile/top-langs.svg" alt="Most used languages" />
 </p>
+
+<h2 align="center">Contribution Activity</h2>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./profile/contribution-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./profile/contribution-snake.svg" />
+  <img src="./profile/contribution-snake.svg" width="100%" alt="GitHub contribution snake animation" />
+</picture>
