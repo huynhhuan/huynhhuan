@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="823" height="148" viewBox="0 0 823 148" role="img" aria-labelledby="title desc">
-  <title id="title">Animated AWS GitHub contribution graph</title>
-  <desc id="desc">A GitHub contribution grid where sixty-nine cells run independent CSS animations, rotating from unique angles and changing from gray to orange and red as they assemble into the AWS wordmark and smile.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="823" height="180" viewBox="0 0 823 180" role="img" aria-labelledby="title desc">
+  <title id="title">AWS deployment sequence built from GitHub contribution cells</title>
+  <desc id="desc">A transparent GitHub contribution grid that wakes in a wave, assembles sixty-nine independently animated cells into a dark AWS wordmark and orange smile, then carries a deployment signal through Code, Build, Ship, and Run.</desc>
   <defs>
     <g id="week">
       <rect y="0" width="11" height="11" rx="2" />
@@ -12,6 +12,13 @@
       <rect y="90" width="11" height="11" rx="2" />
     </g>
     <rect id="active-cell" width="11" height="11" rx="2" />
+    <filter id="orange-glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="2.2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
     <style>
       .base {
         fill:#8c959f;
@@ -42,7 +49,107 @@
         font-weight:600;
         letter-spacing:1.4px;
       }
-      .legend { fill:#8c959f; fill-opacity:.24; }
+      .grid-week {
+        opacity:.58;
+        animation:grid-wave 8.4s cubic-bezier(.22,.72,.2,1) infinite both;
+        animation-delay:calc(var(--i) * 28ms);
+      }
+      @keyframes grid-wave {
+        0%,5%,100% { opacity:.42; fill:#8c959f; }
+        10% { opacity:.96; fill:#39d353; }
+        16%,84% { opacity:.62; fill:#8c959f; }
+        92% { opacity:.34; fill:#8c959f; }
+      }
+      .header-rule {
+        stroke:#8c959f;
+        stroke-opacity:.24;
+        stroke-width:1;
+      }
+      .status-dot {
+        fill:#FF9900;
+        transform-box:fill-box;
+        transform-origin:center;
+        animation:status-pulse 8.4s ease-in-out infinite;
+      }
+      @keyframes status-pulse {
+        0%,12%,100% { opacity:.28; transform:scale(.65); }
+        34%,80% { opacity:1; transform:scale(1); }
+        42%,52%,62% { opacity:.72; transform:scale(.82); }
+        47%,57%,67% { opacity:1; transform:scale(1.18); }
+        90% { opacity:.2; transform:scale(.55); }
+      }
+      .smile-trace {
+        fill:none;
+        stroke:#FF9900;
+        stroke-width:2.4;
+        stroke-linecap:round;
+        stroke-dasharray:470;
+        stroke-dashoffset:470;
+        opacity:0;
+        filter:url(#orange-glow);
+        animation:draw-smile 8.4s cubic-bezier(.2,.72,.18,1) infinite;
+      }
+      @keyframes draw-smile {
+        0%,32% { stroke-dashoffset:470; opacity:0; }
+        36% { opacity:.9; }
+        52%,82% { stroke-dashoffset:0; opacity:1; }
+        92%,100% { stroke-dashoffset:-80; opacity:0; }
+      }
+      .pipeline-rail {
+        stroke:#8c959f;
+        stroke-opacity:.28;
+        stroke-width:1.5;
+        stroke-linecap:round;
+      }
+      .pipeline-progress {
+        stroke:#FF9900;
+        stroke-width:2;
+        stroke-linecap:round;
+        stroke-dasharray:54 354;
+        opacity:.22;
+        animation:rail-breathe 8.4s ease-in-out infinite;
+      }
+      @keyframes rail-breathe {
+        0%,15%,100% { opacity:.08; }
+        32%,78% { opacity:.42; }
+        88% { opacity:.12; }
+      }
+      .pipeline-node {
+        fill:#fff;
+        stroke:#8c959f;
+        stroke-width:1.5;
+        transform-box:fill-box;
+        transform-origin:center;
+        animation:node-pulse 8.4s ease-in-out infinite;
+        animation-delay:var(--node-delay);
+      }
+      @keyframes node-pulse {
+        0%,17%,100% { fill:#fff; stroke:#8c959f; transform:scale(.76); }
+        26%,34% { fill:#FF9900; stroke:#FF9900; transform:scale(1.16); }
+        41%,84% { fill:#fff; stroke:#232F3E; transform:scale(1); }
+        92% { fill:#fff; stroke:#8c959f; transform:scale(.78); }
+      }
+      .pipeline-signal {
+        fill:#FF9900;
+        filter:url(#orange-glow);
+        animation:pipeline-run 8.4s cubic-bezier(.4,0,.2,1) infinite;
+      }
+      @keyframes pipeline-run {
+        0%,18% { opacity:0; transform:translateX(0); }
+        22% { opacity:1; transform:translateX(0); }
+        36% { transform:translateX(136px); }
+        50% { transform:translateX(272px); }
+        64%,80% { opacity:1; transform:translateX(408px); }
+        90%,100% { opacity:0; transform:translateX(408px); }
+      }
+      .pipeline-label {
+        fill:#8c959f;
+        font-family:'Fira Code','JetBrains Mono',Consolas,monospace;
+        font-size:9px;
+        font-weight:700;
+        letter-spacing:1.2px;
+        text-anchor:middle;
+      }
       .cell-0 { --end:#ff9900; animation-name:cell-0; animation-delay:0ms; animation-timing-function:cubic-bezier(.18,.86,.22,1); }
       @keyframes cell-0 {
         0%,3% { opacity:0; fill:#8c959f; transform:translate(-23px,-21px) rotate(73deg) scale(.22); }
@@ -741,65 +848,67 @@
   </defs>
 
   <text class="meta" x="15" y="12">GITHUB CONTRIBUTION GRAPH</text>
-  <text class="meta" x="808" y="12" text-anchor="end">AWS Â· ASSEMBLED CELL BY CELL</text>
+  <line class="header-rule" x1="211" y1="8.5" x2="604" y2="8.5" />
+  <circle class="status-dot" cx="624" cy="8.5" r="3" />
+  <text class="meta" x="808" y="12" text-anchor="end">AWS / DEPLOYMENT SEQUENCE</text>
 
   <g class="base" transform="translate(15 22)">
-    <use href="#week" x="0" />
-    <use href="#week" x="15" />
-    <use href="#week" x="30" />
-    <use href="#week" x="45" />
-    <use href="#week" x="60" />
-    <use href="#week" x="75" />
-    <use href="#week" x="90" />
-    <use href="#week" x="105" />
-    <use href="#week" x="120" />
-    <use href="#week" x="135" />
-    <use href="#week" x="150" />
-    <use href="#week" x="165" />
-    <use href="#week" x="180" />
-    <use href="#week" x="195" />
-    <use href="#week" x="210" />
-    <use href="#week" x="225" />
-    <use href="#week" x="240" />
-    <use href="#week" x="255" />
-    <use href="#week" x="270" />
-    <use href="#week" x="285" />
-    <use href="#week" x="300" />
-    <use href="#week" x="315" />
-    <use href="#week" x="330" />
-    <use href="#week" x="345" />
-    <use href="#week" x="360" />
-    <use href="#week" x="375" />
-    <use href="#week" x="390" />
-    <use href="#week" x="405" />
-    <use href="#week" x="420" />
-    <use href="#week" x="435" />
-    <use href="#week" x="450" />
-    <use href="#week" x="465" />
-    <use href="#week" x="480" />
-    <use href="#week" x="495" />
-    <use href="#week" x="510" />
-    <use href="#week" x="525" />
-    <use href="#week" x="540" />
-    <use href="#week" x="555" />
-    <use href="#week" x="570" />
-    <use href="#week" x="585" />
-    <use href="#week" x="600" />
-    <use href="#week" x="615" />
-    <use href="#week" x="630" />
-    <use href="#week" x="645" />
-    <use href="#week" x="660" />
-    <use href="#week" x="675" />
-    <use href="#week" x="690" />
-    <use href="#week" x="705" />
-    <use href="#week" x="720" />
-    <use href="#week" x="735" />
-    <use href="#week" x="750" />
-    <use href="#week" x="765" />
-    <use href="#week" x="780" />
+    <use href="#week" x="0" class="grid-week" style="--i:0" />
+    <use href="#week" x="15" class="grid-week" style="--i:1" />
+    <use href="#week" x="30" class="grid-week" style="--i:2" />
+    <use href="#week" x="45" class="grid-week" style="--i:3" />
+    <use href="#week" x="60" class="grid-week" style="--i:4" />
+    <use href="#week" x="75" class="grid-week" style="--i:5" />
+    <use href="#week" x="90" class="grid-week" style="--i:6" />
+    <use href="#week" x="105" class="grid-week" style="--i:7" />
+    <use href="#week" x="120" class="grid-week" style="--i:8" />
+    <use href="#week" x="135" class="grid-week" style="--i:9" />
+    <use href="#week" x="150" class="grid-week" style="--i:10" />
+    <use href="#week" x="165" class="grid-week" style="--i:11" />
+    <use href="#week" x="180" class="grid-week" style="--i:12" />
+    <use href="#week" x="195" class="grid-week" style="--i:13" />
+    <use href="#week" x="210" class="grid-week" style="--i:14" />
+    <use href="#week" x="225" class="grid-week" style="--i:15" />
+    <use href="#week" x="240" class="grid-week" style="--i:16" />
+    <use href="#week" x="255" class="grid-week" style="--i:17" />
+    <use href="#week" x="270" class="grid-week" style="--i:18" />
+    <use href="#week" x="285" class="grid-week" style="--i:19" />
+    <use href="#week" x="300" class="grid-week" style="--i:20" />
+    <use href="#week" x="315" class="grid-week" style="--i:21" />
+    <use href="#week" x="330" class="grid-week" style="--i:22" />
+    <use href="#week" x="345" class="grid-week" style="--i:23" />
+    <use href="#week" x="360" class="grid-week" style="--i:24" />
+    <use href="#week" x="375" class="grid-week" style="--i:25" />
+    <use href="#week" x="390" class="grid-week" style="--i:26" />
+    <use href="#week" x="405" class="grid-week" style="--i:27" />
+    <use href="#week" x="420" class="grid-week" style="--i:28" />
+    <use href="#week" x="435" class="grid-week" style="--i:29" />
+    <use href="#week" x="450" class="grid-week" style="--i:30" />
+    <use href="#week" x="465" class="grid-week" style="--i:31" />
+    <use href="#week" x="480" class="grid-week" style="--i:32" />
+    <use href="#week" x="495" class="grid-week" style="--i:33" />
+    <use href="#week" x="510" class="grid-week" style="--i:34" />
+    <use href="#week" x="525" class="grid-week" style="--i:35" />
+    <use href="#week" x="540" class="grid-week" style="--i:36" />
+    <use href="#week" x="555" class="grid-week" style="--i:37" />
+    <use href="#week" x="570" class="grid-week" style="--i:38" />
+    <use href="#week" x="585" class="grid-week" style="--i:39" />
+    <use href="#week" x="600" class="grid-week" style="--i:40" />
+    <use href="#week" x="615" class="grid-week" style="--i:41" />
+    <use href="#week" x="630" class="grid-week" style="--i:42" />
+    <use href="#week" x="645" class="grid-week" style="--i:43" />
+    <use href="#week" x="660" class="grid-week" style="--i:44" />
+    <use href="#week" x="675" class="grid-week" style="--i:45" />
+    <use href="#week" x="690" class="grid-week" style="--i:46" />
+    <use href="#week" x="705" class="grid-week" style="--i:47" />
+    <use href="#week" x="720" class="grid-week" style="--i:48" />
+    <use href="#week" x="735" class="grid-week" style="--i:49" />
+    <use href="#week" x="750" class="grid-week" style="--i:50" />
+    <use href="#week" x="765" class="grid-week" style="--i:51" />
+    <use href="#week" x="780" class="grid-week" style="--i:52" />
   </g>
 
-  <g transform="translate(15 22)">
+  <g transform="translate(-77 22) scale(1.25 1)">
     <use href="#active-cell" x="225" y="75" class="piece cell-0 smile" />
     <use href="#active-cell" x="240" y="15" class="piece cell-1 a" />
     <use href="#active-cell" x="240" y="30" class="piece cell-2 a" />
@@ -871,13 +980,19 @@
     <use href="#active-cell" x="555" y="75" class="piece cell-68 smile" />
   </g>
 
-  <g class="meta">
-    <text x="15" y="141" letter-spacing="0">Less</text>
-    <rect class="legend" x="47" y="132" width="10" height="10" rx="2" />
-    <rect x="62" y="132" width="10" height="10" rx="2" fill="#fbbf24" fill-opacity=".65" />
-    <rect x="77" y="132" width="10" height="10" rx="2" fill="#f59e0b" fill-opacity=".78" />
-    <rect x="92" y="132" width="10" height="10" rx="2" fill="#f97316" fill-opacity=".9" />
-    <rect x="107" y="132" width="10" height="10" rx="2" fill="#ef4444" />
-    <text x="123" y="141" letter-spacing="0">More</text>
+  <path class="smile-trace" d="M211 103 C258 122 318 123 411 123 C511 123 568 114 623 103" />
+
+  <g aria-label="Deployment pipeline">
+    <line class="pipeline-rail" x1="210" y1="150" x2="618" y2="150" />
+    <line class="pipeline-progress" x1="210" y1="150" x2="618" y2="150" />
+    <circle class="pipeline-node" style="--node-delay:0ms" cx="210" cy="150" r="4" />
+    <circle class="pipeline-node" style="--node-delay:1176ms" cx="346" cy="150" r="4" />
+    <circle class="pipeline-node" style="--node-delay:2352ms" cx="482" cy="150" r="4" />
+    <circle class="pipeline-node" style="--node-delay:3528ms" cx="618" cy="150" r="4" />
+    <circle class="pipeline-signal" cx="210" cy="150" r="3.2" />
+    <text class="pipeline-label" x="210" y="170">CODE</text>
+    <text class="pipeline-label" x="346" y="170">BUILD</text>
+    <text class="pipeline-label" x="482" y="170">SHIP</text>
+    <text class="pipeline-label" x="618" y="170">RUN</text>
   </g>
 </svg>
