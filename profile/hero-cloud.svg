@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">Hi, I'm Huỳnh Bá Huân</title>
+  <desc id="desc">Backend and Web Developer, JavaScript, PHP, Python, Cloud and DevOps, AWS, Terraform, and Kubernetes. Building practical web applications and reliable cloud infrastructure from code to cloud.</desc>
+  <defs>
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f59e0b" />
+      <stop offset="0.52" stop-color="#fb923c" />
+      <stop offset="1" stop-color="#ef4444" />
+    </linearGradient>
+    <radialGradient id="glow-left" cx="0" cy="0" r="1" gradientTransform="translate(150 110) rotate(22) scale(410 260)">
+      <stop offset="0" stop-color="#f59e0b" stop-opacity=".16" />
+      <stop offset="1" stop-color="#f59e0b" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glow-right" cx="0" cy="0" r="1" gradientTransform="translate(1060 210) rotate(-158) scale(360 230)">
+      <stop offset="0" stop-color="#ef4444" stop-opacity=".13" />
+      <stop offset="1" stop-color="#ef4444" stop-opacity="0" />
+    </radialGradient>
+    <filter id="caret-glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+    </filter>
+    <style>
+      .title-text {
+        font-family:'Plus Jakarta Sans','Segoe UI',Arial,sans-serif;
+        font-size:58px;
+        font-weight:800;
+        letter-spacing:-1.4px;
+      }
+      .typing-text {
+        font-family:'Fira Code','JetBrains Mono',Consolas,monospace;
+        font-size:26px;
+        font-weight:600;
+        fill:url(#warm);
+      }
+      .tagline {
+        font-family:'Segoe UI',Arial,sans-serif;
+        font-size:20px;
+        font-weight:500;
+        fill:#cbd5e1;
+      }
+      .typed { clip-path:inset(0 100% 0 0); }
+      .line-one { animation:type-one 12s steps(23,end) infinite; }
+      .line-two { animation:type-two 12s steps(25,end) infinite; }
+      .line-three { animation:type-three 12s steps(45,end) infinite; }
+      .cursor-one { animation:travel-one 12s steps(23,end) infinite; }
+      .cursor-two { animation:travel-two 12s steps(25,end) infinite; }
+      .cursor-three { animation:travel-three 12s steps(45,end) infinite; }
+      .cursor-blink { animation:blink .72s step-end infinite; }
+      .static-role { display:none; }
+      @keyframes type-one {
+        0%,2% { clip-path:inset(0 100% 0 0); }
+        16%,26% { clip-path:inset(0 0 0 0); }
+        32%,100% { clip-path:inset(0 100% 0 0); }
+      }
+      @keyframes type-two {
+        0%,34% { clip-path:inset(0 100% 0 0); }
+        48%,58% { clip-path:inset(0 0 0 0); }
+        64%,100% { clip-path:inset(0 100% 0 0); }
+      }
+      @keyframes type-three {
+        0%,66% { clip-path:inset(0 100% 0 0); }
+        80%,92% { clip-path:inset(0 0 0 0); }
+        98%,100% { clip-path:inset(0 100% 0 0); }
+      }
+      @keyframes travel-one {
+        0%,2% { opacity:1; transform:translateX(0); }
+        16%,26% { opacity:1; transform:translateX(370px); }
+        32%,100% { opacity:0; transform:translateX(0); }
+      }
+      @keyframes travel-two {
+        0%,34% { opacity:0; transform:translateX(0); }
+        35% { opacity:1; transform:translateX(0); }
+        48%,58% { opacity:1; transform:translateX(401px); }
+        64%,100% { opacity:0; transform:translateX(0); }
+      }
+      @keyframes travel-three {
+        0%,66% { opacity:0; transform:translateX(0); }
+        67% { opacity:1; transform:translateX(0); }
+        80%,92% { opacity:1; transform:translateX(714px); }
+        98%,100% { opacity:0; transform:translateX(0); }
+      }
+      @keyframes blink { 50% { opacity:0; } }
+      @media (prefers-reduced-motion: reduce) {
+        .animated-role { display:none; }
+        .static-role { display:inline; }
+      }
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="1198" height="298" rx="22" fill="#0f172a" stroke="url(#warm)" stroke-opacity=".48" stroke-width="2" />
+  <rect x="2" y="2" width="1196" height="296" rx="21" fill="url(#glow-left)" />
+  <rect x="2" y="2" width="1196" height="296" rx="21" fill="url(#glow-right)" />
+
+  <text class="title-text" x="600" y="91" text-anchor="middle" fill="url(#warm)">Hi, I'm Huỳnh Bá Huân</text>
+  <text x="936" y="90" font-family="'Segoe UI Emoji','Apple Color Emoji',sans-serif" font-size="44">👋</text>
+
+  <g class="animated-role typing-text">
+    <text class="typed line-one" x="415" y="160">Backend &amp; Web Developer</text>
+    <g class="cursor-one"><rect class="cursor-blink" x="417" y="136" width="3" height="29" rx="1.5" fill="#f59e0b" filter="url(#caret-glow)" /></g>
+
+    <text class="typed line-two" x="399" y="160">JavaScript | PHP | Python</text>
+    <g class="cursor-two"><rect class="cursor-blink" x="401" y="136" width="3" height="29" rx="1.5" fill="#fb923c" filter="url(#caret-glow)" /></g>
+
+    <text class="typed line-three" x="243" y="160">Cloud &amp; DevOps | AWS | Terraform | Kubernetes</text>
+    <g class="cursor-three"><rect class="cursor-blink" x="245" y="136" width="3" height="29" rx="1.5" fill="#ef4444" filter="url(#caret-glow)" /></g>
+  </g>
+
+  <text class="static-role typing-text" x="600" y="160" text-anchor="middle">Backend &amp; Web Developer · Cloud &amp; DevOps</text>
+  <text class="tagline" x="600" y="218" text-anchor="middle">Building practical web applications and reliable cloud infrastructure — from code to cloud.</text>
+  <rect x="390" y="257" width="420" height="3" rx="1.5" fill="url(#warm)" opacity=".88" />
+</svg>
