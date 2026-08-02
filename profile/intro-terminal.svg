@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="190" viewBox="0 0 1200 190" role="img" aria-labelledby="title desc">
   <title id="title">Hi, I'm Huỳnh Bá Huân</title>
-  <desc id="desc">Web Developer and DevOps / Cloud Operations roles presented with a typing animation.</desc>
+  <desc id="desc">Backend and Web Developer, JavaScript, PHP, Python, DevOps and Cloud Operations, AWS, Terraform, and Kubernetes presented in sequence.</desc>
   <defs>
     <linearGradient id="warm" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#f59e0b" />
@@ -25,30 +25,44 @@
         font-weight:600;
       }
       .typed { clip-path:inset(0 100% 0 0); }
-      .web-text { animation:type-web 10s steps(13,end) infinite; }
-      .cloud-text { animation:type-cloud 10s steps(24,end) infinite; }
-      .web-cursor { animation:cursor-web 10s steps(13,end) infinite, blink .72s step-end infinite; }
-      .cloud-cursor { animation:cursor-cloud 10s steps(24,end) infinite, blink .72s step-end infinite; }
+      .line-one { animation:type-one 13.5s steps(23,end) infinite; }
+      .line-two { animation:type-two 13.5s steps(25,end) infinite; }
+      .line-three { animation:type-three 13.5s steps(56,end) infinite; }
+      .cursor-one { animation:travel-one 13.5s steps(23,end) infinite; }
+      .cursor-two { animation:travel-two 13.5s steps(25,end) infinite; }
+      .cursor-three { animation:travel-three 13.5s steps(56,end) infinite; }
+      .cursor-blink { animation:blink .72s step-end infinite; }
       .static-role { display:none; }
-      @keyframes type-web {
-        0%,4% { clip-path:inset(0 100% 0 0); }
-        28%,42% { clip-path:inset(0 0 0 0); }
-        47%,100% { clip-path:inset(0 100% 0 0); }
+      @keyframes type-one {
+        0%,2% { clip-path:inset(0 100% 0 0); }
+        20%,30% { clip-path:inset(0 0 0 0); }
+        33%,100% { clip-path:inset(0 100% 0 0); }
       }
-      @keyframes type-cloud {
-        0%,50% { clip-path:inset(0 100% 0 0); }
-        78%,94% { clip-path:inset(0 0 0 0); }
+      @keyframes type-two {
+        0%,34% { clip-path:inset(0 100% 0 0); }
+        54%,63% { clip-path:inset(0 0 0 0); }
+        66%,100% { clip-path:inset(0 100% 0 0); }
+      }
+      @keyframes type-three {
+        0%,67% { clip-path:inset(0 100% 0 0); }
+        88%,97% { clip-path:inset(0 0 0 0); }
         100% { clip-path:inset(0 100% 0 0); }
       }
-      @keyframes cursor-web {
-        0%,4% { opacity:1; transform:translateX(0); }
-        28%,42% { opacity:1; transform:translateX(222px); }
-        47%,100% { opacity:0; transform:translateX(0); }
+      @keyframes travel-one {
+        0%,2% { opacity:1; transform:translateX(0); }
+        20%,30% { opacity:1; transform:translateX(398px); }
+        33%,100% { opacity:0; transform:translateX(0); }
       }
-      @keyframes cursor-cloud {
-        0%,50% { opacity:0; transform:translateX(0); }
-        51% { opacity:1; transform:translateX(0); }
-        78%,94% { opacity:1; transform:translateX(408px); }
+      @keyframes travel-two {
+        0%,34% { opacity:0; transform:translateX(0); }
+        35% { opacity:1; transform:translateX(0); }
+        54%,63% { opacity:1; transform:translateX(431px); }
+        66%,100% { opacity:0; transform:translateX(0); }
+      }
+      @keyframes travel-three {
+        0%,67% { opacity:0; transform:translateX(0); }
+        68% { opacity:1; transform:translateX(0); }
+        88%,97% { opacity:1; transform:translateX(954px); }
         100% { opacity:0; transform:translateX(0); }
       }
       @keyframes blink { 50% { opacity:0; } }
@@ -63,13 +77,22 @@
   <text x="965" y="76" font-family="'Segoe UI Emoji','Apple Color Emoji',sans-serif" font-size="48">👋</text>
 
   <g class="animated-role role">
-    <text class="typed web-text" x="486" y="139">Web Developer</text>
-    <rect class="web-cursor" x="488" y="116" width="3" height="29" rx="1.5" fill="#f59e0b" filter="url(#soft-glow)" />
+    <text class="typed line-one" x="406" y="139">Backend &amp; Web Developer</text>
+    <g class="cursor-one">
+      <rect class="cursor-blink" x="408" y="116" width="3" height="29" rx="1.5" fill="#f59e0b" filter="url(#soft-glow)" />
+    </g>
 
-    <text class="typed cloud-text" x="393" y="139">DevOps / Cloud Operations</text>
-    <rect class="cloud-cursor" x="395" y="116" width="3" height="29" rx="1.5" fill="#ef4444" filter="url(#soft-glow)" />
+    <text class="typed line-two" x="389" y="139">JavaScript | PHP | Python</text>
+    <g class="cursor-two">
+      <rect class="cursor-blink" x="391" y="116" width="3" height="29" rx="1.5" fill="#fb923c" filter="url(#soft-glow)" />
+    </g>
+
+    <text class="typed line-three" x="128" y="139">DevOps / Cloud Operations | AWS | Terraform | Kubernetes</text>
+    <g class="cursor-three">
+      <rect class="cursor-blink" x="130" y="116" width="3" height="29" rx="1.5" fill="#ef4444" filter="url(#soft-glow)" />
+    </g>
   </g>
 
-  <text class="static-role role" x="600" y="139" text-anchor="middle">Web Developer · DevOps / Cloud Operations</text>
+  <text class="static-role role" x="600" y="139" text-anchor="middle">Backend &amp; Web Developer · DevOps / Cloud Operations</text>
   <rect x="350" y="170" width="500" height="3" rx="1.5" fill="url(#warm)" opacity=".82" />
 </svg>

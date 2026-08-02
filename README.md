@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./profile/intro-terminal.svg" width="100%" alt="Hi, I'm Huỳnh Bá Huân — Web Developer and DevOps / Cloud Operations" />
+<img src="./profile/intro-terminal.svg" width="100%" alt="Hi, I'm Huỳnh Bá Huân — Backend and Web Developer, JavaScript, PHP, Python, DevOps and Cloud Operations" />
 
 <p>Building practical web services and reliable cloud infrastructure — from code to production.</p>
 
