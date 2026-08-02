@@ -3,24 +3,24 @@
   <desc id="desc">A visual delivery pipeline moving from application code through build and deployment to observability.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#07111f" />
-      <stop offset="0.55" stop-color="#0f2342" />
-      <stop offset="1" stop-color="#1e1b4b" />
+      <stop offset="0" stop-color="#0f172a" />
+      <stop offset="0.55" stop-color="#111827" />
+      <stop offset="1" stop-color="#1e293b" />
     </linearGradient>
     <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#38bdf8" />
-      <stop offset="0.5" stop-color="#818cf8" />
-      <stop offset="1" stop-color="#c084fc" />
+      <stop offset="0" stop-color="#f59e0b" />
+      <stop offset="0.55" stop-color="#fb923c" />
+      <stop offset="1" stop-color="#ef4444" />
     </linearGradient>
     <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
-      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#93c5fd" stroke-opacity="0.07" />
+      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#f59e0b" stroke-opacity="0.06" />
     </pattern>
     <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
       <feGaussianBlur stdDeviation="5" result="blur" />
       <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
     </filter>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#60a5fa" />
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f59e0b" />
     </marker>
     <path id="pipeline-motion" d="M203 135 C245 102 278 168 321 135 S420 102 457 135 S554 168 557 135 S650 102 692 135 S750 168 792 135" />
     <style>
@@ -43,55 +43,55 @@
 
   <rect width="1000" height="260" rx="24" fill="url(#background)" />
   <rect width="1000" height="260" rx="24" fill="url(#grid)" />
-  <circle cx="80" cy="30" r="90" fill="#0ea5e9" opacity="0.08" />
-  <circle cx="930" cy="235" r="120" fill="#a855f7" opacity="0.08" />
+  <circle cx="80" cy="30" r="90" fill="#f59e0b" opacity="0.09" />
+  <circle cx="930" cy="235" r="120" fill="#3b82f6" opacity="0.08" />
 
-  <text x="50" y="48" fill="#bfdbfe" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="4">FROM CODE TO CLOUD</text>
+  <text x="50" y="48" fill="#f59e0b" font-family="'JetBrains Mono',Consolas,'Courier New',monospace" font-size="17" font-weight="700" letter-spacing="4">FROM CODE TO CLOUD</text>
   <rect x="50" y="63" width="900" height="2" rx="1" fill="url(#accent)" opacity="0.7" />
 
   <path d="M220 135 H315 M455 135 H550 M690 135 H785" fill="none" stroke="#334155" stroke-width="5" stroke-linecap="round" opacity="0.72" />
   <path class="flow-track" d="M220 135 H315 M455 135 H550 M690 135 H785" fill="none" stroke="url(#accent)" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 10" marker-end="url(#arrow)" opacity="0.9" />
 
   <g class="flow-signal" filter="url(#glow)">
-    <circle r="8" fill="#e0f2fe" opacity=".16">
+    <circle r="8" fill="#f59e0b" opacity=".2">
       <animateMotion dur="8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".4 0 .2 1"><mpath href="#pipeline-motion" /></animateMotion>
     </circle>
-    <circle r="4.5" fill="#f8fafc">
+    <circle r="4.5" fill="#fff7ed">
       <animateMotion dur="8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".4 0 .2 1"><mpath href="#pipeline-motion" /></animateMotion>
     </circle>
-    <circle r="3" fill="#60a5fa" opacity=".48">
+    <circle r="3" fill="#fb923c" opacity=".58">
       <animateMotion dur="8s" begin="-.18s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".4 0 .2 1"><mpath href="#pipeline-motion" /></animateMotion>
     </circle>
   </g>
 
   <g transform="translate(145 135)">
-    <circle class="stage-ring stage-0" r="58" fill="#0b1f35" stroke="#38bdf8" stroke-width="3" filter="url(#glow)" />
-    <path d="M-25 -14 L-43 0 L-25 14 M25 -14 L43 0 L25 14 M10 -28 L-10 28" fill="none" stroke="#7dd3fc" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
-    <text y="88" text-anchor="middle" fill="#e0f2fe" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">DEVELOP</text>
-    <text y="109" text-anchor="middle" fill="#7dd3fc" font-family="Segoe UI, Arial, sans-serif" font-size="12">JS · PHP · PYTHON</text>
+    <circle class="stage-ring stage-0" r="58" fill="#111827" stroke="#f59e0b" stroke-width="3" filter="url(#glow)" />
+    <path d="M-25 -14 L-43 0 L-25 14 M25 -14 L43 0 L25 14 M10 -28 L-10 28" fill="none" stroke="#fbbf24" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+    <text y="88" text-anchor="middle" fill="#f8fafc" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="16" font-weight="700">DEVELOP</text>
+    <text y="109" text-anchor="middle" fill="#94a3b8" font-family="'JetBrains Mono',Consolas,'Courier New',monospace" font-size="12">JS · PHP · PYTHON</text>
   </g>
 
   <g transform="translate(380 135)">
-    <circle class="stage-ring stage-1" r="58" fill="#111d3c" stroke="#818cf8" stroke-width="3" filter="url(#glow)" />
-    <path d="M0 -34 L34 -16 L34 20 L0 38 L-34 20 L-34 -16 Z M0 -34 V2 M34 -16 L0 2 L-34 -16 M0 2 V38" fill="none" stroke="#a5b4fc" stroke-width="5" stroke-linejoin="round" />
-    <text y="88" text-anchor="middle" fill="#eef2ff" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">BUILD</text>
-    <text y="109" text-anchor="middle" fill="#a5b4fc" font-family="Segoe UI, Arial, sans-serif" font-size="12">CI/CD · DOCKER</text>
+    <circle class="stage-ring stage-1" r="58" fill="#111827" stroke="#fb923c" stroke-width="3" filter="url(#glow)" />
+    <path d="M0 -34 L34 -16 L34 20 L0 38 L-34 20 L-34 -16 Z M0 -34 V2 M34 -16 L0 2 L-34 -16 M0 2 V38" fill="none" stroke="#fdba74" stroke-width="5" stroke-linejoin="round" />
+    <text y="88" text-anchor="middle" fill="#f8fafc" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="16" font-weight="700">BUILD</text>
+    <text y="109" text-anchor="middle" fill="#94a3b8" font-family="'JetBrains Mono',Consolas,'Courier New',monospace" font-size="12">CI/CD · DOCKER</text>
   </g>
 
   <g transform="translate(615 135)">
-    <circle class="stage-ring stage-2" r="58" fill="#17183d" stroke="#a78bfa" stroke-width="3" filter="url(#glow)" />
-    <path d="M-37 19 H31 C44 19 48 0 36 -8 C34 -28 8 -37 -7 -24 C-27 -31 -43 -12 -36 4 C-49 10 -46 19 -37 19 Z" fill="none" stroke="#c4b5fd" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+    <circle class="stage-ring stage-2" r="58" fill="#111827" stroke="#3b82f6" stroke-width="3" filter="url(#glow)" />
+    <path d="M-37 19 H31 C44 19 48 0 36 -8 C34 -28 8 -37 -7 -24 C-27 -31 -43 -12 -36 4 C-49 10 -46 19 -37 19 Z" fill="none" stroke="#93c5fd" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
     <path d="M-18 3 L-2 18 L23 -12" fill="none" stroke="#86efac" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
-    <text y="88" text-anchor="middle" fill="#f5f3ff" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">DEPLOY</text>
-    <text y="109" text-anchor="middle" fill="#c4b5fd" font-family="Segoe UI, Arial, sans-serif" font-size="12">AWS · KUBERNETES</text>
+    <text y="88" text-anchor="middle" fill="#f8fafc" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="16" font-weight="700">DEPLOY</text>
+    <text y="109" text-anchor="middle" fill="#94a3b8" font-family="'JetBrains Mono',Consolas,'Courier New',monospace" font-size="12">AWS · KUBERNETES</text>
   </g>
 
   <g transform="translate(850 135)">
-    <circle class="stage-ring stage-3" r="58" fill="#20183e" stroke="#c084fc" stroke-width="3" filter="url(#glow)" />
-    <path d="M-36 28 V-26 M-36 28 H38" fill="none" stroke="#e9d5ff" stroke-width="5" stroke-linecap="round" />
-    <path d="M-28 13 L-10 -3 L7 7 L31 -22" fill="none" stroke="#f0abfc" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
-    <circle cx="-28" cy="13" r="4" fill="#f0abfc" /><circle cx="-10" cy="-3" r="4" fill="#f0abfc" /><circle cx="7" cy="7" r="4" fill="#f0abfc" /><circle cx="31" cy="-22" r="4" fill="#f0abfc" />
-    <text y="88" text-anchor="middle" fill="#faf5ff" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">OBSERVE</text>
-    <text y="109" text-anchor="middle" fill="#e9d5ff" font-family="Segoe UI, Arial, sans-serif" font-size="12">PROMETHEUS · GRAFANA</text>
+    <circle class="stage-ring stage-3" r="58" fill="#111827" stroke="#22c55e" stroke-width="3" filter="url(#glow)" />
+    <path d="M-36 28 V-26 M-36 28 H38" fill="none" stroke="#bbf7d0" stroke-width="5" stroke-linecap="round" />
+    <path d="M-28 13 L-10 -3 L7 7 L31 -22" fill="none" stroke="#4ade80" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+    <circle cx="-28" cy="13" r="4" fill="#4ade80" /><circle cx="-10" cy="-3" r="4" fill="#4ade80" /><circle cx="7" cy="7" r="4" fill="#4ade80" /><circle cx="31" cy="-22" r="4" fill="#4ade80" />
+    <text y="88" text-anchor="middle" fill="#f8fafc" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="16" font-weight="700">OBSERVE</text>
+    <text y="109" text-anchor="middle" fill="#94a3b8" font-family="'JetBrains Mono',Consolas,'Courier New',monospace" font-size="12">PROMETHEUS · GRAFANA</text>
   </g>
 </svg>

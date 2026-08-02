@@ -1,22 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="310" viewBox="0 0 1200 310" role="img" aria-labelledby="title desc">
   <title id="title">AWS logo assembled from GitHub contribution cells</title>
-  <desc id="desc">A contribution graph animates like puzzle pieces, forming the AWS wordmark and orange smile.</desc>
+  <desc id="desc">Contribution cells orbit with individual rotations in a five-second loop, assembling the AWS wordmark and smile.</desc>
   <defs>
     <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0d1117" />
+      <stop offset="0" stop-color="#0f172a" />
       <stop offset="0.55" stop-color="#111827" />
-      <stop offset="1" stop-color="#0b1220" />
+      <stop offset="1" stop-color="#1e293b" />
     </linearGradient>
     <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#58a6ff" stop-opacity="0" />
-      <stop offset="0.5" stop-color="#58a6ff" stop-opacity="0.8" />
-      <stop offset="1" stop-color="#ff9900" stop-opacity="0" />
+      <stop offset="0" stop-color="#f59e0b" stop-opacity="0" />
+      <stop offset="0.5" stop-color="#f59e0b" stop-opacity="0.8" />
+      <stop offset="1" stop-color="#ef4444" stop-opacity="0" />
     </linearGradient>
     <filter id="soft-glow" x="-80%" y="-80%" width="260%" height="260%">
       <feGaussianBlur stdDeviation="4" result="blur" />
       <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
     </filter>
-    <g id="week" fill="#21262d">
+    <g id="week" fill="#1e293b">
       <rect y="0" width="14" height="14" rx="3" />
       <rect y="21" width="14" height="14" rx="3" />
       <rect y="42" width="14" height="14" rx="3" />
@@ -27,51 +27,44 @@
     </g>
     <style>
       .piece {
-        opacity: 0;
-        transform-box: fill-box;
-        transform-origin: center;
-        animation: assemble .82s cubic-bezier(.16,1,.3,1) forwards;
-        animation-delay: var(--delay);
+        opacity:.08;
+        transform-box:view-box;
+        transform-origin:50% 50%;
+        animation-name:contribution-orbit;
+        animation-duration:5s;
+        animation-timing-function:cubic-bezier(.16,1,.3,1);
+        animation-iteration-count:infinite;
       }
-      .entry-0 { transform: translate(-88px,-46px) rotate(-110deg) scale(.12); }
-      .entry-1 { transform: translate(76px,-54px) rotate(95deg) scale(.12); }
-      .entry-2 { transform: translate(-64px,58px) rotate(120deg) scale(.12); }
-      .entry-3 { transform: translate(82px,52px) rotate(-100deg) scale(.12); }
-      .cell-blue { fill:#58a6ff; }
-      .cell-light { fill:#9ecbff; }
-      .cell-white { fill:#f0f6fc; }
-      .cell-orange { fill:#ff9900; filter:url(#soft-glow); }
+      .cell-blue { --end:#f59e0b; fill:#f59e0b; }
+      .cell-light { --end:#fb923c; fill:#fb923c; }
+      .cell-white { --end:#fbbf24; fill:#fbbf24; }
+      .cell-orange { --end:#ef4444; fill:#ef4444; filter:url(#soft-glow); }
       .scan {
-        animation: scan 2.35s cubic-bezier(.4,0,.2,1) forwards;
-        transform-origin: left;
+        animation:scan 5s cubic-bezier(.16,1,.3,1) infinite;
+        transform-origin:left;
       }
-      .status { animation: status-in .5s ease-out 2.15s both; }
-      @keyframes assemble {
-        0% { opacity:0; }
-        45% { opacity:1; }
-        78% { transform:translate(0,0) rotate(4deg) scale(1.08); }
-        100% { opacity:1; transform:translate(0,0) rotate(0) scale(1); }
+      @keyframes contribution-orbit {
+        0% { opacity:.08; transform:rotate(var(--spin)) scale(.28); fill:#1e293b; }
+        18% { opacity:.72; }
+        60% { opacity:1; transform:rotate(0deg) scale(1); fill:var(--end); }
+        100% { opacity:1; transform:rotate(0deg) scale(1); fill:var(--end); }
       }
       @keyframes scan {
         0% { transform:translateX(-1080px); opacity:0; }
-        12% { opacity:.7; }
-        88% { opacity:.7; }
-        100% { transform:translateX(1080px); opacity:0; }
-      }
-      @keyframes status-in {
-        from { opacity:0; transform:translateY(5px); }
-        to { opacity:1; transform:translateY(0); }
+        10% { opacity:.7; }
+        60% { transform:translateX(1080px); opacity:.5; }
+        61%,100% { transform:translateX(1080px); opacity:0; }
       }
       @media (prefers-reduced-motion: reduce) {
-        .piece,.status { animation:none; opacity:1; transform:none; }
+        .piece { animation:none; opacity:1; transform:none; fill:var(--end); }
         .scan { display:none; }
       }
     </style>
   </defs>
 
-  <rect x="1" y="1" width="1198" height="308" rx="22" fill="url(#panel)" stroke="#30363d" stroke-width="2" />
-  <text x="54" y="38" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="13" font-weight="700" letter-spacing="2.4">CONTRIBUTION GRAPH</text>
-  <text x="1146" y="38" text-anchor="end" fill="#c9d1d9" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="13">AWS · BUILT FROM CONTRIBUTIONS</text>
+  <rect x="1" y="1" width="1198" height="308" rx="22" fill="url(#panel)" stroke="#f59e0b" stroke-opacity=".28" stroke-width="2" />
+  <text x="54" y="38" fill="#f59e0b" font-family="'JetBrains Mono',Consolas,'Courier New',monospace" font-size="13" font-weight="700" letter-spacing="2.4">CONTRIBUTION GRAPH</text>
+  <text x="1146" y="38" text-anchor="end" fill="#e2e8f0" font-family="'JetBrains Mono',Consolas,'Courier New',monospace" font-size="13">AWS · BUILT FROM CONTRIBUTIONS</text>
 
   <g transform="translate(54 66)" opacity=".86">
     <use href="#week" x="0" />
@@ -130,102 +123,102 @@
 
   <rect class="scan" x="54" y="60" width="3" height="152" rx="2" fill="url(#rule)" filter="url(#soft-glow)" />
 
-  <rect class="piece cell-blue entry-3" x="369" y="66" width="14" height="14" rx="3" style="--delay:0.55s" />
-  <rect class="piece cell-light entry-1" x="390" y="66" width="14" height="14" rx="3" style="--delay:0.59s" />
-  <rect class="piece cell-white entry-3" x="411" y="66" width="14" height="14" rx="3" style="--delay:0.63s" />
-  <rect class="piece cell-blue entry-2" x="348" y="87" width="14" height="14" rx="3" style="--delay:0.63s" />
-  <rect class="piece cell-light entry-3" x="432" y="87" width="14" height="14" rx="3" style="--delay:0.73s" />
-  <rect class="piece cell-blue entry-0" x="327" y="108" width="14" height="14" rx="3" style="--delay:0.60s" />
-  <rect class="piece cell-blue entry-3" x="453" y="108" width="14" height="14" rx="3" style="--delay:0.75s" />
-  <rect class="piece cell-light entry-3" x="327" y="129" width="14" height="14" rx="3" style="--delay:0.68s" />
-  <rect class="piece cell-light entry-2" x="453" y="129" width="14" height="14" rx="3" style="--delay:0.83s" />
-  <rect class="piece cell-white entry-2" x="327" y="150" width="14" height="14" rx="3" style="--delay:0.76s" />
-  <rect class="piece cell-blue entry-0" x="348" y="150" width="14" height="14" rx="3" style="--delay:0.71s" />
-  <rect class="piece cell-light entry-2" x="369" y="150" width="14" height="14" rx="3" style="--delay:0.75s" />
-  <rect class="piece cell-white entry-0" x="390" y="150" width="14" height="14" rx="3" style="--delay:0.79s" />
-  <rect class="piece cell-blue entry-2" x="411" y="150" width="14" height="14" rx="3" style="--delay:0.83s" />
-  <rect class="piece cell-light entry-0" x="432" y="150" width="14" height="14" rx="3" style="--delay:0.87s" />
-  <rect class="piece cell-white entry-2" x="453" y="150" width="14" height="14" rx="3" style="--delay:0.82s" />
-  <rect class="piece cell-blue entry-2" x="327" y="171" width="14" height="14" rx="3" style="--delay:0.75s" />
-  <rect class="piece cell-blue entry-1" x="453" y="171" width="14" height="14" rx="3" style="--delay:0.90s" />
-  <rect class="piece cell-light entry-1" x="327" y="192" width="14" height="14" rx="3" style="--delay:0.83s" />
-  <rect class="piece cell-light entry-0" x="453" y="192" width="14" height="14" rx="3" style="--delay:0.98s" />
-  <rect class="piece cell-light entry-2" x="516" y="66" width="14" height="14" rx="3" style="--delay:0.70s" />
-  <rect class="piece cell-light entry-1" x="642" y="66" width="14" height="14" rx="3" style="--delay:0.85s" />
-  <rect class="piece cell-white entry-1" x="516" y="87" width="14" height="14" rx="3" style="--delay:0.79s" />
-  <rect class="piece cell-white entry-0" x="642" y="87" width="14" height="14" rx="3" style="--delay:0.94s" />
-  <rect class="piece cell-blue entry-0" x="516" y="108" width="14" height="14" rx="3" style="--delay:0.87s" />
-  <rect class="piece cell-blue entry-3" x="642" y="108" width="14" height="14" rx="3" style="--delay:0.93s" />
-  <rect class="piece cell-light entry-3" x="516" y="129" width="14" height="14" rx="3" style="--delay:0.86s" />
-  <rect class="piece cell-light entry-3" x="579" y="129" width="14" height="14" rx="3" style="--delay:0.94s" />
-  <rect class="piece cell-light entry-3" x="642" y="129" width="14" height="14" rx="3" style="--delay:1.02s" />
-  <rect class="piece cell-white entry-3" x="516" y="150" width="14" height="14" rx="3" style="--delay:0.96s" />
-  <rect class="piece cell-white entry-3" x="579" y="150" width="14" height="14" rx="3" style="--delay:0.95s" />
-  <rect class="piece cell-white entry-3" x="642" y="150" width="14" height="14" rx="3" style="--delay:1.03s" />
-  <rect class="piece cell-blue entry-3" x="516" y="171" width="14" height="14" rx="3" style="--delay:0.96s" />
-  <rect class="piece cell-white entry-2" x="558" y="171" width="14" height="14" rx="3" style="--delay:1.03s" />
-  <rect class="piece cell-light entry-1" x="600" y="171" width="14" height="14" rx="3" style="--delay:1.09s" />
-  <rect class="piece cell-blue entry-0" x="642" y="171" width="14" height="14" rx="3" style="--delay:1.06s" />
-  <rect class="piece cell-white entry-1" x="537" y="192" width="14" height="14" rx="3" style="--delay:1.01s" />
-  <rect class="piece cell-blue entry-2" x="621" y="192" width="14" height="14" rx="3" style="--delay:1.12s" />
-  <rect class="piece cell-white entry-2" x="726" y="66" width="14" height="14" rx="3" style="--delay:0.98s" />
-  <rect class="piece cell-blue entry-0" x="747" y="66" width="14" height="14" rx="3" style="--delay:1.02s" />
-  <rect class="piece cell-light entry-2" x="768" y="66" width="14" height="14" rx="3" style="--delay:0.97s" />
-  <rect class="piece cell-white entry-0" x="789" y="66" width="14" height="14" rx="3" style="--delay:1.01s" />
-  <rect class="piece cell-blue entry-2" x="810" y="66" width="14" height="14" rx="3" style="--delay:1.05s" />
-  <rect class="piece cell-light entry-0" x="831" y="66" width="14" height="14" rx="3" style="--delay:1.09s" />
-  <rect class="piece cell-white entry-0" x="705" y="87" width="14" height="14" rx="3" style="--delay:1.02s" />
-  <rect class="piece cell-blue entry-2" x="705" y="108" width="14" height="14" rx="3" style="--delay:0.99s" />
-  <rect class="piece cell-white entry-1" x="726" y="129" width="14" height="14" rx="3" style="--delay:1.08s" />
-  <rect class="piece cell-blue entry-3" x="747" y="129" width="14" height="14" rx="3" style="--delay:1.12s" />
-  <rect class="piece cell-light entry-1" x="768" y="129" width="14" height="14" rx="3" style="--delay:1.16s" />
-  <rect class="piece cell-white entry-3" x="789" y="129" width="14" height="14" rx="3" style="--delay:1.20s" />
-  <rect class="piece cell-blue entry-1" x="810" y="129" width="14" height="14" rx="3" style="--delay:1.15s" />
-  <rect class="piece cell-white entry-0" x="831" y="150" width="14" height="14" rx="3" style="--delay:1.23s" />
-  <rect class="piece cell-blue entry-2" x="831" y="171" width="14" height="14" rx="3" style="--delay:1.29s" />
-  <rect class="piece cell-light entry-2" x="705" y="192" width="14" height="14" rx="3" style="--delay:1.23s" />
-  <rect class="piece cell-white entry-0" x="726" y="192" width="14" height="14" rx="3" style="--delay:1.27s" />
-  <rect class="piece cell-blue entry-2" x="747" y="192" width="14" height="14" rx="3" style="--delay:1.22s" />
-  <rect class="piece cell-light entry-0" x="768" y="192" width="14" height="14" rx="3" style="--delay:1.26s" />
-  <rect class="piece cell-white entry-2" x="789" y="192" width="14" height="14" rx="3" style="--delay:1.30s" />
-  <rect class="piece cell-blue entry-0" x="810" y="192" width="14" height="14" rx="3" style="--delay:1.34s" />
+  <rect class="piece cell-blue entry-3" x="369" y="66" width="14" height="14" rx="3" style="--spin:-523deg" />
+  <rect class="piece cell-light entry-1" x="390" y="66" width="14" height="14" rx="3" style="--spin:-450deg" />
+  <rect class="piece cell-white entry-3" x="411" y="66" width="14" height="14" rx="3" style="--spin:343deg" />
+  <rect class="piece cell-blue entry-2" x="348" y="87" width="14" height="14" rx="3" style="--spin:-664deg" />
+  <rect class="piece cell-light entry-3" x="432" y="87" width="14" height="14" rx="3" style="--spin:-231deg" />
+  <rect class="piece cell-blue entry-0" x="327" y="108" width="14" height="14" rx="3" style="--spin:202deg" />
+  <rect class="piece cell-blue entry-3" x="453" y="108" width="14" height="14" rx="3" style="--spin:635deg" />
+  <rect class="piece cell-light entry-3" x="327" y="129" width="14" height="14" rx="3" style="--spin:-372deg" />
+  <rect class="piece cell-light entry-2" x="453" y="129" width="14" height="14" rx="3" style="--spin:421deg" />
+  <rect class="piece cell-white entry-2" x="327" y="150" width="14" height="14" rx="3" style="--spin:494deg" />
+  <rect class="piece cell-blue entry-0" x="348" y="150" width="14" height="14" rx="3" style="--spin:-513deg" />
+  <rect class="piece cell-light entry-2" x="369" y="150" width="14" height="14" rx="3" style="--spin:-440deg" />
+  <rect class="piece cell-white entry-0" x="390" y="150" width="14" height="14" rx="3" style="--spin:353deg" />
+  <rect class="piece cell-blue entry-2" x="411" y="150" width="14" height="14" rx="3" style="--spin:-654deg" />
+  <rect class="piece cell-light entry-0" x="432" y="150" width="14" height="14" rx="3" style="--spin:-221deg" />
+  <rect class="piece cell-white entry-2" x="453" y="150" width="14" height="14" rx="3" style="--spin:212deg" />
+  <rect class="piece cell-blue entry-2" x="327" y="171" width="14" height="14" rx="3" style="--spin:645deg" />
+  <rect class="piece cell-blue entry-1" x="453" y="171" width="14" height="14" rx="3" style="--spin:-362deg" />
+  <rect class="piece cell-light entry-1" x="327" y="192" width="14" height="14" rx="3" style="--spin:431deg" />
+  <rect class="piece cell-light entry-0" x="453" y="192" width="14" height="14" rx="3" style="--spin:504deg" />
+  <rect class="piece cell-light entry-2" x="516" y="66" width="14" height="14" rx="3" style="--spin:-503deg" />
+  <rect class="piece cell-light entry-1" x="642" y="66" width="14" height="14" rx="3" style="--spin:-430deg" />
+  <rect class="piece cell-white entry-1" x="516" y="87" width="14" height="14" rx="3" style="--spin:363deg" />
+  <rect class="piece cell-white entry-0" x="642" y="87" width="14" height="14" rx="3" style="--spin:-644deg" />
+  <rect class="piece cell-blue entry-0" x="516" y="108" width="14" height="14" rx="3" style="--spin:-211deg" />
+  <rect class="piece cell-blue entry-3" x="642" y="108" width="14" height="14" rx="3" style="--spin:222deg" />
+  <rect class="piece cell-light entry-3" x="516" y="129" width="14" height="14" rx="3" style="--spin:655deg" />
+  <rect class="piece cell-light entry-3" x="579" y="129" width="14" height="14" rx="3" style="--spin:-352deg" />
+  <rect class="piece cell-light entry-3" x="642" y="129" width="14" height="14" rx="3" style="--spin:441deg" />
+  <rect class="piece cell-white entry-3" x="516" y="150" width="14" height="14" rx="3" style="--spin:514deg" />
+  <rect class="piece cell-white entry-3" x="579" y="150" width="14" height="14" rx="3" style="--spin:-493deg" />
+  <rect class="piece cell-white entry-3" x="642" y="150" width="14" height="14" rx="3" style="--spin:-420deg" />
+  <rect class="piece cell-blue entry-3" x="516" y="171" width="14" height="14" rx="3" style="--spin:373deg" />
+  <rect class="piece cell-white entry-2" x="558" y="171" width="14" height="14" rx="3" style="--spin:-634deg" />
+  <rect class="piece cell-light entry-1" x="600" y="171" width="14" height="14" rx="3" style="--spin:-201deg" />
+  <rect class="piece cell-blue entry-0" x="642" y="171" width="14" height="14" rx="3" style="--spin:232deg" />
+  <rect class="piece cell-white entry-1" x="537" y="192" width="14" height="14" rx="3" style="--spin:665deg" />
+  <rect class="piece cell-blue entry-2" x="621" y="192" width="14" height="14" rx="3" style="--spin:-342deg" />
+  <rect class="piece cell-white entry-2" x="726" y="66" width="14" height="14" rx="3" style="--spin:451deg" />
+  <rect class="piece cell-blue entry-0" x="747" y="66" width="14" height="14" rx="3" style="--spin:524deg" />
+  <rect class="piece cell-light entry-2" x="768" y="66" width="14" height="14" rx="3" style="--spin:-483deg" />
+  <rect class="piece cell-white entry-0" x="789" y="66" width="14" height="14" rx="3" style="--spin:-410deg" />
+  <rect class="piece cell-blue entry-2" x="810" y="66" width="14" height="14" rx="3" style="--spin:383deg" />
+  <rect class="piece cell-light entry-0" x="831" y="66" width="14" height="14" rx="3" style="--spin:-624deg" />
+  <rect class="piece cell-white entry-0" x="705" y="87" width="14" height="14" rx="3" style="--spin:-191deg" />
+  <rect class="piece cell-blue entry-2" x="705" y="108" width="14" height="14" rx="3" style="--spin:242deg" />
+  <rect class="piece cell-white entry-1" x="726" y="129" width="14" height="14" rx="3" style="--spin:675deg" />
+  <rect class="piece cell-blue entry-3" x="747" y="129" width="14" height="14" rx="3" style="--spin:-332deg" />
+  <rect class="piece cell-light entry-1" x="768" y="129" width="14" height="14" rx="3" style="--spin:461deg" />
+  <rect class="piece cell-white entry-3" x="789" y="129" width="14" height="14" rx="3" style="--spin:534deg" />
+  <rect class="piece cell-blue entry-1" x="810" y="129" width="14" height="14" rx="3" style="--spin:-473deg" />
+  <rect class="piece cell-white entry-0" x="831" y="150" width="14" height="14" rx="3" style="--spin:-400deg" />
+  <rect class="piece cell-blue entry-2" x="831" y="171" width="14" height="14" rx="3" style="--spin:393deg" />
+  <rect class="piece cell-light entry-2" x="705" y="192" width="14" height="14" rx="3" style="--spin:-614deg" />
+  <rect class="piece cell-white entry-0" x="726" y="192" width="14" height="14" rx="3" style="--spin:-181deg" />
+  <rect class="piece cell-blue entry-2" x="747" y="192" width="14" height="14" rx="3" style="--spin:252deg" />
+  <rect class="piece cell-light entry-0" x="768" y="192" width="14" height="14" rx="3" style="--spin:685deg" />
+  <rect class="piece cell-white entry-2" x="789" y="192" width="14" height="14" rx="3" style="--spin:-322deg" />
+  <rect class="piece cell-blue entry-0" x="810" y="192" width="14" height="14" rx="3" style="--spin:471deg" />
 
-  <rect class="piece cell-orange entry-2" x="390" y="231" width="14" height="14" rx="3" style="--delay:1.25s" />
-  <rect class="piece cell-orange entry-3" x="411" y="240" width="14" height="14" rx="3" style="--delay:1.28s" />
-  <rect class="piece cell-orange entry-0" x="432" y="240" width="14" height="14" rx="3" style="--delay:1.32s" />
-  <rect class="piece cell-orange entry-1" x="453" y="249" width="14" height="14" rx="3" style="--delay:1.35s" />
-  <rect class="piece cell-orange entry-2" x="474" y="249" width="14" height="14" rx="3" style="--delay:1.39s" />
-  <rect class="piece cell-orange entry-3" x="495" y="258" width="14" height="14" rx="3" style="--delay:1.43s" />
-  <rect class="piece cell-orange entry-0" x="516" y="258" width="14" height="14" rx="3" style="--delay:1.46s" />
-  <rect class="piece cell-orange entry-1" x="537" y="258" width="14" height="14" rx="3" style="--delay:1.50s" />
-  <rect class="piece cell-orange entry-2" x="558" y="267" width="14" height="14" rx="3" style="--delay:1.53s" />
-  <rect class="piece cell-orange entry-3" x="579" y="267" width="14" height="14" rx="3" style="--delay:1.56s" />
-  <rect class="piece cell-orange entry-0" x="600" y="267" width="14" height="14" rx="3" style="--delay:1.60s" />
-  <rect class="piece cell-orange entry-1" x="621" y="267" width="14" height="14" rx="3" style="--delay:1.64s" />
-  <rect class="piece cell-orange entry-2" x="642" y="267" width="14" height="14" rx="3" style="--delay:1.67s" />
-  <rect class="piece cell-orange entry-3" x="663" y="267" width="14" height="14" rx="3" style="--delay:1.71s" />
-  <rect class="piece cell-orange entry-0" x="684" y="267" width="14" height="14" rx="3" style="--delay:1.74s" />
-  <rect class="piece cell-orange entry-1" x="705" y="258" width="14" height="14" rx="3" style="--delay:1.77s" />
-  <rect class="piece cell-orange entry-2" x="726" y="258" width="14" height="14" rx="3" style="--delay:1.81s" />
-  <rect class="piece cell-orange entry-3" x="747" y="258" width="14" height="14" rx="3" style="--delay:1.85s" />
-  <rect class="piece cell-orange entry-0" x="768" y="249" width="14" height="14" rx="3" style="--delay:1.88s" />
-  <rect class="piece cell-orange entry-1" x="789" y="249" width="14" height="14" rx="3" style="--delay:1.92s" />
-  <rect class="piece cell-orange entry-2" x="810" y="240" width="14" height="14" rx="3" style="--delay:1.95s" />
-  <rect class="piece cell-orange entry-3" x="831" y="240" width="14" height="14" rx="3" style="--delay:1.99s" />
-  <rect class="piece cell-orange entry-0" x="852" y="231" width="14" height="14" rx="3" style="--delay:2.02s" />
-  <rect class="piece cell-orange entry-1" x="831" y="222" width="14" height="14" rx="3" style="--delay:2.06s" />
-  <rect class="piece cell-orange entry-2" x="852" y="231" width="14" height="14" rx="3" style="--delay:2.09s" />
-  <rect class="piece cell-orange entry-3" x="831" y="240" width="14" height="14" rx="3" style="--delay:2.13s" />
+  <rect class="piece cell-orange entry-2" x="390" y="231" width="14" height="14" rx="3" style="--spin:544deg" />
+  <rect class="piece cell-orange entry-3" x="411" y="240" width="14" height="14" rx="3" style="--spin:-463deg" />
+  <rect class="piece cell-orange entry-0" x="432" y="240" width="14" height="14" rx="3" style="--spin:-390deg" />
+  <rect class="piece cell-orange entry-1" x="453" y="249" width="14" height="14" rx="3" style="--spin:403deg" />
+  <rect class="piece cell-orange entry-2" x="474" y="249" width="14" height="14" rx="3" style="--spin:-604deg" />
+  <rect class="piece cell-orange entry-3" x="495" y="258" width="14" height="14" rx="3" style="--spin:-171deg" />
+  <rect class="piece cell-orange entry-0" x="516" y="258" width="14" height="14" rx="3" style="--spin:262deg" />
+  <rect class="piece cell-orange entry-1" x="537" y="258" width="14" height="14" rx="3" style="--spin:695deg" />
+  <rect class="piece cell-orange entry-2" x="558" y="267" width="14" height="14" rx="3" style="--spin:-312deg" />
+  <rect class="piece cell-orange entry-3" x="579" y="267" width="14" height="14" rx="3" style="--spin:121deg" />
+  <rect class="piece cell-orange entry-0" x="600" y="267" width="14" height="14" rx="3" style="--spin:554deg" />
+  <rect class="piece cell-orange entry-1" x="621" y="267" width="14" height="14" rx="3" style="--spin:-453deg" />
+  <rect class="piece cell-orange entry-2" x="642" y="267" width="14" height="14" rx="3" style="--spin:-380deg" />
+  <rect class="piece cell-orange entry-3" x="663" y="267" width="14" height="14" rx="3" style="--spin:413deg" />
+  <rect class="piece cell-orange entry-0" x="684" y="267" width="14" height="14" rx="3" style="--spin:-594deg" />
+  <rect class="piece cell-orange entry-1" x="705" y="258" width="14" height="14" rx="3" style="--spin:-161deg" />
+  <rect class="piece cell-orange entry-2" x="726" y="258" width="14" height="14" rx="3" style="--spin:272deg" />
+  <rect class="piece cell-orange entry-3" x="747" y="258" width="14" height="14" rx="3" style="--spin:705deg" />
+  <rect class="piece cell-orange entry-0" x="768" y="249" width="14" height="14" rx="3" style="--spin:-302deg" />
+  <rect class="piece cell-orange entry-1" x="789" y="249" width="14" height="14" rx="3" style="--spin:131deg" />
+  <rect class="piece cell-orange entry-2" x="810" y="240" width="14" height="14" rx="3" style="--spin:564deg" />
+  <rect class="piece cell-orange entry-3" x="831" y="240" width="14" height="14" rx="3" style="--spin:-443deg" />
+  <rect class="piece cell-orange entry-0" x="852" y="231" width="14" height="14" rx="3" style="--spin:-370deg" />
+  <rect class="piece cell-orange entry-1" x="831" y="222" width="14" height="14" rx="3" style="--spin:423deg" />
+  <rect class="piece cell-orange entry-2" x="852" y="231" width="14" height="14" rx="3" style="--spin:-584deg" />
+  <rect class="piece cell-orange entry-3" x="831" y="240" width="14" height="14" rx="3" style="--spin:-151deg" />
 
-  <g class="status" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="12" fill="#8b949e">
+  <g class="status" font-family="'JetBrains Mono',Consolas,'Courier New',monospace" font-size="12" fill="#94a3b8">
     <text x="54" y="285">Less</text>
-    <rect x="86" y="274" width="12" height="12" rx="2" fill="#21262d" />
-    <rect x="103" y="274" width="12" height="12" rx="2" fill="#0e4429" />
-    <rect x="120" y="274" width="12" height="12" rx="2" fill="#006d32" />
-    <rect x="137" y="274" width="12" height="12" rx="2" fill="#26a641" />
-    <rect x="154" y="274" width="12" height="12" rx="2" fill="#39d353" />
+    <rect x="86" y="274" width="12" height="12" rx="2" fill="#1e293b" />
+    <rect x="103" y="274" width="12" height="12" rx="2" fill="#78350f" />
+    <rect x="120" y="274" width="12" height="12" rx="2" fill="#b45309" />
+    <rect x="137" y="274" width="12" height="12" rx="2" fill="#f59e0b" />
+    <rect x="154" y="274" width="12" height="12" rx="2" fill="#fb923c" />
     <text x="172" y="285">More</text>
     <circle cx="1048" cy="280" r="4" fill="#39d353" />
-    <text x="1060" y="285" fill="#c9d1d9">assembled</text>
+    <text x="1060" y="285" fill="#e2e8f0">assembled</text>
   </g>
 </svg>

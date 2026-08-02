@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="230" viewBox="0 0 1200 230" role="img" aria-labelledby="title desc">
+  <title id="title">Hi, I'm Huỳnh Bá Huân</title>
+  <desc id="desc">Backend and Web Developer, DevOps and Cloud Operations, presented with an AI response typing animation.</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a" />
+      <stop offset="0.62" stop-color="#111827" />
+      <stop offset="1" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f59e0b" />
+      <stop offset="0.55" stop-color="#fb923c" />
+      <stop offset="1" stop-color="#ef4444" />
+    </linearGradient>
+    <radialGradient id="orange-glow">
+      <stop offset="0" stop-color="#f59e0b" stop-opacity=".2" />
+      <stop offset="1" stop-color="#f59e0b" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="blue-glow">
+      <stop offset="0" stop-color="#3b82f6" stop-opacity=".12" />
+      <stop offset="1" stop-color="#3b82f6" stop-opacity="0" />
+    </radialGradient>
+    <filter id="soft-glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+    </filter>
+    <style>
+      .title {
+        font-family:'Plus Jakarta Sans','Segoe UI',Arial,sans-serif;
+        font-size:64px;
+        font-weight:800;
+        letter-spacing:-1.6px;
+      }
+      .mono {
+        font-family:'JetBrains Mono',Consolas,'Courier New',monospace;
+      }
+      .typing {
+        clip-path:inset(0 100% 0 0);
+        animation:type-response 6.2s steps(55,end) infinite;
+      }
+      .cursor {
+        transform-box:fill-box;
+        transform-origin:center;
+        animation:cursor-travel 6.2s steps(55,end) infinite, cursor-blink .72s step-end infinite;
+      }
+      .pulse { animation:pulse 1.8s ease-in-out infinite; }
+      @keyframes type-response {
+        0%,8% { clip-path:inset(0 100% 0 0); }
+        76%,94% { clip-path:inset(0 0 0 0); }
+        100% { clip-path:inset(0 100% 0 0); }
+      }
+      @keyframes cursor-travel {
+        0%,8% { transform:translateX(0); }
+        76%,94% { transform:translateX(790px); }
+        100% { transform:translateX(0); }
+      }
+      @keyframes cursor-blink { 50% { opacity:0; } }
+      @keyframes pulse { 50% { opacity:.35; } }
+      @media (prefers-reduced-motion: reduce) {
+        .typing { animation:none; clip-path:none; }
+        .cursor { display:none; }
+        .pulse { animation:none; }
+      }
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="1198" height="228" rx="20" fill="url(#panel)" stroke="#f59e0b" stroke-opacity=".32" stroke-width="2" />
+  <circle cx="1070" cy="22" r="220" fill="url(#orange-glow)" />
+  <circle cx="80" cy="220" r="180" fill="url(#blue-glow)" />
+
+  <g class="mono" font-size="12" font-weight="700" letter-spacing="2">
+    <circle class="pulse" cx="52" cy="35" r="5" fill="#22c55e" />
+    <text x="66" y="39" fill="#94a3b8">ASSISTANT · STREAMING PROFILE</text>
+  </g>
+
+  <text class="title" x="600" y="104" text-anchor="middle" fill="url(#warm)">Hi, I'm Huỳnh Bá Huân</text>
+
+  <g class="mono" font-size="28" font-weight="500">
+    <text x="72" y="164" fill="#f59e0b" font-weight="700">›</text>
+    <text class="typing" x="104" y="164" fill="#e2e8f0">Backend &amp; Web Developer · DevOps &amp; Cloud Operations</text>
+    <rect class="cursor" x="105" y="142" width="3" height="28" rx="1.5" fill="#f59e0b" filter="url(#soft-glow)" />
+  </g>
+
+  <rect x="48" y="203" width="1104" height="2" rx="1" fill="url(#warm)" opacity=".7" />
+</svg>
