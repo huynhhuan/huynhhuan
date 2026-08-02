@@ -78,23 +78,6 @@
         47%,57%,67% { opacity:1; transform:scale(1.18); }
         90% { opacity:.2; transform:scale(.55); }
       }
-      .smile-trace {
-        fill:none;
-        stroke:#FF9900;
-        stroke-width:2.4;
-        stroke-linecap:round;
-        stroke-dasharray:470;
-        stroke-dashoffset:470;
-        opacity:0;
-        filter:url(#orange-glow);
-        animation:draw-smile 8.4s cubic-bezier(.2,.72,.18,1) infinite;
-      }
-      @keyframes draw-smile {
-        0%,32% { stroke-dashoffset:470; opacity:0; }
-        36% { opacity:.9; }
-        52%,82% { stroke-dashoffset:0; opacity:1; }
-        92%,100% { stroke-dashoffset:-80; opacity:0; }
-      }
       .pipeline-rail {
         stroke:#8c959f;
         stroke-opacity:.28;
@@ -979,8 +962,6 @@
     <use href="#active-cell" x="555" y="60" class="piece cell-67 smile" />
     <use href="#active-cell" x="555" y="75" class="piece cell-68 smile" />
   </g>
-
-  <path class="smile-trace" d="M211 103 C258 122 318 123 411 123 C511 123 568 114 623 103" />
 
   <g aria-label="Deployment pipeline">
     <line class="pipeline-rail" x1="210" y1="150" x2="618" y2="150" />
