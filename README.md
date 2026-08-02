@@ -1,6 +1,10 @@
 <div align="center">
 
-<img src="./profile/hero-cloud.svg" width="100%" alt="Hi, I'm Huỳnh Bá Huân — Backend and Web Developer, Cloud and DevOps" />
+# Hi, I'm Huỳnh Bá Huân 👋
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=F97316&center=true&vCenter=true&width=760&lines=Backend+%26+Web+Developer;JavaScript+%7C+PHP+%7C+Python;Cloud+%26+DevOps+%7C+AWS+%7C+Terraform+%7C+Kubernetes)](https://git.io/typing-svg)
+
+Building practical web applications and reliable cloud infrastructure — from code to cloud.
 
 </div>
 
