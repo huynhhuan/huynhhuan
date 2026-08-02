@@ -2,7 +2,7 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=30&pause=1200&color=58A6FF&center=true&vCenter=true&width=720&height=90&lines=Hu%E1%BB%B3nh+B%C3%A1+Hu%C3%A2n;Backend+Developer+%C2%B7+DevOps+%26+Cloud" alt="Huỳnh Bá Huân — Backend Developer · DevOps & Cloud" />
 
-[![Website](https://img.shields.io/badge/Website-Open-2F81F7?style=for-the-badge&logo=googlechrome&logoColor=white)](https://bahuan-greencart.vercel.app/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hybhuan204)
 [![Email](https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:huynhbahuan@gmail.com)
 [![GitHub](https://img.shields.io/badge/GitHub-huynhhuan-181717?style=for-the-badge&logo=github)](https://github.com/huynhhuan)
 
