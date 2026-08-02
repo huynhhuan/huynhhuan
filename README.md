@@ -1,14 +1,10 @@
 <div align="center">
 
-# Hi, I'm Huỳnh Bá Huân
+<img src="./profile/cinematic-hero.svg" width="100%" alt="Huỳnh Bá Huân — Backend and Web Developer, DevOps and Cloud Operations, building from code to cloud" />
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=900&color=2F81F7&center=true&vCenter=true&repeat=false&width=720&height=70&lines=Backend+%26+Web+Developer;DevOps+%26+Cloud+Operations;Building+from+code+to+cloud" alt="Backend and Web Developer — DevOps and Cloud Operations" />
-
-I build practical web services and reliable cloud infrastructure — from code to production.
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hybhuan204)
-[![Email](https://img.shields.io/badge/Email-Contact-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:huynhbahuan@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-huynhhuan-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/huynhhuan)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-3B82F6?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0F172A)](https://www.linkedin.com/in/hybhuan204)
+[![Email](https://img.shields.io/badge/Email-Contact-F59E0B?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0F172A)](mailto:huynhbahuan@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-huynhhuan-22C55E?style=for-the-badge&logo=github&logoColor=white&labelColor=0F172A)](https://github.com/huynhhuan)
 
 </div>
 
