@@ -1,10 +1,14 @@
 <div align="center">
 
-<img src="./profile/cinematic-hero.svg" width="100%" alt="Huỳnh Bá Huân — Backend and Web Developer, DevOps and Cloud Operations, building from code to cloud" />
+<h1>Hi, I'm Huỳnh Bá Huân</h1>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-3B82F6?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0F172A)](https://www.linkedin.com/in/hybhuan204)
-[![Email](https://img.shields.io/badge/Email-Contact-F59E0B?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0F172A)](mailto:huynhbahuan@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-huynhhuan-22C55E?style=for-the-badge&logo=github&logoColor=white&labelColor=0F172A)](https://github.com/huynhhuan)
+<strong>Backend &amp; Web Developer · DevOps &amp; Cloud Operations</strong>
+
+<p>Building practical web services and reliable cloud infrastructure — from code to production.</p>
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hybhuan204)
+[![Email](https://img.shields.io/badge/Email-Contact-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:huynhbahuan@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-huynhhuan-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/huynhhuan)
 
 </div>
 
@@ -50,8 +54,6 @@ Final-year Information Technology student and backend-focused developer who enjo
 
 Four builds across the same engineering path: create the product, automate delivery, govern the platform, and observe it in production.
 
-<img src="./profile/project-orbit.svg" width="100%" alt="Four selected projects mapped from web engineering through cloud delivery and governance" />
-
 ### Web engineering
 
 > [**Badminton Shop API**](https://github.com/huynhhuan/badminton-shop-be) — Laravel commerce API with authentication, orders, and VNPay.
@@ -68,7 +70,7 @@ Four builds across the same engineering path: create the product, automate deliv
 
 A live view of my public work — code first, cloud next, always improving.
 
-<img src="./profile/aws-cloud-atlas.svg" width="100%" alt="AWS Cloud Atlas connecting contribution cells with Infrastructure as Code, CI/CD, Amazon EKS, and observability" />
+<img src="./profile/aws-cloud-atlas.svg" width="100%" alt="Animated GitHub contribution graph assembling into the AWS logo" />
 
 <p align="center">
   <img width="74%" src="./profile/stats.svg" alt="Huynh Ba Huan's GitHub activity statistics" />
