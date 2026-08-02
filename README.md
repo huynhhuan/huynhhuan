@@ -10,47 +10,17 @@
 
 </div>
 
-## About me
+## Engineering profile
 
-Final-year Information Technology student and backend-focused developer who enjoys connecting application development with the infrastructure that runs it.
+I connect application engineering with the systems that deliver and operate it.
 
-- **Web:** REST APIs and full-stack applications with JavaScript, PHP, Python, Node.js, Laravel, and React.
-- **Cloud:** Hands-on work with AWS, Terraform, Docker, Kubernetes, CI/CD, and GitOps.
-- **Focus:** Maintainable delivery, cloud security, observability, and continuous learning.
-
-## Languages and tools
-
-<p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" width="42" height="42" alt="JavaScript" title="JavaScript" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" width="42" height="42" alt="PHP" title="PHP" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="42" height="42" alt="Python" title="Python" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" width="42" height="42" alt="Node.js" title="Node.js" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" width="42" height="42" alt="Laravel" title="Laravel" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" width="42" height="42" alt="React" title="React" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" width="42" height="42" alt="MySQL" title="MySQL" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" width="42" height="42" alt="MongoDB" title="MongoDB" />
-  <br /><br />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" width="42" height="42" alt="AWS" title="AWS" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" width="42" height="42" alt="Terraform" title="Terraform" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" width="42" height="42" alt="Linux" title="Linux" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" width="42" height="42" alt="Docker" title="Docker" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg" width="42" height="42" alt="Kubernetes" title="Kubernetes" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" width="42" height="42" alt="GitHub Actions" title="GitHub Actions" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/argocd/argocd-original.svg" width="42" height="42" alt="Argo CD" title="Argo CD" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/helm/helm-original.svg" width="42" height="42" alt="Helm" title="Helm" />
-  <br /><br />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" width="42" height="42" alt="Prometheus" title="Prometheus" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" width="42" height="42" alt="Grafana" title="Grafana" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" width="42" height="42" alt="Git" title="Git" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" width="42" height="42" alt="Bash" title="Bash" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" width="42" height="42" alt="Postman" title="Postman" />
-</p>
-
-<img src="https://raw.githubusercontent.com/huynhhuan/huynhhuan/cf5361c/profile/tech-banner.svg" width="100%" alt="Development workflow from application code through CI/CD and cloud deployment to observability" />
+- **Product:** Backend APIs and full-stack applications with JavaScript, PHP, Python, Node.js, Laravel, and React.
+- **Platform:** AWS infrastructure, Terraform, containers, Kubernetes, CI/CD, and GitOps.
+- **Reliability:** Cloud security, observable delivery, and maintainable production workflows.
 
 ## Selected work
 
-Four builds across the same engineering path: create the product, automate delivery, govern the platform, and observe it in production.
+Four builds across one engineering path: product, delivery, governance, and operations.
 
 ### Web engineering
 
@@ -63,6 +33,42 @@ Four builds across the same engineering path: create the product, automate deliv
 > [**AWS Accelerator Platform**](https://github.com/huynhhuan/bahuan-aws-accelerator-p2) — Infrastructure-to-GitOps delivery with Terraform, EKS, and observability.
 >
 > [**EKS Governance Platform**](https://github.com/TF4-Phase3-TechX) — Audit-ready controls with AWS Config, CloudTrail, and least-privilege IAM.
+
+## Stack and delivery
+
+<p align="center">
+  <strong>Application engineering</strong>
+  <br /><br />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" width="42" height="42" alt="JavaScript" title="JavaScript" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" width="42" height="42" alt="PHP" title="PHP" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="42" height="42" alt="Python" title="Python" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" width="42" height="42" alt="Node.js" title="Node.js" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" width="42" height="42" alt="Laravel" title="Laravel" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" width="42" height="42" alt="React" title="React" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" width="42" height="42" alt="MySQL" title="MySQL" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" width="42" height="42" alt="MongoDB" title="MongoDB" />
+  <br /><br />
+  <strong>Cloud delivery</strong>
+  <br /><br />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" width="42" height="42" alt="AWS" title="AWS" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" width="42" height="42" alt="Terraform" title="Terraform" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" width="42" height="42" alt="Linux" title="Linux" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" width="42" height="42" alt="Docker" title="Docker" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg" width="42" height="42" alt="Kubernetes" title="Kubernetes" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" width="42" height="42" alt="GitHub Actions" title="GitHub Actions" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/argocd/argocd-original.svg" width="42" height="42" alt="Argo CD" title="Argo CD" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/helm/helm-original.svg" width="42" height="42" alt="Helm" title="Helm" />
+  <br /><br />
+  <strong>Observability and workflow</strong>
+  <br /><br />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" width="42" height="42" alt="Prometheus" title="Prometheus" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" width="42" height="42" alt="Grafana" title="Grafana" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" width="42" height="42" alt="Git" title="Git" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" width="42" height="42" alt="Bash" title="Bash" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" width="42" height="42" alt="Postman" title="Postman" />
+</p>
+
+<img src="https://raw.githubusercontent.com/huynhhuan/huynhhuan/cf5361c/profile/tech-banner.svg" width="100%" alt="Development workflow from application code through CI/CD and cloud deployment to observability" />
 
 ## GitHub activity
 
@@ -81,10 +87,16 @@ A live view of my public work — code first, cloud next, always improving.
 
 <br />
 
-<img src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="Three-dimensional GitHub contribution activity" />
+### Queen's Gambit opening
+
+An animated study of the Orthodox line — central pressure, controlled development, and a safe king.
+
+<img src="./profile/queens-gambit.svg" width="100%" alt="Animated black and white chessboard playing the Queen's Gambit Orthodox opening" />
+
+<br />
+
+### 3D contribution terrain
+
+<img src="./profile-3d-contrib/profile-night-orange.svg" width="100%" alt="Three-dimensional GitHub contribution activity in navy, orange, and red" />
 
 </details>
-
-## Current focus
-
-Backend services · AWS Infrastructure as Code · Kubernetes and GitOps · Monitoring and observability

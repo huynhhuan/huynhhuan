@@ -47,6 +47,34 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
 
+      - name: Apply orange and navy theme to 3D city
+        shell: python
+        run: |
+          from pathlib import Path
+
+          source = Path("profile-3d-contrib/profile-night-view.svg")
+          target = Path("profile-3d-contrib/profile-night-orange.svg")
+          theme = """
+          *{font-family:'Plus Jakarta Sans','Segoe UI',Arial,sans-serif}
+          .fill-fg{fill:#e2e8f0!important}.stroke-fg{stroke:#e2e8f0!important}
+          .fill-bg{fill:#0f172a!important}.stroke-bg{stroke:#0f172a!important}
+          .fill-strong{fill:#f59e0b!important}.fill-weak{fill:#94a3b8!important}.stroke-weak{stroke:#475569!important}
+          .radar{stroke:#fb923c!important;fill:#f59e0b!important}
+          .cont-top-0{fill:#1e293b!important}.cont-left-0{fill:#172033!important}.cont-right-0{fill:#111827!important}
+          .cont-top-1{fill:#78350f!important}.cont-left-1{fill:#642b0b!important}.cont-right-1{fill:#4b1f08!important}
+          .cont-top-2{fill:#b45309!important}.cont-left-2{fill:#92400e!important}.cont-right-2{fill:#78350f!important}
+          .cont-top-3{fill:#f59e0b!important}.cont-left-3{fill:#d97706!important}.cont-right-3{fill:#b45309!important}
+          .cont-top-4{fill:#ef4444!important}.cont-left-4{fill:#dc2626!important}.cont-right-4{fill:#991b1b!important}
+          [fill="#844FBA"],[style*="#844FBA"]{fill:#f59e0b!important}
+          [fill="#f1e05a"],[style*="#f1e05a"]{fill:#fbbf24!important}
+          [fill="#4F5D95"],[style*="#4F5D95"]{fill:#fb923c!important}
+          [fill="#3178c6"],[style*="#3178c6"]{fill:#ef4444!important}
+          [fill="#3572A5"],[style*="#3572A5"]{fill:#dc2626!important}
+          [fill="#444444"],[style*="#444444"]{fill:#7f1d1d!important}
+          """
+          svg = source.read_text(encoding="utf-8")
+          target.write_text(svg.replace("</style>", theme + "</style>", 1), encoding="utf-8")
+
       - name: Commit refreshed cards
         run: |
           git config user.name "github-actions[bot]"
