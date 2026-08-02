@@ -2,103 +2,125 @@
 
 # Hi, I'm Huỳnh Bá Huân 👋
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=2F81F7&center=true&vCenter=true&width=720&lines=Junior+Cloud+%26+DevOps+Engineer;AWS+%7C+Terraform+%7C+Docker+%7C+Kubernetes;CI%2FCD+%7C+GitOps+%7C+DevSecOps+%7C+Observability)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=2F81F7&center=true&vCenter=true&width=760&lines=Backend+%26+Web+Developer;JavaScript+%7C+PHP+%7C+Python;Cloud+%26+DevOps+%7C+AWS+%7C+Terraform+%7C+Kubernetes)](https://git.io/typing-svg)
 
-<p>Building practical web services and reliable cloud infrastructure — from code to production.</p>
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-F59E0B?style=flat-square&logo=linkedin&logoColor=white&labelColor=0F172A)](https://www.linkedin.com/in/hybhuan204)
-[![Email](https://img.shields.io/badge/Email-Contact-FB923C?style=flat-square&logo=gmail&logoColor=white&labelColor=0F172A)](mailto:huynhbahuan@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-huynhhuan-EF4444?style=flat-square&logo=github&logoColor=white&labelColor=0F172A)](https://github.com/huynhhuan)
+Building practical web applications and reliable cloud infrastructure — from code to cloud.
 
 </div>
 
-## Engineering profile
+## About me
 
-I connect application engineering with the systems that deliver and operate it.
+- 🎓 Final-year Information Technology student with a **3.46/4 GPA**.
+- 💻 Backend-focused developer building RESTful APIs with **Node.js/Express** and **PHP/Laravel**.
+- 🌐 Comfortable working across web applications with **JavaScript, PHP, Python, React, SQL, and NoSQL**.
+- ☁️ DevOps Engineer Intern with hands-on experience in **AWS, Terraform, CI/CD, Docker, Kubernetes, and GitOps**.
+- 🔐 Interested in secure authentication, payment integrations, cloud governance, observability, and reliable delivery.
+- 🌱 I enjoy connecting application development with the infrastructure that runs it.
 
-- **Product:** Backend APIs and full-stack applications with JavaScript, PHP, Python, Node.js, Laravel, and React.
-- **Platform:** AWS infrastructure, Terraform, containers, Kubernetes, CI/CD, and GitOps.
-- **Reliability:** Cloud security, observable delivery, and maintainable production workflows.
+## Tech stack
 
-## Selected work
+### Languages & Web
 
-Four builds across one engineering path: product, delivery, governance, and operations.
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-### Web engineering
+### Backend, Frontend & Data
 
-> [**Badminton Shop API**](https://github.com/huynhhuan/badminton-shop-be) — Laravel commerce API with authentication, orders, and VNPay.
->
-> [**GreenCart**](https://github.com/huynhhuan/W6-BE-greencart) — Containerized MERN shop with payments and cloud health signals.
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 
-### Cloud and DevOps
+### Cloud, Infrastructure & Delivery
 
-> [**AWS Accelerator Platform**](https://github.com/huynhhuan/bahuan-aws-accelerator-p2) — Infrastructure-to-GitOps delivery with Terraform, EKS, and observability.
->
-> [**EKS Governance Platform**](https://github.com/TF4-Phase3-TechX) — Audit-ready controls with AWS Config, CloudTrail, and least-privilege IAM.
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=FF9900)
+![Terraform](https://img.shields.io/badge/Terraform-844FBA?style=for-the-badge&logo=terraform&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
+![Argo CD](https://img.shields.io/badge/Argo_CD-EF7B4D?style=for-the-badge&logo=argo&logoColor=white)
+![Helm](https://img.shields.io/badge/Helm-0F1689?style=for-the-badge&logo=helm&logoColor=white)
 
-## Stack and delivery
+### Observability, Security & Tools
 
-<p align="center">
-  <strong>Application engineering</strong>
-  <br /><br />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" width="42" height="42" alt="JavaScript" title="JavaScript" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" width="42" height="42" alt="PHP" title="PHP" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="42" height="42" alt="Python" title="Python" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" width="42" height="42" alt="Node.js" title="Node.js" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" width="42" height="42" alt="Laravel" title="Laravel" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" width="42" height="42" alt="React" title="React" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" width="42" height="42" alt="MySQL" title="MySQL" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" width="42" height="42" alt="MongoDB" title="MongoDB" />
-  <br /><br />
-  <strong>Cloud delivery</strong>
-  <br /><br />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" width="42" height="42" alt="AWS" title="AWS" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" width="42" height="42" alt="Terraform" title="Terraform" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" width="42" height="42" alt="Linux" title="Linux" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" width="42" height="42" alt="Docker" title="Docker" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg" width="42" height="42" alt="Kubernetes" title="Kubernetes" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" width="42" height="42" alt="GitHub Actions" title="GitHub Actions" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/argocd/argocd-original.svg" width="42" height="42" alt="Argo CD" title="Argo CD" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/helm/helm-original.svg" width="42" height="42" alt="Helm" title="Helm" />
-  <br /><br />
-  <strong>Observability and workflow</strong>
-  <br /><br />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" width="42" height="42" alt="Prometheus" title="Prometheus" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" width="42" height="42" alt="Grafana" title="Grafana" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" width="42" height="42" alt="Git" title="Git" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" width="42" height="42" alt="Bash" title="Bash" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" width="42" height="42" alt="Postman" title="Postman" />
-</p>
+![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white)
+![Grafana](https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white)
+![Trivy](https://img.shields.io/badge/Trivy-1904DA?style=for-the-badge&logo=trivy&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 
-<img src="https://raw.githubusercontent.com/huynhhuan/huynhhuan/cf5361c/profile/tech-banner.svg" width="100%" alt="Development workflow from application code through CI/CD and cloud deployment to observability" />
+## Featured web projects
 
-## GitHub activity
+### [Badminton Shop E-commerce Backend](https://github.com/huynhhuan/badminton-shop-be)
 
-A live view of my public work — code first, cloud next, always improving.
+Team project built with **PHP, Laravel, and MySQL**:
 
-<img src="./profile/aws-cloud-atlas.svg" width="100%" alt="Animated GitHub contribution graph assembling into the AWS logo" />
+- Designed versioned RESTful APIs with a Controller–Service–Repository structure.
+- Implemented product, category, brand, cart, order, and profile workflows.
+- Added Laravel Sanctum authentication, social login, and VNPay payment processing.
+- Containerized the backend development environment with Docker Compose.
 
-<p align="center">
-  <img width="74%" src="./profile/stats.svg?v=20260802" alt="Huynh Ba Huan's GitHub activity statistics" />
-  <br />
-  <img width="74%" src="./profile/top-langs.svg?v=20260802" alt="Most used languages in Huynh Ba Huan's public repositories" />
-</p>
+### [GreenCart — Food & Beverage E-commerce](https://github.com/huynhhuan/W6-BE-greencart)
 
-<details>
-<summary><strong>View 3D contribution activity</strong></summary>
+Full-stack e-commerce project using the **MERN stack**:
 
-<br />
+- Built Express APIs and MongoDB models for users, products, carts, addresses, and orders.
+- Integrated Stripe Checkout and webhooks, JWT/HttpOnly-cookie authentication, and Cloudinary uploads.
+- Added seller workflows, request metrics, health checks, Docker packaging, and AWS CloudWatch metrics.
+- Live demo: [bahuan-greencart.vercel.app](https://bahuan-greencart.vercel.app/)
 
-### Queen's Gambit opening
+### More web work
 
-An animated study of the Orthodox line — central pressure, controlled development, and a safe king.
+- [Estate App](https://github.com/huynhhuan/estate-app) — Express, Prisma, MongoDB, JWT, and Socket.IO for property listings and real-time messaging.
+- [Movie Trailer](https://github.com/huynhhuan/movie-trailer) — React, Vite, Tailwind CSS, and the TMDB API for movie discovery and search.
 
-<img src="./profile/queens-gambit.svg" width="100%" alt="Animated black and white chessboard playing the Queen's Gambit Orthodox opening" />
+## Featured cloud & DevOps work
 
-<br />
+### [AWS Accelerator Cloud Platform](https://github.com/huynhhuan/bahuan-aws-accelerator-p2)
 
-### 3D contribution terrain
+An end-to-end cloud-native platform built through hands-on DevOps challenges:
 
-<img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="Three-dimensional GitHub contribution activity" />
+- Provisioned AWS infrastructure with Terraform.
+- Automated build and deployment workflows with GitHub Actions.
+- Containerized workloads with Docker and deployed to Amazon ECS/Fargate and Kubernetes.
+- Applied GitOps delivery with Argo CD.
+- Added monitoring and visualization with Prometheus and Grafana.
 
-</details>
+### [Team EKS Platform — Auditability & Cloud Governance](https://github.com/TF4-Phase3-TechX)
+
+Team contribution to the governance of a 27-microservice platform on Amazon EKS:
+
+- Implemented AWS Config with Terraform for continuous configuration tracking.
+- Secured audit evidence with S3 Versioning, replication, Object Lock, and least-privilege IAM.
+- Reviewed infrastructure and access activity with CloudWatch EKS audit logs, CloudTrail, and IAM Access Analyzer.
+- Collaborated through Git branches, pull requests, and code reviews.
+
+## GitHub stats
+
+<div align="center">
+
+<img height="165" src="./profile/stats.svg" alt="Huynh Ba Huan's GitHub stats" />
+<img height="165" src="./profile/top-langs.svg" alt="Most used languages" />
+
+</div>
+
+## Current focus
+
+- Building maintainable backend services and full-stack web applications.
+- Designing reproducible AWS environments with Infrastructure as Code.
+- Improving deployment safety with containers, CI/CD, Kubernetes, and GitOps.
+- Strengthening application security, observability, and cloud operations.
+
+<div align="center">
+
+### From code to cloud 🚀
+
+</div>
