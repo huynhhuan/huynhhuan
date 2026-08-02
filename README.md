@@ -46,7 +46,7 @@ Final-year Information Technology student and backend-focused developer who enjo
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" width="42" height="42" alt="Postman" title="Postman" />
 </p>
 
-<img src="./profile/tech-banner.svg" width="100%" alt="Development workflow from application code through CI/CD and cloud deployment to observability" />
+<img src="./profile/tech-banner.svg?v=20260802" width="100%" alt="Development workflow from application code through CI/CD and cloud deployment to observability" />
 
 ## Selected work
 
@@ -68,12 +68,12 @@ Four builds across the same engineering path: create the product, automate deliv
 
 A live view of my public work — code first, cloud next, always improving.
 
-<img src="./profile/aws-cloud-atlas.svg" width="100%" alt="Animated GitHub contribution graph assembling into the AWS logo" />
+<img src="./profile/aws-cloud-atlas.svg?v=20260802" width="100%" alt="Animated GitHub contribution graph assembling into the AWS logo" />
 
 <p align="center">
-  <img width="74%" src="./profile/stats.svg" alt="Huynh Ba Huan's GitHub activity statistics" />
+  <img width="74%" src="./profile/stats.svg?v=20260802" alt="Huynh Ba Huan's GitHub activity statistics" />
   <br />
-  <img width="74%" src="./profile/top-langs.svg" alt="Most used languages in Huynh Ba Huan's public repositories" />
+  <img width="74%" src="./profile/top-langs.svg?v=20260802" alt="Most used languages in Huynh Ba Huan's public repositories" />
 </p>
 
 <details>
