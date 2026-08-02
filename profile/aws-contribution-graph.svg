@@ -1,0 +1,887 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="823" height="148" viewBox="0 0 823 148" role="img" aria-labelledby="title desc">
+  <title id="title">Animated AWS GitHub contribution graph</title>
+  <desc id="desc">A GitHub contribution grid where sixty-nine cells run independent CSS animations, rotating from unique angles and changing from gray to orange and red as they assemble into the AWS wordmark and smile.</desc>
+  <defs>
+    <g id="week">
+      <rect y="0" width="11" height="11" rx="2" />
+      <rect y="15" width="11" height="11" rx="2" />
+      <rect y="30" width="11" height="11" rx="2" />
+      <rect y="45" width="11" height="11" rx="2" />
+      <rect y="60" width="11" height="11" rx="2" />
+      <rect y="75" width="11" height="11" rx="2" />
+      <rect y="90" width="11" height="11" rx="2" />
+    </g>
+    <rect id="active-cell" width="11" height="11" rx="2" />
+    <style>
+      .base {
+        fill:#8c959f;
+        fill-opacity:.14;
+        stroke:#8c959f;
+        stroke-opacity:.09;
+        stroke-width:1;
+        shape-rendering:geometricPrecision;
+      }
+      .piece {
+        fill:#8c959f;
+        opacity:0;
+        transform-box:fill-box;
+        transform-origin:center;
+        animation-duration:8.4s;
+        animation-iteration-count:infinite;
+        animation-fill-mode:both;
+        shape-rendering:geometricPrecision;
+      }
+      .meta {
+        fill:#8c959f;
+        font-family:'Fira Code','JetBrains Mono',Consolas,monospace;
+        font-size:10px;
+        font-weight:600;
+        letter-spacing:1.4px;
+      }
+      .legend { fill:#8c959f; fill-opacity:.24; }
+      .cell-0 { --end:#ff9900; animation-name:cell-0; animation-delay:0ms; animation-timing-function:cubic-bezier(.18,.86,.22,1); }
+      @keyframes cell-0 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-23px,-21px) rotate(73deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#ff9900; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#ff9900; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#ff9900; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-4.1px,-3.8px) rotate(-6deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-23px,-21px) rotate(73deg) scale(.22); }
+      }
+      .cell-1 { --end:#f59e0b; animation-name:cell-1; animation-delay:22ms; animation-timing-function:cubic-bezier(.22,.74,.18,1); }
+      @keyframes cell-1 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-6px,8px) rotate(-82deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-1.1px,1.4px) rotate(1deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-6px,8px) rotate(-82deg) scale(.22); }
+      }
+      .cell-2 { --end:#fb923c; animation-name:cell-2; animation-delay:45ms; animation-timing-function:cubic-bezier(.16,.9,.3,1); }
+      @keyframes cell-2 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(11px,-6px) rotate(91deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(2px,-1.1px) rotate(-5deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(11px,-6px) rotate(91deg) scale(.22); }
+      }
+      .cell-3 { --end:#fbbf24; animation-name:cell-3; animation-delay:54ms; animation-timing-function:cubic-bezier(.24,.8,.2,1); }
+      @keyframes cell-3 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-19px,-20px) rotate(-100deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fbbf24; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fbbf24; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fbbf24; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-3.4px,-3.6px) rotate(2deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-19px,-20px) rotate(-100deg) scale(.22); }
+      }
+      .cell-4 { --end:#f59e0b; animation-name:cell-4; animation-delay:77ms; animation-timing-function:cubic-bezier(.18,.86,.22,1); }
+      @keyframes cell-4 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-2px,9px) rotate(109deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-0.4px,1.6px) rotate(-4deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-2px,9px) rotate(109deg) scale(.22); }
+      }
+      .cell-5 { --end:#fb923c; animation-name:cell-5; animation-delay:99ms; animation-timing-function:cubic-bezier(.22,.74,.18,1); }
+      @keyframes cell-5 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(15px,-5px) rotate(-118deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(2.7px,-0.9px) rotate(3deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(15px,-5px) rotate(-118deg) scale(.22); }
+      }
+      .cell-6 { --end:#fbbf24; animation-name:cell-6; animation-delay:102ms; animation-timing-function:cubic-bezier(.16,.9,.3,1); }
+      @keyframes cell-6 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-15px,-19px) rotate(127deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fbbf24; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fbbf24; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fbbf24; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-2.7px,-3.4px) rotate(-3deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-15px,-19px) rotate(127deg) scale(.22); }
+      }
+      .cell-7 { --end:#f59e0b; animation-name:cell-7; animation-delay:124ms; animation-timing-function:cubic-bezier(.24,.8,.2,1); }
+      @keyframes cell-7 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(2px,10px) rotate(-136deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(0.4px,1.8px) rotate(4deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(2px,10px) rotate(-136deg) scale(.22); }
+      }
+      .cell-8 { --end:#fb923c; animation-name:cell-8; animation-delay:147ms; animation-timing-function:cubic-bezier(.18,.86,.22,1); }
+      @keyframes cell-8 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(19px,-4px) rotate(145deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(3.4px,-0.7px) rotate(-2deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(19px,-4px) rotate(145deg) scale(.22); }
+      }
+      .cell-9 { --end:#ff9900; animation-name:cell-9; animation-delay:156ms; animation-timing-function:cubic-bezier(.22,.74,.18,1); }
+      @keyframes cell-9 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-11px,-18px) rotate(-154deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#ff9900; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#ff9900; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#ff9900; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-2px,-3.2px) rotate(5deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-11px,-18px) rotate(-154deg) scale(.22); }
+      }
+      .cell-10 { --end:#f59e0b; animation-name:cell-10; animation-delay:179ms; animation-timing-function:cubic-bezier(.16,.9,.3,1); }
+      @keyframes cell-10 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(6px,11px) rotate(163deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(1.1px,2px) rotate(-1deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(6px,11px) rotate(163deg) scale(.22); }
+      }
+      .cell-11 { --end:#fb923c; animation-name:cell-11; animation-delay:201ms; animation-timing-function:cubic-bezier(.24,.8,.2,1); }
+      @keyframes cell-11 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(23px,-3px) rotate(-172deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(4.1px,-0.5px) rotate(6deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(23px,-3px) rotate(-172deg) scale(.22); }
+      }
+      .cell-12 { --end:#ff9900; animation-name:cell-12; animation-delay:204ms; animation-timing-function:cubic-bezier(.18,.86,.22,1); }
+      @keyframes cell-12 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-7px,-17px) rotate(181deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#ff9900; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#ff9900; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#ff9900; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-1.3px,-3.1px) rotate(0deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-7px,-17px) rotate(181deg) scale(.22); }
+      }
+      .cell-13 { --end:#f59e0b; animation-name:cell-13; animation-delay:226ms; animation-timing-function:cubic-bezier(.22,.74,.18,1); }
+      @keyframes cell-13 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(10px,12px) rotate(-190deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(1.8px,2.2px) rotate(-6deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(10px,12px) rotate(-190deg) scale(.22); }
+      }
+      .cell-14 { --end:#fb923c; animation-name:cell-14; animation-delay:249ms; animation-timing-function:cubic-bezier(.16,.9,.3,1); }
+      @keyframes cell-14 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-20px,-2px) rotate(199deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-3.6px,-0.4px) rotate(1deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-20px,-2px) rotate(199deg) scale(.22); }
+      }
+      .cell-15 { --end:#fbbf24; animation-name:cell-15; animation-delay:258ms; animation-timing-function:cubic-bezier(.24,.8,.2,1); }
+      @keyframes cell-15 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-3px,-16px) rotate(-208deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fbbf24; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fbbf24; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fbbf24; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-0.5px,-2.9px) rotate(-5deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-3px,-16px) rotate(-208deg) scale(.22); }
+      }
+      .cell-16 { --end:#f59e0b; animation-name:cell-16; animation-delay:281ms; animation-timing-function:cubic-bezier(.18,.86,.22,1); }
+      @keyframes cell-16 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(14px,13px) rotate(217deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(2.5px,2.3px) rotate(2deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(14px,13px) rotate(217deg) scale(.22); }
+      }
+      .cell-17 { --end:#fb923c; animation-name:cell-17; animation-delay:303ms; animation-timing-function:cubic-bezier(.22,.74,.18,1); }
+      @keyframes cell-17 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-16px,-1px) rotate(-226deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-2.9px,-0.2px) rotate(-4deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-16px,-1px) rotate(-226deg) scale(.22); }
+      }
+      .cell-18 { --end:#fbbf24; animation-name:cell-18; animation-delay:306ms; animation-timing-function:cubic-bezier(.16,.9,.3,1); }
+      @keyframes cell-18 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(1px,-15px) rotate(235deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fbbf24; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fbbf24; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fbbf24; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(0.2px,-2.7px) rotate(3deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(1px,-15px) rotate(235deg) scale(.22); }
+      }
+      .cell-19 { --end:#f59e0b; animation-name:cell-19; animation-delay:328ms; animation-timing-function:cubic-bezier(.24,.8,.2,1); }
+      @keyframes cell-19 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(18px,14px) rotate(-244deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(3.2px,2.5px) rotate(-3deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(18px,14px) rotate(-244deg) scale(.22); }
+      }
+      .cell-20 { --end:#ea580c; animation-name:cell-20; animation-delay:351ms; animation-timing-function:cubic-bezier(.18,.86,.22,1); }
+      @keyframes cell-20 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-12px,0px) rotate(253deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#ea580c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#ea580c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#ea580c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-2.2px,0px) rotate(4deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-12px,0px) rotate(253deg) scale(.22); }
+      }
+      .cell-21 { --end:#ff9900; animation-name:cell-21; animation-delay:360ms; animation-timing-function:cubic-bezier(.22,.74,.18,1); }
+      @keyframes cell-21 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(5px,-14px) rotate(-262deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#ff9900; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#ff9900; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#ff9900; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(0.9px,-2.5px) rotate(-2deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(5px,-14px) rotate(-262deg) scale(.22); }
+      }
+      .cell-22 { --end:#f97316; animation-name:cell-22; animation-delay:383ms; animation-timing-function:cubic-bezier(.16,.9,.3,1); }
+      @keyframes cell-22 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(22px,15px) rotate(271deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(4px,2.7px) rotate(5deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(22px,15px) rotate(271deg) scale(.22); }
+      }
+      .cell-23 { --end:#fb923c; animation-name:cell-23; animation-delay:405ms; animation-timing-function:cubic-bezier(.24,.8,.2,1); }
+      @keyframes cell-23 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-8px,1px) rotate(-280deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-1.4px,0.2px) rotate(-1deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-8px,1px) rotate(-280deg) scale(.22); }
+      }
+      .cell-24 { --end:#fb923c; animation-name:cell-24; animation-delay:408ms; animation-timing-function:cubic-bezier(.18,.86,.22,1); }
+      @keyframes cell-24 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(9px,-13px) rotate(289deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(1.6px,-2.3px) rotate(6deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(9px,-13px) rotate(289deg) scale(.22); }
+      }
+      .cell-25 { --end:#f97316; animation-name:cell-25; animation-delay:430ms; animation-timing-function:cubic-bezier(.22,.74,.18,1); }
+      @keyframes cell-25 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-21px,16px) rotate(-298deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-3.8px,2.9px) rotate(0deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-21px,16px) rotate(-298deg) scale(.22); }
+      }
+      .cell-26 { --end:#fb923c; animation-name:cell-26; animation-delay:453ms; animation-timing-function:cubic-bezier(.16,.9,.3,1); }
+      @keyframes cell-26 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-4px,2px) rotate(307deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-0.7px,0.4px) rotate(-6deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-4px,2px) rotate(307deg) scale(.22); }
+      }
+      .cell-27 { --end:#fb923c; animation-name:cell-27; animation-delay:462ms; animation-timing-function:cubic-bezier(.24,.8,.2,1); }
+      @keyframes cell-27 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(13px,-12px) rotate(-316deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(2.3px,-2.2px) rotate(1deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(13px,-12px) rotate(-316deg) scale(.22); }
+      }
+      .cell-28 { --end:#f97316; animation-name:cell-28; animation-delay:485ms; animation-timing-function:cubic-bezier(.18,.86,.22,1); }
+      @keyframes cell-28 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-17px,17px) rotate(325deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-3.1px,3.1px) rotate(-5deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-17px,17px) rotate(325deg) scale(.22); }
+      }
+      .cell-29 { --end:#fb923c; animation-name:cell-29; animation-delay:507ms; animation-timing-function:cubic-bezier(.22,.74,.18,1); }
+      @keyframes cell-29 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(0px,3px) rotate(-334deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(0px,0.5px) rotate(2deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(0px,3px) rotate(-334deg) scale(.22); }
+      }
+      .cell-30 { --end:#fb923c; animation-name:cell-30; animation-delay:510ms; animation-timing-function:cubic-bezier(.16,.9,.3,1); }
+      @keyframes cell-30 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(17px,-11px) rotate(343deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(3.1px,-2px) rotate(-4deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(17px,-11px) rotate(343deg) scale(.22); }
+      }
+      .cell-31 { --end:#f59e0b; animation-name:cell-31; animation-delay:532ms; animation-timing-function:cubic-bezier(.24,.8,.2,1); }
+      @keyframes cell-31 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-13px,18px) rotate(-352deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-2.3px,3.2px) rotate(3deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-13px,18px) rotate(-352deg) scale(.22); }
+      }
+      .cell-32 { --end:#ea580c; animation-name:cell-32; animation-delay:555ms; animation-timing-function:cubic-bezier(.18,.86,.22,1); }
+      @keyframes cell-32 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(4px,4px) rotate(361deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#ea580c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#ea580c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#ea580c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(0.7px,0.7px) rotate(-3deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(4px,4px) rotate(361deg) scale(.22); }
+      }
+      .cell-33 { --end:#fb923c; animation-name:cell-33; animation-delay:564ms; animation-timing-function:cubic-bezier(.22,.74,.18,1); }
+      @keyframes cell-33 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(21px,-10px) rotate(-370deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(3.8px,-1.8px) rotate(4deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(21px,-10px) rotate(-370deg) scale(.22); }
+      }
+      .cell-34 { --end:#f59e0b; animation-name:cell-34; animation-delay:587ms; animation-timing-function:cubic-bezier(.16,.9,.3,1); }
+      @keyframes cell-34 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-9px,19px) rotate(379deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-1.6px,3.4px) rotate(-2deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-9px,19px) rotate(379deg) scale(.22); }
+      }
+      .cell-35 { --end:#fb923c; animation-name:cell-35; animation-delay:609ms; animation-timing-function:cubic-bezier(.24,.8,.2,1); }
+      @keyframes cell-35 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(8px,5px) rotate(-388deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(1.4px,0.9px) rotate(5deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(8px,5px) rotate(-388deg) scale(.22); }
+      }
+      .cell-36 { --end:#fb923c; animation-name:cell-36; animation-delay:612ms; animation-timing-function:cubic-bezier(.18,.86,.22,1); }
+      @keyframes cell-36 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-22px,-9px) rotate(397deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-4px,-1.6px) rotate(-1deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-22px,-9px) rotate(397deg) scale(.22); }
+      }
+      .cell-37 { --end:#f97316; animation-name:cell-37; animation-delay:634ms; animation-timing-function:cubic-bezier(.22,.74,.18,1); }
+      @keyframes cell-37 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-5px,20px) rotate(-406deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-0.9px,3.6px) rotate(6deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-5px,20px) rotate(-406deg) scale(.22); }
+      }
+      .cell-38 { --end:#ea580c; animation-name:cell-38; animation-delay:657ms; animation-timing-function:cubic-bezier(.16,.9,.3,1); }
+      @keyframes cell-38 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(12px,6px) rotate(415deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#ea580c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#ea580c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#ea580c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(2.2px,1.1px) rotate(0deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(12px,6px) rotate(415deg) scale(.22); }
+      }
+      .cell-39 { --end:#fb923c; animation-name:cell-39; animation-delay:666ms; animation-timing-function:cubic-bezier(.24,.8,.2,1); }
+      @keyframes cell-39 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-18px,-8px) rotate(-424deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-3.2px,-1.4px) rotate(-6deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-18px,-8px) rotate(-424deg) scale(.22); }
+      }
+      .cell-40 { --end:#f97316; animation-name:cell-40; animation-delay:689ms; animation-timing-function:cubic-bezier(.18,.86,.22,1); }
+      @keyframes cell-40 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-1px,21px) rotate(433deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-0.2px,3.8px) rotate(1deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-1px,21px) rotate(433deg) scale(.22); }
+      }
+      .cell-41 { --end:#fb923c; animation-name:cell-41; animation-delay:711ms; animation-timing-function:cubic-bezier(.22,.74,.18,1); }
+      @keyframes cell-41 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(16px,7px) rotate(-442deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(2.9px,1.3px) rotate(-5deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(16px,7px) rotate(-442deg) scale(.22); }
+      }
+      .cell-42 { --end:#ff9900; animation-name:cell-42; animation-delay:714ms; animation-timing-function:cubic-bezier(.16,.9,.3,1); }
+      @keyframes cell-42 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-14px,-7px) rotate(451deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#ff9900; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#ff9900; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#ff9900; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-2.5px,-1.3px) rotate(2deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-14px,-7px) rotate(451deg) scale(.22); }
+      }
+      .cell-43 { --end:#ef4444; animation-name:cell-43; animation-delay:736ms; animation-timing-function:cubic-bezier(.24,.8,.2,1); }
+      @keyframes cell-43 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(3px,-21px) rotate(-460deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#ef4444; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#ef4444; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#ef4444; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(0.5px,-3.8px) rotate(-4deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(3px,-21px) rotate(-460deg) scale(.22); }
+      }
+      .cell-44 { --end:#fb923c; animation-name:cell-44; animation-delay:759ms; animation-timing-function:cubic-bezier(.18,.86,.22,1); }
+      @keyframes cell-44 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(20px,8px) rotate(469deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(3.6px,1.4px) rotate(3deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(20px,8px) rotate(469deg) scale(.22); }
+      }
+      .cell-45 { --end:#f97316; animation-name:cell-45; animation-delay:768ms; animation-timing-function:cubic-bezier(.22,.74,.18,1); }
+      @keyframes cell-45 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-10px,-6px) rotate(-478deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-1.8px,-1.1px) rotate(-3deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-10px,-6px) rotate(-478deg) scale(.22); }
+      }
+      .cell-46 { --end:#f59e0b; animation-name:cell-46; animation-delay:791ms; animation-timing-function:cubic-bezier(.16,.9,.3,1); }
+      @keyframes cell-46 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(7px,-20px) rotate(487deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(1.3px,-3.6px) rotate(4deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(7px,-20px) rotate(487deg) scale(.22); }
+      }
+      .cell-47 { --end:#dc2626; animation-name:cell-47; animation-delay:813ms; animation-timing-function:cubic-bezier(.24,.8,.2,1); }
+      @keyframes cell-47 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-23px,9px) rotate(-496deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#dc2626; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#dc2626; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#dc2626; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-4.1px,1.6px) rotate(-2deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-23px,9px) rotate(-496deg) scale(.22); }
+      }
+      .cell-48 { --end:#f97316; animation-name:cell-48; animation-delay:816ms; animation-timing-function:cubic-bezier(.18,.86,.22,1); }
+      @keyframes cell-48 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-6px,-5px) rotate(505deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-1.1px,-0.9px) rotate(5deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-6px,-5px) rotate(505deg) scale(.22); }
+      }
+      .cell-49 { --end:#ef4444; animation-name:cell-49; animation-delay:838ms; animation-timing-function:cubic-bezier(.22,.74,.18,1); }
+      @keyframes cell-49 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(11px,-19px) rotate(-514deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#ef4444; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#ef4444; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#ef4444; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(2px,-3.4px) rotate(-1deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(11px,-19px) rotate(-514deg) scale(.22); }
+      }
+      .cell-50 { --end:#dc2626; animation-name:cell-50; animation-delay:861ms; animation-timing-function:cubic-bezier(.16,.9,.3,1); }
+      @keyframes cell-50 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-19px,10px) rotate(523deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#dc2626; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#dc2626; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#dc2626; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-3.4px,1.8px) rotate(6deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-19px,10px) rotate(523deg) scale(.22); }
+      }
+      .cell-51 { --end:#f97316; animation-name:cell-51; animation-delay:870ms; animation-timing-function:cubic-bezier(.24,.8,.2,1); }
+      @keyframes cell-51 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-2px,-4px) rotate(-532deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-0.4px,-0.7px) rotate(0deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-2px,-4px) rotate(-532deg) scale(.22); }
+      }
+      .cell-52 { --end:#f59e0b; animation-name:cell-52; animation-delay:893ms; animation-timing-function:cubic-bezier(.18,.86,.22,1); }
+      @keyframes cell-52 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(15px,-18px) rotate(541deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(2.7px,-3.2px) rotate(-6deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(15px,-18px) rotate(541deg) scale(.22); }
+      }
+      .cell-53 { --end:#fb923c; animation-name:cell-53; animation-delay:915ms; animation-timing-function:cubic-bezier(.22,.74,.18,1); }
+      @keyframes cell-53 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-15px,11px) rotate(-550deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-2.7px,2px) rotate(1deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-15px,11px) rotate(-550deg) scale(.22); }
+      }
+      .cell-54 { --end:#f97316; animation-name:cell-54; animation-delay:918ms; animation-timing-function:cubic-bezier(.16,.9,.3,1); }
+      @keyframes cell-54 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(2px,-3px) rotate(559deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(0.4px,-0.5px) rotate(-5deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(2px,-3px) rotate(559deg) scale(.22); }
+      }
+      .cell-55 { --end:#ef4444; animation-name:cell-55; animation-delay:940ms; animation-timing-function:cubic-bezier(.24,.8,.2,1); }
+      @keyframes cell-55 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(19px,-17px) rotate(-568deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#ef4444; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#ef4444; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#ef4444; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(3.4px,-3.1px) rotate(2deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(19px,-17px) rotate(-568deg) scale(.22); }
+      }
+      .cell-56 { --end:#dc2626; animation-name:cell-56; animation-delay:963ms; animation-timing-function:cubic-bezier(.18,.86,.22,1); }
+      @keyframes cell-56 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-11px,12px) rotate(577deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#dc2626; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#dc2626; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#dc2626; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-2px,2.2px) rotate(-4deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-11px,12px) rotate(577deg) scale(.22); }
+      }
+      .cell-57 { --end:#f97316; animation-name:cell-57; animation-delay:972ms; animation-timing-function:cubic-bezier(.22,.74,.18,1); }
+      @keyframes cell-57 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(6px,-2px) rotate(-586deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(1.1px,-0.4px) rotate(3deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(6px,-2px) rotate(-586deg) scale(.22); }
+      }
+      .cell-58 { --end:#ef4444; animation-name:cell-58; animation-delay:995ms; animation-timing-function:cubic-bezier(.16,.9,.3,1); }
+      @keyframes cell-58 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(23px,-16px) rotate(595deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#ef4444; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#ef4444; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#ef4444; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(4.1px,-2.9px) rotate(-3deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(23px,-16px) rotate(595deg) scale(.22); }
+      }
+      .cell-59 { --end:#fb923c; animation-name:cell-59; animation-delay:1017ms; animation-timing-function:cubic-bezier(.24,.8,.2,1); }
+      @keyframes cell-59 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-7px,13px) rotate(-604deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-1.3px,2.3px) rotate(4deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-7px,13px) rotate(-604deg) scale(.22); }
+      }
+      .cell-60 { --end:#f97316; animation-name:cell-60; animation-delay:1020ms; animation-timing-function:cubic-bezier(.18,.86,.22,1); }
+      @keyframes cell-60 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(10px,-1px) rotate(613deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(1.8px,-0.2px) rotate(-2deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(10px,-1px) rotate(613deg) scale(.22); }
+      }
+      .cell-61 { --end:#ef4444; animation-name:cell-61; animation-delay:1042ms; animation-timing-function:cubic-bezier(.22,.74,.18,1); }
+      @keyframes cell-61 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-20px,-15px) rotate(-622deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#ef4444; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#ef4444; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#ef4444; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-3.6px,-2.7px) rotate(5deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-20px,-15px) rotate(-622deg) scale(.22); }
+      }
+      .cell-62 { --end:#fb923c; animation-name:cell-62; animation-delay:1065ms; animation-timing-function:cubic-bezier(.16,.9,.3,1); }
+      @keyframes cell-62 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-3px,14px) rotate(631deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-0.5px,2.5px) rotate(-1deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-3px,14px) rotate(631deg) scale(.22); }
+      }
+      .cell-63 { --end:#f97316; animation-name:cell-63; animation-delay:1074ms; animation-timing-function:cubic-bezier(.24,.8,.2,1); }
+      @keyframes cell-63 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(14px,0px) rotate(-640deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f97316; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(2.5px,0px) rotate(6deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(14px,0px) rotate(-640deg) scale(.22); }
+      }
+      .cell-64 { --end:#ef4444; animation-name:cell-64; animation-delay:1097ms; animation-timing-function:cubic-bezier(.18,.86,.22,1); }
+      @keyframes cell-64 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-16px,-14px) rotate(649deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#ef4444; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#ef4444; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#ef4444; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-2.9px,-2.5px) rotate(0deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-16px,-14px) rotate(649deg) scale(.22); }
+      }
+      .cell-65 { --end:#dc2626; animation-name:cell-65; animation-delay:1119ms; animation-timing-function:cubic-bezier(.22,.74,.18,1); }
+      @keyframes cell-65 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(1px,15px) rotate(-658deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#dc2626; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#dc2626; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#dc2626; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(0.2px,2.7px) rotate(-6deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(1px,15px) rotate(-658deg) scale(.22); }
+      }
+      .cell-66 { --end:#ff9900; animation-name:cell-66; animation-delay:1122ms; animation-timing-function:cubic-bezier(.16,.9,.3,1); }
+      @keyframes cell-66 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(18px,1px) rotate(667deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#ff9900; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#ff9900; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#ff9900; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(3.2px,0.2px) rotate(1deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(18px,1px) rotate(667deg) scale(.22); }
+      }
+      .cell-67 { --end:#f59e0b; animation-name:cell-67; animation-delay:1144ms; animation-timing-function:cubic-bezier(.24,.8,.2,1); }
+      @keyframes cell-67 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(-12px,-13px) rotate(-676deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#f59e0b; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(-2.2px,-2.3px) rotate(-5deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(-12px,-13px) rotate(-676deg) scale(.22); }
+      }
+      .cell-68 { --end:#fb923c; animation-name:cell-68; animation-delay:1167ms; animation-timing-function:cubic-bezier(.18,.86,.22,1); }
+      @keyframes cell-68 {
+        0%,3% { opacity:0; fill:#8c959f; transform:translate(5px,16px) rotate(685deg) scale(.22); }
+        9% { opacity:.48; fill:#8c959f; }
+        29% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1.08); }
+        36% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(.98); }
+        43%,82% { opacity:1; fill:#fb923c; transform:translate(0,0) rotate(0deg) scale(1); }
+        93% { opacity:.22; fill:#8c959f; transform:translate(0.9px,2.9px) rotate(2deg) scale(.86); }
+        100% { opacity:0; fill:#8c959f; transform:translate(5px,16px) rotate(685deg) scale(.22); }
+      }
+      @media (prefers-color-scheme:dark) {
+        .base { fill-opacity:.18; stroke-opacity:.12; }
+        .meta { fill:#9ca3af; }
+      }
+      @media (prefers-reduced-motion:reduce) {
+        .piece {
+          animation:none;
+          opacity:1;
+          fill:var(--end);
+          transform:none;
+        }
+      }
+    </style>
+  </defs>
+
+  <text class="meta" x="15" y="12">GITHUB CONTRIBUTION GRAPH</text>
+  <text class="meta" x="808" y="12" text-anchor="end">AWS · ASSEMBLED CELL BY CELL</text>
+
+  <g class="base" transform="translate(15 22)">
+    <use href="#week" x="0" />
+    <use href="#week" x="15" />
+    <use href="#week" x="30" />
+    <use href="#week" x="45" />
+    <use href="#week" x="60" />
+    <use href="#week" x="75" />
+    <use href="#week" x="90" />
+    <use href="#week" x="105" />
+    <use href="#week" x="120" />
+    <use href="#week" x="135" />
+    <use href="#week" x="150" />
+    <use href="#week" x="165" />
+    <use href="#week" x="180" />
+    <use href="#week" x="195" />
+    <use href="#week" x="210" />
+    <use href="#week" x="225" />
+    <use href="#week" x="240" />
+    <use href="#week" x="255" />
+    <use href="#week" x="270" />
+    <use href="#week" x="285" />
+    <use href="#week" x="300" />
+    <use href="#week" x="315" />
+    <use href="#week" x="330" />
+    <use href="#week" x="345" />
+    <use href="#week" x="360" />
+    <use href="#week" x="375" />
+    <use href="#week" x="390" />
+    <use href="#week" x="405" />
+    <use href="#week" x="420" />
+    <use href="#week" x="435" />
+    <use href="#week" x="450" />
+    <use href="#week" x="465" />
+    <use href="#week" x="480" />
+    <use href="#week" x="495" />
+    <use href="#week" x="510" />
+    <use href="#week" x="525" />
+    <use href="#week" x="540" />
+    <use href="#week" x="555" />
+    <use href="#week" x="570" />
+    <use href="#week" x="585" />
+    <use href="#week" x="600" />
+    <use href="#week" x="615" />
+    <use href="#week" x="630" />
+    <use href="#week" x="645" />
+    <use href="#week" x="660" />
+    <use href="#week" x="675" />
+    <use href="#week" x="690" />
+    <use href="#week" x="705" />
+    <use href="#week" x="720" />
+    <use href="#week" x="735" />
+    <use href="#week" x="750" />
+    <use href="#week" x="765" />
+    <use href="#week" x="780" />
+  </g>
+
+  <g transform="translate(15 22)">
+    <use href="#active-cell" x="225" y="75" class="piece cell-0 smile" />
+    <use href="#active-cell" x="240" y="15" class="piece cell-1 a" />
+    <use href="#active-cell" x="240" y="30" class="piece cell-2 a" />
+    <use href="#active-cell" x="240" y="60" class="piece cell-3 a" />
+    <use href="#active-cell" x="255" y="0" class="piece cell-4 a" />
+    <use href="#active-cell" x="240" y="45" class="piece cell-5 a" />
+    <use href="#active-cell" x="255" y="30" class="piece cell-6 a" />
+    <use href="#active-cell" x="240" y="75" class="piece cell-7 smile" />
+    <use href="#active-cell" x="270" y="0" class="piece cell-8 a" />
+    <use href="#active-cell" x="255" y="90" class="piece cell-9 smile" />
+    <use href="#active-cell" x="270" y="30" class="piece cell-10 a" />
+    <use href="#active-cell" x="285" y="0" class="piece cell-11 a" />
+    <use href="#active-cell" x="270" y="90" class="piece cell-12 smile" />
+    <use href="#active-cell" x="285" y="30" class="piece cell-13 a" />
+    <use href="#active-cell" x="300" y="15" class="piece cell-14 a" />
+    <use href="#active-cell" x="300" y="45" class="piece cell-15 a" />
+    <use href="#active-cell" x="285" y="90" class="piece cell-16 smile" />
+    <use href="#active-cell" x="300" y="30" class="piece cell-17 a" />
+    <use href="#active-cell" x="300" y="60" class="piece cell-18 a" />
+    <use href="#active-cell" x="300" y="90" class="piece cell-19 smile" />
+    <use href="#active-cell" x="345" y="0" class="piece cell-20 w" />
+    <use href="#active-cell" x="315" y="90" class="piece cell-21 smile" />
+    <use href="#active-cell" x="345" y="15" class="piece cell-22 w" />
+    <use href="#active-cell" x="330" y="90" class="piece cell-23 smile" />
+    <use href="#active-cell" x="345" y="30" class="piece cell-24 w" />
+    <use href="#active-cell" x="345" y="45" class="piece cell-25 w" />
+    <use href="#active-cell" x="345" y="90" class="piece cell-26 smile" />
+    <use href="#active-cell" x="360" y="60" class="piece cell-27 w" />
+    <use href="#active-cell" x="375" y="45" class="piece cell-28 w" />
+    <use href="#active-cell" x="360" y="90" class="piece cell-29 smile" />
+    <use href="#active-cell" x="390" y="30" class="piece cell-30 w" />
+    <use href="#active-cell" x="375" y="90" class="piece cell-31 smile" />
+    <use href="#active-cell" x="390" y="60" class="piece cell-32 w" />
+    <use href="#active-cell" x="405" y="45" class="piece cell-33 w" />
+    <use href="#active-cell" x="390" y="90" class="piece cell-34 smile" />
+    <use href="#active-cell" x="405" y="90" class="piece cell-35 smile" />
+    <use href="#active-cell" x="420" y="60" class="piece cell-36 w" />
+    <use href="#active-cell" x="435" y="0" class="piece cell-37 w" />
+    <use href="#active-cell" x="435" y="30" class="piece cell-38 w" />
+    <use href="#active-cell" x="435" y="15" class="piece cell-39 w" />
+    <use href="#active-cell" x="435" y="45" class="piece cell-40 w" />
+    <use href="#active-cell" x="420" y="90" class="piece cell-41 smile" />
+    <use href="#active-cell" x="435" y="90" class="piece cell-42 smile" />
+    <use href="#active-cell" x="480" y="0" class="piece cell-43 s" />
+    <use href="#active-cell" x="450" y="90" class="piece cell-44 smile" />
+    <use href="#active-cell" x="480" y="15" class="piece cell-45 s" />
+    <use href="#active-cell" x="465" y="90" class="piece cell-46 smile" />
+    <use href="#active-cell" x="480" y="30" class="piece cell-47 s" />
+    <use href="#active-cell" x="480" y="60" class="piece cell-48 s" />
+    <use href="#active-cell" x="495" y="0" class="piece cell-49 s" />
+    <use href="#active-cell" x="495" y="30" class="piece cell-50 s" />
+    <use href="#active-cell" x="510" y="0" class="piece cell-51 s" />
+    <use href="#active-cell" x="480" y="90" class="piece cell-52 smile" />
+    <use href="#active-cell" x="495" y="75" class="piece cell-53 smile" />
+    <use href="#active-cell" x="495" y="60" class="piece cell-54 s" />
+    <use href="#active-cell" x="510" y="30" class="piece cell-55 s" />
+    <use href="#active-cell" x="510" y="60" class="piece cell-56 s" />
+    <use href="#active-cell" x="525" y="0" class="piece cell-57 s" />
+    <use href="#active-cell" x="525" y="30" class="piece cell-58 s" />
+    <use href="#active-cell" x="510" y="75" class="piece cell-59 smile" />
+    <use href="#active-cell" x="525" y="60" class="piece cell-60 s" />
+    <use href="#active-cell" x="540" y="0" class="piece cell-61 s" />
+    <use href="#active-cell" x="525" y="75" class="piece cell-62 smile" />
+    <use href="#active-cell" x="540" y="45" class="piece cell-63 s" />
+    <use href="#active-cell" x="540" y="30" class="piece cell-64 s" />
+    <use href="#active-cell" x="540" y="60" class="piece cell-65 s" />
+    <use href="#active-cell" x="540" y="75" class="piece cell-66 smile" />
+    <use href="#active-cell" x="555" y="60" class="piece cell-67 smile" />
+    <use href="#active-cell" x="555" y="75" class="piece cell-68 smile" />
+  </g>
+
+  <g class="meta">
+    <text x="15" y="141" letter-spacing="0">Less</text>
+    <rect class="legend" x="47" y="132" width="10" height="10" rx="2" />
+    <rect x="62" y="132" width="10" height="10" rx="2" fill="#fbbf24" fill-opacity=".65" />
+    <rect x="77" y="132" width="10" height="10" rx="2" fill="#f59e0b" fill-opacity=".78" />
+    <rect x="92" y="132" width="10" height="10" rx="2" fill="#f97316" fill-opacity=".9" />
+    <rect x="107" y="132" width="10" height="10" rx="2" fill="#ef4444" />
+    <text x="123" y="141" letter-spacing="0">More</text>
+  </g>
+</svg>

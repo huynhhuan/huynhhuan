@@ -34,3 +34,7 @@ I connect application engineering with the systems that deliver and operate it.
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" width="42" height="42" alt="Prometheus" title="Prometheus" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" width="42" height="42" alt="Grafana" title="Grafana" />
 </p>
+
+## GitHub Contribution Graph
+
+<img src="./profile/aws-contribution-graph.svg" width="100%" alt="Animated GitHub contribution graph assembling into the AWS logo" />
