@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="310" viewBox="0 0 1200 310" role="img" aria-labelledby="title desc">
   <title id="title">AWS logo assembled from GitHub contribution cells</title>
-  <desc id="desc">Contribution cells orbit with individual rotations in a five-second loop, assembling the AWS wordmark and smile.</desc>
+  <desc id="desc">Eighty-five contribution cells arrive by hand-tuned stagger, each rotating from a different angle and changing from slate gray into the AWS wordmark and smile.</desc>
   <defs>
     <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0f172a" />
@@ -27,33 +27,92 @@
     </g>
     <style>
       .piece {
-        opacity:.08;
-        transform-box:view-box;
-        transform-origin:50% 50%;
-        animation-name:contribution-orbit;
-        animation-duration:5s;
-        animation-timing-function:cubic-bezier(.16,1,.3,1);
-        animation-iteration-count:infinite;
+        --step:0ms;
+        --micro-delay:0ms;
+        --micro-x:0px;
+        --micro-y:0px;
+        opacity:0;
+        fill:var(--start,#475569);
+        transform-box:fill-box;
+        transform-origin:center;
+        animation:cell-assemble 8.6s var(--ease,cubic-bezier(.2,.82,.25,1)) infinite both;
+        animation-delay:calc(var(--step) + var(--micro-delay));
       }
-      .cell-blue { --end:#f59e0b; fill:#f59e0b; }
-      .cell-light { --end:#fb923c; fill:#fb923c; }
-      .cell-white { --end:#fbbf24; fill:#fbbf24; }
-      .cell-orange { --end:#ef4444; fill:#ef4444; filter:url(#soft-glow); }
+      .cell-blue { --end:#f59e0b; }
+      .cell-light { --end:#fb923c; }
+      .cell-white { --end:#fbbf24; }
+      .cell-orange { --end:#ef4444; filter:url(#soft-glow); }
+      .entry-0 { --start:#334155; --dx:-22px; --dy:-16px; --ease:cubic-bezier(.18,.86,.22,1); }
+      .entry-1 { --start:#475569; --dx:19px; --dy:-21px; --ease:cubic-bezier(.2,.76,.18,1); }
+      .entry-2 { --start:#64748b; --dx:-17px; --dy:20px; --ease:cubic-bezier(.16,.9,.3,1); }
+      .entry-3 { --start:#3f4b5f; --dx:23px; --dy:17px; --ease:cubic-bezier(.24,.8,.2,1); }
+
+      /* Seventeen broad beats × five micro offsets = a unique delay for all 85 cells. */
+      .piece:nth-of-type(17n+1) { --step:0ms; }
+      .piece:nth-of-type(17n+2) { --step:61ms; }
+      .piece:nth-of-type(17n+3) { --step:122ms; }
+      .piece:nth-of-type(17n+4) { --step:183ms; }
+      .piece:nth-of-type(17n+5) { --step:244ms; }
+      .piece:nth-of-type(17n+6) { --step:305ms; }
+      .piece:nth-of-type(17n+7) { --step:366ms; }
+      .piece:nth-of-type(17n+8) { --step:427ms; }
+      .piece:nth-of-type(17n+9) { --step:488ms; }
+      .piece:nth-of-type(17n+10) { --step:549ms; }
+      .piece:nth-of-type(17n+11) { --step:610ms; }
+      .piece:nth-of-type(17n+12) { --step:671ms; }
+      .piece:nth-of-type(17n+13) { --step:732ms; }
+      .piece:nth-of-type(17n+14) { --step:793ms; }
+      .piece:nth-of-type(17n+15) { --step:854ms; }
+      .piece:nth-of-type(17n+16) { --step:915ms; }
+      .piece:nth-of-type(17n+17) { --step:976ms; }
+
+      .piece:nth-of-type(5n+1) { --micro-delay:3ms; --micro-x:-5px; --micro-y:2px; }
+      .piece:nth-of-type(5n+2) { --micro-delay:11ms; --micro-x:3px; --micro-y:-4px; }
+      .piece:nth-of-type(5n+3) { --micro-delay:23ms; --micro-x:-2px; --micro-y:5px; }
+      .piece:nth-of-type(5n+4) { --micro-delay:37ms; --micro-x:5px; --micro-y:3px; }
+      .piece:nth-of-type(5n+5) { --micro-delay:53ms; --micro-x:-4px; --micro-y:-3px; }
+
       .scan {
-        animation:scan 5s cubic-bezier(.16,1,.3,1) infinite;
+        animation:scan 8.6s cubic-bezier(.16,1,.3,1) infinite;
         transform-origin:left;
       }
-      @keyframes contribution-orbit {
-        0% { opacity:.08; transform:rotate(var(--spin)) scale(.28); fill:#1e293b; }
-        18% { opacity:.72; }
-        60% { opacity:1; transform:rotate(0deg) scale(1); fill:var(--end); }
-        100% { opacity:1; transform:rotate(0deg) scale(1); fill:var(--end); }
+      @keyframes cell-assemble {
+        0%,3% {
+          opacity:0;
+          transform:translate(calc(var(--dx) + var(--micro-x)),calc(var(--dy) + var(--micro-y))) rotate(var(--spin)) scale(.22);
+          fill:var(--start);
+        }
+        10% {
+          opacity:.42;
+          fill:var(--start);
+        }
+        34% {
+          opacity:1;
+          transform:translate(0,0) rotate(0deg) scale(1.055);
+          fill:var(--end);
+        }
+        42% { transform:translate(0,0) rotate(0deg) scale(.985); }
+        50%,82% {
+          opacity:1;
+          transform:translate(0,0) rotate(0deg) scale(1);
+          fill:var(--end);
+        }
+        94% {
+          opacity:.18;
+          transform:translate(var(--micro-x),var(--micro-y)) rotate(3deg) scale(.9);
+          fill:var(--start);
+        }
+        100% {
+          opacity:0;
+          transform:translate(calc(var(--dx) + var(--micro-x)),calc(var(--dy) + var(--micro-y))) rotate(var(--spin)) scale(.22);
+          fill:var(--start);
+        }
       }
       @keyframes scan {
         0% { transform:translateX(-1080px); opacity:0; }
-        10% { opacity:.7; }
-        60% { transform:translateX(1080px); opacity:.5; }
-        61%,100% { transform:translateX(1080px); opacity:0; }
+        8% { opacity:.55; }
+        48% { transform:translateX(1080px); opacity:.42; }
+        49%,100% { transform:translateX(1080px); opacity:0; }
       }
       @media (prefers-reduced-motion: reduce) {
         .piece { animation:none; opacity:1; transform:none; fill:var(--end); }
