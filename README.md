@@ -107,8 +107,8 @@ Team contribution to the governance of a 27-microservice platform on Amazon EKS:
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=huynhhuan&show_icons=true&theme=github_dark&hide_border=true&rank_icon=github" alt="Huynh Ba Huan's GitHub stats" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=huynhhuan&layout=compact&theme=github_dark&hide_border=true" alt="Most used languages" />
+<img height="165" src="./profile/stats.svg" alt="Huynh Ba Huan's GitHub stats" />
+<img height="165" src="./profile/top-langs.svg" alt="Most used languages" />
 
 </div>
 
