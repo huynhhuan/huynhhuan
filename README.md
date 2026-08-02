@@ -1,18 +1,18 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=30&pause=1100&color=58A6FF&center=true&vCenter=true&width=760&height=90&lines=Hu%E1%BB%B3nh+B%C3%A1+Hu%C3%A2n;DevOps+%26+Cloud+Operations;Backend+%26+Web+Developer" alt="Huỳnh Bá Huân — DevOps, Cloud Operations, Backend and Web Developer" />
+<img src="./profile/identity-console.svg" width="100%" alt="Huỳnh Bá Huân — DevOps, Cloud Operations and Web Developer control room profile" />
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hybhuan204)
-[![Email](https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:huynhbahuan@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-huynhhuan-181717?style=for-the-badge&logo=github)](https://github.com/huynhhuan)
+<a href="https://www.linkedin.com/in/hybhuan204"><img src="./profile/contact-linkedin.svg" width="98" height="36" alt="Connect with Huỳnh Bá Huân on LinkedIn" /></a><a href="mailto:huynhbahuan@gmail.com"><img src="./profile/contact-email.svg" width="98" height="36" alt="Email Huỳnh Bá Huân" /></a><a href="https://github.com/huynhhuan"><img src="./profile/contact-github.svg" width="98" height="36" alt="Follow huynhhuan on GitHub" /></a>
 
 </div>
 
-<p align="center">
-  <img src="./profile/cloud-ops-control-deck.webp" width="100%" alt="Cloud Operations Control Deck showing code, CI/CD, Kubernetes, cloud infrastructure, and observability" />
-</p>
+<br />
 
-<h2 align="center">⚙️ Cloud Ops Stack</h2>
+<img src="./profile/cloud-ops-control-deck.webp" width="100%" alt="Cloud operations control deck connecting code, CI/CD, Kubernetes, cloud infrastructure and observability" />
+
+<br />
+
+<img src="./profile/section-stack.svg" width="100%" alt="Stack matrix" />
 
 <p align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" width="44" height="44" alt="JavaScript" title="JavaScript" />
@@ -40,19 +40,22 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" width="44" height="44" alt="Postman" title="Postman" />
 </p>
 
-<p align="center">
-  <img src="./profile/tech-banner.svg" width="100%" alt="From code to cloud: develop, build, deploy, and observe" />
-</p>
+<img src="./profile/tech-banner.svg" width="100%" alt="Delivery system from development through build and deployment to observability" />
 
-<h2 align="center">📊 Live Metrics</h2>
+<br />
 
-<p align="center">
-  <img height="175" src="./profile/stats.svg" alt="Huynh Ba Huan's GitHub stats" />
-  <img height="175" src="./profile/top-langs.svg" alt="Most used languages" />
-</p>
-
-<h2 align="center">🌌 Contribution City</h2>
+<img src="./profile/section-metrics.svg" width="100%" alt="Live telemetry" />
 
 <p align="center">
-  <img src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D GitHub contribution city" />
+  <img width="78%" src="./profile/stats.svg" alt="Huynh Ba Huan's GitHub activity statistics" />
+  <br />
+  <img width="78%" src="./profile/top-langs.svg" alt="Most used languages in Huynh Ba Huan's public repositories" />
 </p>
+
+<img src="./profile/section-contributions.svg" width="100%" alt="Contribution topology" />
+
+<img src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="Three-dimensional GitHub contribution city" />
+
+<br />
+
+<img src="./profile/console-footer.svg" width="100%" alt="Build, automate, observe and improve" />
