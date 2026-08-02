@@ -1,6 +1,8 @@
 <div align="center">
 
-<img src="./profile/intro-terminal.svg" width="100%" alt="Hi, I'm Huỳnh Bá Huân — Backend and Web Developer, JavaScript, PHP, Python, DevOps and Cloud Operations" />
+# Hi, I'm Huỳnh Bá Huân 👋
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=2F81F7&center=true&vCenter=true&width=720&lines=Junior+Cloud+%26+DevOps+Engineer;AWS+%7C+Terraform+%7C+Docker+%7C+Kubernetes;CI%2FCD+%7C+GitOps+%7C+DevSecOps+%7C+Observability)](https://git.io/typing-svg)
 
 <p>Building practical web services and reliable cloud infrastructure — from code to production.</p>
 
