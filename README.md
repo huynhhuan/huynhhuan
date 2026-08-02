@@ -16,7 +16,7 @@ I connect application engineering with the systems that deliver and operate it.
 - ☁️ **Platform:** AWS infrastructure, Terraform, containers, Kubernetes, CI/CD, and GitOps.
 - 🛡️ **Reliability:** Cloud security, observable delivery, and maintainable production workflows.
 
-## Language and Tools
+## Language and Tools.
 
 <p align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" width="42" height="42" alt="JavaScript" title="JavaScript" />
