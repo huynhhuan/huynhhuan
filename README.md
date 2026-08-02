@@ -16,7 +16,7 @@ I connect application engineering with the systems that deliver and operate it.
 - ☁️ **Platform:** AWS infrastructure, Terraform, containers, Kubernetes, CI/CD, and GitOps.
 - 🛡️ **Reliability:** Cloud security, observable delivery, and maintainable production workflows.
 
-## Tech stack
+## Language and Tools
 
 <p align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" width="42" height="42" alt="JavaScript" title="JavaScript" />
@@ -34,70 +34,3 @@ I connect application engineering with the systems that deliver and operate it.
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" width="42" height="42" alt="Prometheus" title="Prometheus" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" width="42" height="42" alt="Grafana" title="Grafana" />
 </p>
-
-## Selected work
-
-Four builds across one engineering path: **🧩 Product → 🚀 Delivery → 🛡️ Governance → ⚙️ Operations.**
-
-### Web engineering
-
-### [Badminton Shop E-commerce Backend](https://github.com/huynhhuan/badminton-shop-be)
-
-Team project built with **PHP, Laravel, and MySQL**:
-
-- Designed versioned RESTful APIs with a Controller–Service–Repository structure.
-- Implemented product, category, brand, cart, order, and profile workflows.
-- Added Laravel Sanctum authentication, social login, and VNPay payment processing.
-- Containerized the backend development environment with Docker Compose.
-
-### [GreenCart — Food & Beverage E-commerce](https://github.com/huynhhuan/W6-BE-greencart)
-
-Full-stack e-commerce project using the **MERN stack**:
-
-- Built Express APIs and MongoDB models for users, products, carts, addresses, and orders.
-- Integrated Stripe Checkout and webhooks, JWT/HttpOnly-cookie authentication, and Cloudinary uploads.
-- Added seller workflows, request metrics, health checks, Docker packaging, and AWS CloudWatch metrics.
-- Live demo: [bahuan-greencart.vercel.app](https://bahuan-greencart.vercel.app/)
-
-### Cloud & DevOps
-
-### [AWS Accelerator Cloud Platform](https://github.com/huynhhuan/bahuan-aws-accelerator-p2)
-
-An end-to-end cloud-native platform built through hands-on DevOps challenges:
-
-- Provisioned AWS infrastructure with Terraform.
-- Automated build and deployment workflows with GitHub Actions.
-- Containerized workloads with Docker and deployed to Amazon ECS/Fargate and Kubernetes.
-- Applied GitOps delivery with Argo CD.
-- Added monitoring and visualization with Prometheus and Grafana.
-
-### [Team EKS Platform — Auditability & Cloud Governance](https://github.com/TF4-Phase3-TechX)
-
-Team contribution to the governance of a 27-microservice platform on Amazon EKS:
-
-- Implemented AWS Config with Terraform for continuous configuration tracking.
-- Secured audit evidence with S3 Versioning, replication, Object Lock, and least-privilege IAM.
-- Reviewed infrastructure and access activity with CloudWatch EKS audit logs, CloudTrail, and IAM Access Analyzer.
-- Collaborated through Git branches, pull requests, and code reviews.
-
-## GitHub stats
-
-<div align="center">
-
-<img height="165" src="./profile/stats.svg" alt="Huynh Ba Huan's GitHub stats" />
-<img height="165" src="./profile/top-langs.svg" alt="Most used languages" />
-
-</div>
-
-## Current focus
-
-- Building maintainable backend services and full-stack web applications.
-- Designing reproducible AWS environments with Infrastructure as Code.
-- Improving deployment safety with containers, CI/CD, Kubernetes, and GitOps.
-- Strengthening application security, observability, and cloud operations.
-
-<div align="center">
-
-### From code to cloud 🚀
-
-</div>
