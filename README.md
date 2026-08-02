@@ -37,4 +37,4 @@ I connect application engineering with the systems that deliver and operate it.
 
 ## GitHub Contribution Graph
 
-<img src="./profile/aws-contribution-graph.svg" width="100%" alt="Animated GitHub contribution graph assembling into the AWS logo" />
+<img src="./profile/aws-contribution-graph.svg?v=a754f39" width="100%" alt="Animated GitHub contribution graph assembling into the AWS logo" />
