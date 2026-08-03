@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -52,6 +53,7 @@ def format_ict(value: str) -> str:
 
 def markdown_text(value: str, limit: int = 86) -> str:
     compact = " ".join(value.split())
+    compact = re.sub(r"https?://\S+", "remote", compact)
     if len(compact) > limit:
         compact = f"{compact[: limit - 1].rstrip()}…"
     return compact.replace("|", "\\|")
