@@ -52,6 +52,7 @@
         stroke:#8C959F;
         stroke-opacity:.09;
         stroke-width:1;
+        opacity:.62;
         shape-rendering:geometricPrecision;
       }
       .header-rule { stroke:#8C959F; stroke-opacity:.22; }
