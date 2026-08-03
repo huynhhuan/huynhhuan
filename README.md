@@ -22,10 +22,6 @@ I build and operate practical web systems end to end — from application code t
 - ☁️ **Cloud and platform:** AWS infrastructure, Terraform, containers, Kubernetes, CI/CD, and GitOps.
 - 🛡️ **Reliability:** Cloud security, observable delivery, and maintainable production workflows.
 
-## ⚙️ CI/CD Pipeline
-
-A GitHub Actions-inspired delivery path from push to production across a 53-week contribution grid.
-
 <img src="./assets/cicd-animation.svg?v=actions8" width="100%" alt="Sequential GitHub Actions CI/CD pipeline aligned to the AWS 53-week by 7-day contribution grid" />
 
 ## 🧰 Language and Tools
@@ -49,9 +45,5 @@ A GitHub Actions-inspired delivery path from push to production across a 53-week
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" width="40" height="40" alt="Prometheus" title="Prometheus" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" width="40" height="40" alt="Grafana" title="Grafana" />
 </p>
-
-## ☁️ AWS Contribution Graph
-
-GitHub contribution cells assemble into the AWS wordmark while a delivery signal moves from code to operations.
 
 <img src="./profile/aws-contribution-graph.svg?v=a754f39" width="100%" alt="Animated GitHub contribution graph assembling into the AWS logo" />
