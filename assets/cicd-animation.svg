@@ -1,0 +1,542 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="250" viewBox="0 0 960 250" role="img" aria-labelledby="title desc">
+  <title id="title">GitHub Actions CI/CD pipeline animation</title>
+  <desc id="desc">A push to main triggers a sequential GitHub Actions workflow: Checkout, Setup, Install, Test, Build, Scan, and Deploy, ending in a successful production deployment.</desc>
+  <defs>
+    <pattern id="contrib-grid" width="15" height="15" patternUnits="userSpaceOnUse">
+      <rect width="9" height="9" rx="2.2" fill="#8C959F" fill-opacity=".11"/>
+    </pattern>
+    <linearGradient id="grid-fade" x1="0" x2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".08"/>
+      <stop offset=".12" stop-color="#fff" stop-opacity=".68"/>
+      <stop offset=".5" stop-color="#fff"/>
+      <stop offset=".88" stop-color="#fff" stop-opacity=".68"/>
+      <stop offset="1" stop-color="#fff" stop-opacity=".08"/>
+    </linearGradient>
+    <mask id="grid-mask"><rect width="960" height="250" fill="url(#grid-fade)"/></mask>
+    <filter id="soft-glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="2.6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    
+    <symbol id="icon-checkout" viewBox="0 0 24 24">
+      <path d="M12 3v12m0 0-4-4m4 4 4-4M5 19h14"/>
+    </symbol>
+    <symbol id="icon-setup" viewBox="0 0 24 24">
+      <path d="M12 3l2 2.2 3-.4.8 2.9 2.7 1.4-1.3 2.7 1.3 2.7-2.7 1.4-.8 2.9-3-.4-2 2.2-2-2.2-3 .4-.8-2.9-2.7-1.4 1.3-2.7-1.3-2.7 2.7-1.4.8-2.9 3 .4L12 3Z"/>
+      <circle cx="12" cy="12" r="3"/>
+    </symbol>
+    <symbol id="icon-install" viewBox="0 0 24 24">
+      <path d="m4 7 8-4 8 4-8 4-8-4Zm0 0v10l8 4 8-4V7M12 11v10"/>
+      <path d="M8 5l8 4"/>
+    </symbol>
+    <symbol id="icon-test" viewBox="0 0 24 24">
+      <path d="M9 3h6m-5 0v6l-5 9a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9V3M8 15h8"/>
+    </symbol>
+    <symbol id="icon-build" viewBox="0 0 24 24">
+      <path d="m5 7 7-4 7 4v10l-7 4-7-4V7Zm0 0 7 4 7-4M12 11v10"/>
+    </symbol>
+    <symbol id="icon-scan" viewBox="0 0 24 24">
+      <path d="M12 3l7 3v5c0 4.7-2.8 8-7 10-4.2-2-7-5.3-7-10V6l7-3Z"/>
+      <path d="m9 12 2 2 4-5"/>
+    </symbol>
+    <symbol id="icon-deploy" viewBox="0 0 24 24">
+      <path d="M14 5c2.5-2.5 5.5-2 5.5-2s.5 3-2 5.5L13 13l-4-4 5-4Z"/>
+      <path d="m9 9-4 1-2 3 6 2 2 6 3-2 1-4M7 17l-3 3"/>
+      <circle cx="16" cy="6.5" r="1.3"/>
+    </symbol>
+    <style>
+      .meta,.job-label,.step-label,.duration,.trigger-text,.run-state,.result-title,.result-sub {
+        font-family:'Fira Code','JetBrains Mono',Consolas,monospace;
+      }
+      .grid { mask:url(#grid-mask); }
+      .header-rule { stroke:#8C959F; stroke-opacity:.22; }
+      .meta { fill:#8C959F; font-size:10px; font-weight:700; letter-spacing:1.25px; }
+      .job-label { fill:#8C959F; font-size:9px; font-weight:700; letter-spacing:1px; }
+      .run-dot { fill:#2F81F7; transform-box:fill-box; transform-origin:center; animation:run-dot 16s ease-in-out infinite; }
+      @keyframes run-dot {
+        0%,3%,100% { opacity:.3; transform:scale(.7); }
+        6%,86% { opacity:1; transform:scale(1); }
+        90%,94% { opacity:.55; transform:scale(.8); }
+      }
+      .state-queued { animation:queued 16s ease-in-out infinite; }
+      .state-running { animation:run-label 16s ease-in-out infinite; }
+      .state-complete { fill:#3FB950; animation:complete 16s ease-in-out infinite; }
+      @keyframes queued { 0%,4%{opacity:1} 7%,100%{opacity:0} }
+      @keyframes run-label { 0%,4%{opacity:0} 7%,83%{opacity:1} 85%,100%{opacity:0} }
+      @keyframes complete { 0%,86%{opacity:0} 88%,95%{opacity:1} 99%,100%{opacity:0} }
+      .trigger { color:#2F81F7; animation:trigger 16s cubic-bezier(.2,.8,.2,1) infinite; }
+      .trigger-box { fill:currentColor; fill-opacity:.1; stroke:currentColor; stroke-width:1.3; }
+      .trigger-text { fill:currentColor; font-size:9px; font-weight:800; text-anchor:middle; }
+      @keyframes trigger {
+        0%,1% { color:#8C959F; opacity:.55; transform:scale(.94); }
+        3%,94% { color:#2F81F7; opacity:1; transform:scale(1); }
+        98%,100% { color:#8C959F; opacity:.45; transform:scale(.96); }
+      }
+      .rail { fill:none; stroke:#8C959F; stroke-opacity:.24; stroke-width:2; stroke-linecap:round; }
+      .edge { fill:none; stroke:#3FB950; stroke-width:2.4; stroke-linecap:round; stroke-dasharray:1; stroke-dashoffset:1; filter:url(#soft-glow); }
+      .step { color:#8C959F; transform-box:fill-box; transform-origin:center; }
+      .node { fill:currentColor; fill-opacity:.09; stroke:currentColor; stroke-width:1.5; }
+      .icon { fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; transform-box:fill-box; transform-origin:center; }
+      .runner { fill:none; stroke:currentColor; stroke-width:2.5; stroke-linecap:round; stroke-dasharray:22 198; transform-box:fill-box; transform-origin:center; }
+      .status-disc { fill:#0D1117; stroke:currentColor; stroke-width:1.3; }
+      .status-check { fill:none; stroke:#3FB950; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:1; stroke-dashoffset:1; transform-box:fill-box; transform-origin:center; }
+      .step-label { fill:currentColor; font-size:9px; font-weight:800; letter-spacing:1px; text-anchor:middle; }
+      .duration { fill:currentColor; font-size:8px; font-weight:650; text-anchor:middle; transform-box:fill-box; transform-origin:center; }
+      
+      .step-checkout { animation:step-checkout 16s cubic-bezier(.18,.84,.22,1) infinite both; }
+      .step-checkout .runner { animation:runner-checkout 16s linear infinite both; }
+      .step-checkout .status-check { animation:check-checkout 16s cubic-bezier(.18,.86,.22,1) infinite both; }
+      .step-checkout .duration { animation:duration-checkout 16s ease-in-out infinite both; }
+      .step-checkout .icon { animation:icon-checkout 16s cubic-bezier(.18,.84,.22,1) infinite both; }
+      @keyframes step-checkout {
+        0%,5% { color:#8C959F; opacity:.68; transform:translateY(0) scale(1); filter:none; }
+        6% { color:#2F81F7; opacity:1; transform:translateY(1px) scale(.96); filter:none; }
+        8% { color:#2F81F7; opacity:1; transform:translateY(-1px) scale(1.035); filter:drop-shadow(0 0 5px #2F81F766); }
+        13% { color:#2F81F7; opacity:1; transform:translateY(0) scale(1); filter:drop-shadow(0 0 6px #2F81F744); }
+        15% { color:#3FB950; opacity:1; transform:scale(1.07); filter:drop-shadow(0 0 7px #3FB95055); }
+        18%,94% { color:#3FB950; opacity:1; transform:scale(1); filter:drop-shadow(0 0 2px #3FB95022); }
+        98%,100% { color:#8C959F; opacity:.48; transform:translateY(1px) scale(.98); filter:none; }
+      }
+      @keyframes runner-checkout {
+        0%,5% { opacity:0; stroke-dashoffset:0; transform:rotate(-90deg); }
+        6% { opacity:1; stroke-dashoffset:0; transform:rotate(-90deg); }
+        13% { opacity:1; stroke-dashoffset:-160; transform:rotate(250deg); }
+        15%,100% { opacity:0; stroke-dashoffset:-190; transform:rotate(290deg); }
+      }
+      @keyframes check-checkout {
+        0%,14% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
+        15% { opacity:1; stroke-dashoffset:0; transform:scale(1.18); }
+        18%,94% { opacity:1; stroke-dashoffset:0; transform:scale(1); }
+        98%,100% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
+      }
+      @keyframes duration-checkout {
+        0%,14% { opacity:0; transform:translateY(2px); }
+        18%,94% { opacity:.72; transform:translateY(0); }
+        98%,100% { opacity:0; transform:translateY(1px); }
+      }
+      @keyframes icon-checkout {
+        0%,5% { transform:none; }
+        8% { transform:translateY(-2px); }
+        13% { transform:none; }
+        100% { transform:none; }
+      }
+
+      .step-setup { animation:step-setup 16s cubic-bezier(.22,.76,.16,1) infinite both; }
+      .step-setup .runner { animation:runner-setup 16s linear infinite both; }
+      .step-setup .status-check { animation:check-setup 16s cubic-bezier(.18,.86,.22,1) infinite both; }
+      .step-setup .duration { animation:duration-setup 16s ease-in-out infinite both; }
+      .step-setup .icon { animation:icon-setup 16s cubic-bezier(.22,.76,.16,1) infinite both; }
+      @keyframes step-setup {
+        0%,15% { color:#8C959F; opacity:.68; transform:translateY(0) scale(1); filter:none; }
+        16% { color:#2F81F7; opacity:1; transform:translateY(1px) scale(.96); filter:none; }
+        18% { color:#2F81F7; opacity:1; transform:translateY(-1px) scale(1.035); filter:drop-shadow(0 0 5px #2F81F766); }
+        24% { color:#2F81F7; opacity:1; transform:translateY(0) scale(1); filter:drop-shadow(0 0 6px #2F81F744); }
+        26% { color:#3FB950; opacity:1; transform:scale(1.07); filter:drop-shadow(0 0 7px #3FB95055); }
+        29%,94% { color:#3FB950; opacity:1; transform:scale(1); filter:drop-shadow(0 0 2px #3FB95022); }
+        98%,100% { color:#8C959F; opacity:.48; transform:translateY(1px) scale(.98); filter:none; }
+      }
+      @keyframes runner-setup {
+        0%,15% { opacity:0; stroke-dashoffset:0; transform:rotate(-90deg); }
+        16% { opacity:1; stroke-dashoffset:0; transform:rotate(-90deg); }
+        24% { opacity:1; stroke-dashoffset:-160; transform:rotate(250deg); }
+        26%,100% { opacity:0; stroke-dashoffset:-190; transform:rotate(290deg); }
+      }
+      @keyframes check-setup {
+        0%,25% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
+        26% { opacity:1; stroke-dashoffset:0; transform:scale(1.18); }
+        29%,94% { opacity:1; stroke-dashoffset:0; transform:scale(1); }
+        98%,100% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
+      }
+      @keyframes duration-setup {
+        0%,25% { opacity:0; transform:translateY(2px); }
+        29%,94% { opacity:.72; transform:translateY(0); }
+        98%,100% { opacity:0; transform:translateY(1px); }
+      }
+      @keyframes icon-setup {
+        0%,15% { transform:none; }
+        18% { transform:rotate(24deg); }
+        24% { transform:none; }
+        100% { transform:none; }
+      }
+
+      .step-install { animation:step-install 16s cubic-bezier(.16,.88,.28,1) infinite both; }
+      .step-install .runner { animation:runner-install 16s linear infinite both; }
+      .step-install .status-check { animation:check-install 16s cubic-bezier(.18,.86,.22,1) infinite both; }
+      .step-install .duration { animation:duration-install 16s ease-in-out infinite both; }
+      .step-install .icon { animation:icon-install 16s cubic-bezier(.16,.88,.28,1) infinite both; }
+      @keyframes step-install {
+        0%,26% { color:#8C959F; opacity:.68; transform:translateY(0) scale(1); filter:none; }
+        27% { color:#2F81F7; opacity:1; transform:translateY(1px) scale(.96); filter:none; }
+        29% { color:#2F81F7; opacity:1; transform:translateY(-1px) scale(1.035); filter:drop-shadow(0 0 5px #2F81F766); }
+        36% { color:#2F81F7; opacity:1; transform:translateY(0) scale(1); filter:drop-shadow(0 0 6px #2F81F744); }
+        38% { color:#3FB950; opacity:1; transform:scale(1.07); filter:drop-shadow(0 0 7px #3FB95055); }
+        41%,94% { color:#3FB950; opacity:1; transform:scale(1); filter:drop-shadow(0 0 2px #3FB95022); }
+        98%,100% { color:#8C959F; opacity:.48; transform:translateY(1px) scale(.98); filter:none; }
+      }
+      @keyframes runner-install {
+        0%,26% { opacity:0; stroke-dashoffset:0; transform:rotate(-90deg); }
+        27% { opacity:1; stroke-dashoffset:0; transform:rotate(-90deg); }
+        36% { opacity:1; stroke-dashoffset:-160; transform:rotate(250deg); }
+        38%,100% { opacity:0; stroke-dashoffset:-190; transform:rotate(290deg); }
+      }
+      @keyframes check-install {
+        0%,37% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
+        38% { opacity:1; stroke-dashoffset:0; transform:scale(1.18); }
+        41%,94% { opacity:1; stroke-dashoffset:0; transform:scale(1); }
+        98%,100% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
+      }
+      @keyframes duration-install {
+        0%,37% { opacity:0; transform:translateY(2px); }
+        41%,94% { opacity:.72; transform:translateY(0); }
+        98%,100% { opacity:0; transform:translateY(1px); }
+      }
+      @keyframes icon-install {
+        0%,26% { transform:none; }
+        29% { transform:scale(.9); }
+        36% { transform:none; }
+        100% { transform:none; }
+      }
+
+      .step-test { animation:step-test 16s cubic-bezier(.2,.74,.18,1) infinite both; }
+      .step-test .runner { animation:runner-test 16s linear infinite both; }
+      .step-test .status-check { animation:check-test 16s cubic-bezier(.18,.86,.22,1) infinite both; }
+      .step-test .duration { animation:duration-test 16s ease-in-out infinite both; }
+      .step-test .icon { animation:icon-test 16s cubic-bezier(.2,.74,.18,1) infinite both; }
+      @keyframes step-test {
+        0%,38% { color:#8C959F; opacity:.68; transform:translateY(0) scale(1); filter:none; }
+        39% { color:#2F81F7; opacity:1; transform:translateY(1px) scale(.96); filter:none; }
+        41% { color:#2F81F7; opacity:1; transform:translateY(-1px) scale(1.035); filter:drop-shadow(0 0 5px #2F81F766); }
+        49% { color:#2F81F7; opacity:1; transform:translateY(0) scale(1); filter:drop-shadow(0 0 6px #2F81F744); }
+        51% { color:#3FB950; opacity:1; transform:scale(1.07); filter:drop-shadow(0 0 7px #3FB95055); }
+        54%,94% { color:#3FB950; opacity:1; transform:scale(1); filter:drop-shadow(0 0 2px #3FB95022); }
+        98%,100% { color:#8C959F; opacity:.48; transform:translateY(1px) scale(.98); filter:none; }
+      }
+      @keyframes runner-test {
+        0%,38% { opacity:0; stroke-dashoffset:0; transform:rotate(-90deg); }
+        39% { opacity:1; stroke-dashoffset:0; transform:rotate(-90deg); }
+        49% { opacity:1; stroke-dashoffset:-160; transform:rotate(250deg); }
+        51%,100% { opacity:0; stroke-dashoffset:-190; transform:rotate(290deg); }
+      }
+      @keyframes check-test {
+        0%,50% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
+        51% { opacity:1; stroke-dashoffset:0; transform:scale(1.18); }
+        54%,94% { opacity:1; stroke-dashoffset:0; transform:scale(1); }
+        98%,100% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
+      }
+      @keyframes duration-test {
+        0%,50% { opacity:0; transform:translateY(2px); }
+        54%,94% { opacity:.72; transform:translateY(0); }
+        98%,100% { opacity:0; transform:translateY(1px); }
+      }
+      @keyframes icon-test {
+        0%,38% { transform:none; }
+        41% { transform:translateY(-2px) rotate(-2deg); }
+        49% { transform:none; }
+        100% { transform:none; }
+      }
+
+      .step-build { animation:step-build 16s cubic-bezier(.24,.8,.2,1) infinite both; }
+      .step-build .runner { animation:runner-build 16s linear infinite both; }
+      .step-build .status-check { animation:check-build 16s cubic-bezier(.18,.86,.22,1) infinite both; }
+      .step-build .duration { animation:duration-build 16s ease-in-out infinite both; }
+      .step-build .icon { animation:icon-build 16s cubic-bezier(.24,.8,.2,1) infinite both; }
+      @keyframes step-build {
+        0%,51% { color:#8C959F; opacity:.68; transform:translateY(0) scale(1); filter:none; }
+        52% { color:#2F81F7; opacity:1; transform:translateY(1px) scale(.96); filter:none; }
+        54% { color:#2F81F7; opacity:1; transform:translateY(-1px) scale(1.035); filter:drop-shadow(0 0 5px #2F81F766); }
+        61% { color:#2F81F7; opacity:1; transform:translateY(0) scale(1); filter:drop-shadow(0 0 6px #2F81F744); }
+        63% { color:#3FB950; opacity:1; transform:scale(1.07); filter:drop-shadow(0 0 7px #3FB95055); }
+        66%,94% { color:#3FB950; opacity:1; transform:scale(1); filter:drop-shadow(0 0 2px #3FB95022); }
+        98%,100% { color:#8C959F; opacity:.48; transform:translateY(1px) scale(.98); filter:none; }
+      }
+      @keyframes runner-build {
+        0%,51% { opacity:0; stroke-dashoffset:0; transform:rotate(-90deg); }
+        52% { opacity:1; stroke-dashoffset:0; transform:rotate(-90deg); }
+        61% { opacity:1; stroke-dashoffset:-160; transform:rotate(250deg); }
+        63%,100% { opacity:0; stroke-dashoffset:-190; transform:rotate(290deg); }
+      }
+      @keyframes check-build {
+        0%,62% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
+        63% { opacity:1; stroke-dashoffset:0; transform:scale(1.18); }
+        66%,94% { opacity:1; stroke-dashoffset:0; transform:scale(1); }
+        98%,100% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
+      }
+      @keyframes duration-build {
+        0%,62% { opacity:0; transform:translateY(2px); }
+        66%,94% { opacity:.72; transform:translateY(0); }
+        98%,100% { opacity:0; transform:translateY(1px); }
+      }
+      @keyframes icon-build {
+        0%,51% { transform:none; }
+        54% { transform:rotate(6deg) scale(.96); }
+        61% { transform:none; }
+        100% { transform:none; }
+      }
+
+      .step-scan { animation:step-scan 16s cubic-bezier(.17,.86,.24,1) infinite both; }
+      .step-scan .runner { animation:runner-scan 16s linear infinite both; }
+      .step-scan .status-check { animation:check-scan 16s cubic-bezier(.18,.86,.22,1) infinite both; }
+      .step-scan .duration { animation:duration-scan 16s ease-in-out infinite both; }
+      .step-scan .icon { animation:icon-scan 16s cubic-bezier(.17,.86,.24,1) infinite both; }
+      @keyframes step-scan {
+        0%,63% { color:#8C959F; opacity:.68; transform:translateY(0) scale(1); filter:none; }
+        64% { color:#2F81F7; opacity:1; transform:translateY(1px) scale(.96); filter:none; }
+        66% { color:#2F81F7; opacity:1; transform:translateY(-1px) scale(1.035); filter:drop-shadow(0 0 5px #2F81F766); }
+        73% { color:#2F81F7; opacity:1; transform:translateY(0) scale(1); filter:drop-shadow(0 0 6px #2F81F744); }
+        75% { color:#3FB950; opacity:1; transform:scale(1.07); filter:drop-shadow(0 0 7px #3FB95055); }
+        78%,94% { color:#3FB950; opacity:1; transform:scale(1); filter:drop-shadow(0 0 2px #3FB95022); }
+        98%,100% { color:#8C959F; opacity:.48; transform:translateY(1px) scale(.98); filter:none; }
+      }
+      @keyframes runner-scan {
+        0%,63% { opacity:0; stroke-dashoffset:0; transform:rotate(-90deg); }
+        64% { opacity:1; stroke-dashoffset:0; transform:rotate(-90deg); }
+        73% { opacity:1; stroke-dashoffset:-160; transform:rotate(250deg); }
+        75%,100% { opacity:0; stroke-dashoffset:-190; transform:rotate(290deg); }
+      }
+      @keyframes check-scan {
+        0%,74% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
+        75% { opacity:1; stroke-dashoffset:0; transform:scale(1.18); }
+        78%,94% { opacity:1; stroke-dashoffset:0; transform:scale(1); }
+        98%,100% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
+      }
+      @keyframes duration-scan {
+        0%,74% { opacity:0; transform:translateY(2px); }
+        78%,94% { opacity:.72; transform:translateY(0); }
+        98%,100% { opacity:0; transform:translateY(1px); }
+      }
+      @keyframes icon-scan {
+        0%,63% { transform:none; }
+        66% { transform:scale(1.04); }
+        73% { transform:none; }
+        100% { transform:none; }
+      }
+
+      .step-deploy { animation:step-deploy 16s cubic-bezier(.14,.9,.24,1) infinite both; }
+      .step-deploy .runner { animation:runner-deploy 16s linear infinite both; }
+      .step-deploy .status-check { animation:check-deploy 16s cubic-bezier(.18,.86,.22,1) infinite both; }
+      .step-deploy .duration { animation:duration-deploy 16s ease-in-out infinite both; }
+      .step-deploy .icon { animation:icon-deploy 16s cubic-bezier(.14,.9,.24,1) infinite both; }
+      @keyframes step-deploy {
+        0%,75% { color:#8C959F; opacity:.68; transform:translateY(0) scale(1); filter:none; }
+        76% { color:#2F81F7; opacity:1; transform:translateY(1px) scale(.96); filter:none; }
+        78% { color:#2F81F7; opacity:1; transform:translateY(-1px) scale(1.035); filter:drop-shadow(0 0 5px #2F81F766); }
+        86% { color:#2F81F7; opacity:1; transform:translateY(0) scale(1); filter:drop-shadow(0 0 6px #2F81F744); }
+        88% { color:#3FB950; opacity:1; transform:scale(1.07); filter:drop-shadow(0 0 7px #3FB95055); }
+        91%,94% { color:#3FB950; opacity:1; transform:scale(1); filter:drop-shadow(0 0 2px #3FB95022); }
+        98%,100% { color:#8C959F; opacity:.48; transform:translateY(1px) scale(.98); filter:none; }
+      }
+      @keyframes runner-deploy {
+        0%,75% { opacity:0; stroke-dashoffset:0; transform:rotate(-90deg); }
+        76% { opacity:1; stroke-dashoffset:0; transform:rotate(-90deg); }
+        86% { opacity:1; stroke-dashoffset:-160; transform:rotate(250deg); }
+        88%,100% { opacity:0; stroke-dashoffset:-190; transform:rotate(290deg); }
+      }
+      @keyframes check-deploy {
+        0%,87% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
+        88% { opacity:1; stroke-dashoffset:0; transform:scale(1.18); }
+        91%,94% { opacity:1; stroke-dashoffset:0; transform:scale(1); }
+        98%,100% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
+      }
+      @keyframes duration-deploy {
+        0%,87% { opacity:0; transform:translateY(2px); }
+        91%,94% { opacity:.72; transform:translateY(0); }
+        98%,100% { opacity:0; transform:translateY(1px); }
+      }
+      @keyframes icon-deploy {
+        0%,75% { transform:none; }
+        78% { transform:translateY(-4px) rotate(2deg); }
+        86% { transform:none; }
+        100% { transform:none; }
+      }
+      
+      .edge-trigger { animation:edge-trigger 16s cubic-bezier(.22,.72,.18,1) infinite both; }
+      @keyframes edge-trigger {
+        0%,3% { opacity:0; stroke-dashoffset:1; }
+        6%,94% { opacity:1; stroke-dashoffset:0; }
+        98%,100% { opacity:0; stroke-dashoffset:1; }
+      }
+
+      .edge-checkout-setup { animation:edge-checkout-setup 16s cubic-bezier(.22,.72,.18,1) infinite both; }
+      @keyframes edge-checkout-setup {
+        0%,13% { opacity:0; stroke-dashoffset:1; }
+        16%,94% { opacity:1; stroke-dashoffset:0; }
+        98%,100% { opacity:0; stroke-dashoffset:1; }
+      }
+
+      .edge-setup-install { animation:edge-setup-install 16s cubic-bezier(.22,.72,.18,1) infinite both; }
+      @keyframes edge-setup-install {
+        0%,24% { opacity:0; stroke-dashoffset:1; }
+        27%,94% { opacity:1; stroke-dashoffset:0; }
+        98%,100% { opacity:0; stroke-dashoffset:1; }
+      }
+
+      .edge-install-test { animation:edge-install-test 16s cubic-bezier(.22,.72,.18,1) infinite both; }
+      @keyframes edge-install-test {
+        0%,36% { opacity:0; stroke-dashoffset:1; }
+        39%,94% { opacity:1; stroke-dashoffset:0; }
+        98%,100% { opacity:0; stroke-dashoffset:1; }
+      }
+
+      .edge-test-build { animation:edge-test-build 16s cubic-bezier(.22,.72,.18,1) infinite both; }
+      @keyframes edge-test-build {
+        0%,49% { opacity:0; stroke-dashoffset:1; }
+        52%,94% { opacity:1; stroke-dashoffset:0; }
+        98%,100% { opacity:0; stroke-dashoffset:1; }
+      }
+
+      .edge-build-scan { animation:edge-build-scan 16s cubic-bezier(.22,.72,.18,1) infinite both; }
+      @keyframes edge-build-scan {
+        0%,61% { opacity:0; stroke-dashoffset:1; }
+        64%,94% { opacity:1; stroke-dashoffset:0; }
+        98%,100% { opacity:0; stroke-dashoffset:1; }
+      }
+
+      .edge-scan-deploy { animation:edge-scan-deploy 16s cubic-bezier(.22,.72,.18,1) infinite both; }
+      @keyframes edge-scan-deploy {
+        0%,73% { opacity:0; stroke-dashoffset:1; }
+        76%,94% { opacity:1; stroke-dashoffset:0; }
+        98%,100% { opacity:0; stroke-dashoffset:1; }
+      }
+      .scan-line { stroke:#2F81F7; stroke-width:1.5; stroke-linecap:round; opacity:0; animation:scan-line 16s ease-in-out infinite; }
+      @keyframes scan-line {
+        0%,63% { opacity:0; transform:translateY(-10px); }
+        65% { opacity:.95; transform:translateY(-9px); }
+        72% { opacity:.95; transform:translateY(10px); }
+        74%,100% { opacity:0; transform:translateY(10px); }
+      }
+      .result { transform-box:fill-box; transform-origin:center; animation:result 16s cubic-bezier(.18,.86,.22,1) infinite both; }
+      @keyframes result {
+        0%,87% { opacity:0; transform:translateY(5px) scale(.98); }
+        89% { opacity:1; transform:translateY(-1px) scale(1.02); }
+        91%,95% { opacity:1; transform:translateY(0) scale(1); }
+        99%,100% { opacity:0; transform:translateY(3px) scale(.99); }
+      }
+      .result-pill { fill:#3FB950; fill-opacity:.1; stroke:#3FB950; stroke-opacity:.45; }
+      .result-check { fill:#3FB950; }
+      .result-title { fill:#238636; font-size:11px; font-weight:800; letter-spacing:.9px; }
+      .result-sub { fill:#8C959F; font-size:8px; font-weight:600; letter-spacing:.35px; }
+      .failed { color:#F85149; }
+      @media (prefers-color-scheme:dark) {
+        .meta,.job-label,.result-sub { fill:#9DA7B3; }
+        .header-rule { stroke-opacity:.3; }
+        .status-disc { fill:#0D1117; }
+        .result-title { fill:#56D364; }
+      }
+    </style>
+  </defs>
+
+  <rect class="grid" x="15" y="54" width="930" height="144" fill="url(#contrib-grid)"/>
+
+  <text class="meta" x="20" y="22">CI / .github/workflows/deploy.yml</text>
+  <line class="header-rule" x1="282" y1="18" x2="690" y2="18"/>
+  <circle class="run-dot" cx="713" cy="18" r="3.2"/>
+  <g class="run-state">
+    <text class="meta state-queued" x="940" y="22" text-anchor="end">QUEUED / RUN #204</text>
+    <text class="meta state-running" x="940" y="22" text-anchor="end">IN PROGRESS / RUN #204</text>
+    <text class="meta state-complete" x="940" y="22" text-anchor="end">COMPLETED / RUN #204</text>
+  </g>
+  <text class="job-label" x="20" y="52">JOB: BUILD-AND-DEPLOY Â· UBUNTU-LATEST</text>
+
+  <g class="trigger" aria-label="Push to main trigger">
+    <rect class="trigger-box" x="12" y="108" width="51" height="26" rx="13"/>
+    <text class="trigger-text" x="37.5" y="125">PUSH</text>
+  </g>
+
+  <g aria-label="Sequential workflow connections">
+    <path class="rail" d="M63 121 H67"/>
+    <path class="rail" d="M123 121 H197"/>
+    <path class="rail" d="M253 121 H327"/>
+    <path class="rail" d="M383 121 H457"/>
+    <path class="rail" d="M513 121 H587"/>
+    <path class="rail" d="M643 121 H717"/>
+    <path class="rail" d="M773 121 H847"/>
+    <path class="edge edge-trigger" pathLength="1" d="M63 121 H67"/>
+    <path class="edge edge-checkout-setup" pathLength="1" d="M123 121 H197"/>
+    <path class="edge edge-setup-install" pathLength="1" d="M253 121 H327"/>
+    <path class="edge edge-install-test" pathLength="1" d="M383 121 H457"/>
+    <path class="edge edge-test-build" pathLength="1" d="M513 121 H587"/>
+    <path class="edge edge-build-scan" pathLength="1" d="M643 121 H717"/>
+    <path class="edge edge-scan-deploy" pathLength="1" d="M773 121 H847"/>
+  </g>
+
+  
+    <g class="step step-checkout" aria-label="CHECKOUT">
+      <circle class="runner" cx="95" cy="121" r="35"/>
+      <rect class="node" x="67" y="93" width="56" height="56" rx="11"/>
+      <use class="icon" href="#icon-checkout" x="83" y="109" width="24" height="24"/>
+      <circle class="status-disc" cx="118" cy="98" r="8.5"/>
+      <path class="status-check" pathLength="1" d="M114 98l2.7 2.8 5.2-6.1"/>
+      <text class="step-label" x="95" y="174">CHECKOUT</text>
+      <text class="duration" x="95" y="187">1s</text>
+    </g>
+
+    <g class="step step-setup" aria-label="SETUP">
+      <circle class="runner" cx="225" cy="121" r="35"/>
+      <rect class="node" x="197" y="93" width="56" height="56" rx="11"/>
+      <use class="icon" href="#icon-setup" x="213" y="109" width="24" height="24"/>
+      <circle class="status-disc" cx="248" cy="98" r="8.5"/>
+      <path class="status-check" pathLength="1" d="M244 98l2.7 2.8 5.2-6.1"/>
+      <text class="step-label" x="225" y="174">SETUP</text>
+      <text class="duration" x="225" y="187">2s</text>
+    </g>
+
+    <g class="step step-install" aria-label="INSTALL">
+      <circle class="runner" cx="355" cy="121" r="35"/>
+      <rect class="node" x="327" y="93" width="56" height="56" rx="11"/>
+      <use class="icon" href="#icon-install" x="343" y="109" width="24" height="24"/>
+      <circle class="status-disc" cx="378" cy="98" r="8.5"/>
+      <path class="status-check" pathLength="1" d="M374 98l2.7 2.8 5.2-6.1"/>
+      <text class="step-label" x="355" y="174">INSTALL</text>
+      <text class="duration" x="355" y="187">5s</text>
+    </g>
+
+    <g class="step step-test" aria-label="TEST">
+      <circle class="runner" cx="485" cy="121" r="35"/>
+      <rect class="node" x="457" y="93" width="56" height="56" rx="11"/>
+      <use class="icon" href="#icon-test" x="473" y="109" width="24" height="24"/>
+      <circle class="status-disc" cx="508" cy="98" r="8.5"/>
+      <path class="status-check" pathLength="1" d="M504 98l2.7 2.8 5.2-6.1"/>
+      <text class="step-label" x="485" y="174">TEST</text>
+      <text class="duration" x="485" y="187">8s</text>
+    </g>
+
+    <g class="step step-build" aria-label="BUILD">
+      <circle class="runner" cx="615" cy="121" r="35"/>
+      <rect class="node" x="587" y="93" width="56" height="56" rx="11"/>
+      <use class="icon" href="#icon-build" x="603" y="109" width="24" height="24"/>
+      <circle class="status-disc" cx="638" cy="98" r="8.5"/>
+      <path class="status-check" pathLength="1" d="M634 98l2.7 2.8 5.2-6.1"/>
+      <text class="step-label" x="615" y="174">BUILD</text>
+      <text class="duration" x="615" y="187">7s</text>
+    </g>
+
+    <g class="step step-scan" aria-label="SCAN">
+      <circle class="runner" cx="745" cy="121" r="35"/>
+      <rect class="node" x="717" y="93" width="56" height="56" rx="11"/>
+      <use class="icon" href="#icon-scan" x="733" y="109" width="24" height="24"/>
+      <circle class="status-disc" cx="768" cy="98" r="8.5"/>
+      <path class="status-check" pathLength="1" d="M764 98l2.7 2.8 5.2-6.1"/>
+      <text class="step-label" x="745" y="174">SCAN</text>
+      <text class="duration" x="745" y="187">6s</text>
+    </g>
+
+    <g class="step step-deploy" aria-label="DEPLOY">
+      <circle class="runner" cx="875" cy="121" r="35"/>
+      <rect class="node" x="847" y="93" width="56" height="56" rx="11"/>
+      <use class="icon" href="#icon-deploy" x="863" y="109" width="24" height="24"/>
+      <circle class="status-disc" cx="898" cy="98" r="8.5"/>
+      <path class="status-check" pathLength="1" d="M894 98l2.7 2.8 5.2-6.1"/>
+      <text class="step-label" x="875" y="174">DEPLOY</text>
+      <text class="duration" x="875" y="187">13s</text>
+    </g>
+
+  <line class="scan-line" x1="727" y1="121" x2="763" y2="121"/>
+
+  <g class="result" aria-label="Workflow completed successfully">
+    <rect class="result-pill" x="254" y="207" width="452" height="31" rx="15.5"/>
+    <circle class="result-check" cx="276" cy="222.5" r="8.5"/>
+    <path d="m272 222.5 2.7 2.8 5.4-6.3" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text class="result-title" x="294" y="220">BUILD-AND-DEPLOY COMPLETED</text>
+    <text class="result-sub" x="294" y="231">main@HEAD Â· production Â· completed in 42s</text>
+  </g>
+</svg>

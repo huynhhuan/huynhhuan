@@ -35,6 +35,10 @@ I connect application engineering with the systems that deliver and operate it.
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" width="42" height="42" alt="Grafana" title="Grafana" />
 </p>
 
+## CI/CD Pipeline
+
+<img src="./assets/cicd-animation.svg?v=actions4" width="100%" alt="Sequential GitHub Actions CI/CD pipeline from push to production deployment" />
+
 ## GitHub Contribution Graph
 
 <img src="./profile/aws-contribution-graph.svg?v=a754f39" width="100%" alt="Animated GitHub contribution graph assembling into the AWS logo" />
