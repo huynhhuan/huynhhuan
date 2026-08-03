@@ -37,7 +37,7 @@ I connect application engineering with the systems that deliver and operate it.
 
 ## CI/CD Pipeline
 
-<img src="./assets/cicd-animation.svg?v=actions4" width="100%" alt="Sequential GitHub Actions CI/CD pipeline from push to production deployment" />
+<img src="./assets/cicd-animation.svg?v=actions5" width="100%" alt="Sequential GitHub Actions CI/CD pipeline across a 53-week by 7-day contribution grid" />
 
 ## GitHub Contribution Graph
 

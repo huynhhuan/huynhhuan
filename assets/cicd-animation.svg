@@ -1,18 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="250" viewBox="0 0 960 250" role="img" aria-labelledby="title desc">
   <title id="title">GitHub Actions CI/CD pipeline animation</title>
-  <desc id="desc">A push to main triggers a sequential GitHub Actions workflow: Checkout, Setup, Install, Test, Build, Scan, and Deploy, ending in a successful production deployment.</desc>
+  <desc id="desc">A push to main triggers a sequential GitHub Actions workflow across an exact GitHub contribution calendar of fifty-three weeks by seven days: Checkout, Setup, Install, Test, Build, Scan, and Deploy.</desc>
   <defs>
-    <pattern id="contrib-grid" width="15" height="15" patternUnits="userSpaceOnUse">
-      <rect width="9" height="9" rx="2.2" fill="#8C959F" fill-opacity=".11"/>
-    </pattern>
-    <linearGradient id="grid-fade" x1="0" x2="1">
-      <stop offset="0" stop-color="#fff" stop-opacity=".08"/>
-      <stop offset=".12" stop-color="#fff" stop-opacity=".68"/>
-      <stop offset=".5" stop-color="#fff"/>
-      <stop offset=".88" stop-color="#fff" stop-opacity=".68"/>
-      <stop offset="1" stop-color="#fff" stop-opacity=".08"/>
-    </linearGradient>
-    <mask id="grid-mask"><rect width="960" height="250" fill="url(#grid-fade)"/></mask>
+    <g id="contribution-week">
+      <rect y="0" width="11" height="11" rx="2"/>
+      <rect y="15" width="11" height="11" rx="2"/>
+      <rect y="30" width="11" height="11" rx="2"/>
+      <rect y="45" width="11" height="11" rx="2"/>
+      <rect y="60" width="11" height="11" rx="2"/>
+      <rect y="75" width="11" height="11" rx="2"/>
+      <rect y="90" width="11" height="11" rx="2"/>
+    </g>
     <filter id="soft-glow" x="-80%" y="-80%" width="260%" height="260%">
       <feGaussianBlur stdDeviation="2.6" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
@@ -48,7 +46,7 @@
       .meta,.job-label,.step-label,.duration,.trigger-text,.run-state,.result-title,.result-sub {
         font-family:'Fira Code','JetBrains Mono',Consolas,monospace;
       }
-      .grid { mask:url(#grid-mask); }
+      .grid { fill:#8C959F; fill-opacity:.11; }
       .header-rule { stroke:#8C959F; stroke-opacity:.22; }
       .meta { fill:#8C959F; font-size:10px; font-weight:700; letter-spacing:1.25px; }
       .job-label { fill:#8C959F; font-size:9px; font-weight:700; letter-spacing:1px; }
@@ -419,13 +417,68 @@
       @media (prefers-color-scheme:dark) {
         .meta,.job-label,.result-sub { fill:#9DA7B3; }
         .header-rule { stroke-opacity:.3; }
+        .grid { fill-opacity:.15; }
         .status-disc { fill:#0D1117; }
         .result-title { fill:#56D364; }
       }
     </style>
   </defs>
 
-  <rect class="grid" x="15" y="54" width="930" height="144" fill="url(#contrib-grid)"/>
+  <g class="grid" transform="translate(85 71)" aria-label="GitHub contribution grid with 53 weeks and 7 days">
+    <use href="#contribution-week" x="0"/>
+    <use href="#contribution-week" x="15"/>
+    <use href="#contribution-week" x="30"/>
+    <use href="#contribution-week" x="45"/>
+    <use href="#contribution-week" x="60"/>
+    <use href="#contribution-week" x="75"/>
+    <use href="#contribution-week" x="90"/>
+    <use href="#contribution-week" x="105"/>
+    <use href="#contribution-week" x="120"/>
+    <use href="#contribution-week" x="135"/>
+    <use href="#contribution-week" x="150"/>
+    <use href="#contribution-week" x="165"/>
+    <use href="#contribution-week" x="180"/>
+    <use href="#contribution-week" x="195"/>
+    <use href="#contribution-week" x="210"/>
+    <use href="#contribution-week" x="225"/>
+    <use href="#contribution-week" x="240"/>
+    <use href="#contribution-week" x="255"/>
+    <use href="#contribution-week" x="270"/>
+    <use href="#contribution-week" x="285"/>
+    <use href="#contribution-week" x="300"/>
+    <use href="#contribution-week" x="315"/>
+    <use href="#contribution-week" x="330"/>
+    <use href="#contribution-week" x="345"/>
+    <use href="#contribution-week" x="360"/>
+    <use href="#contribution-week" x="375"/>
+    <use href="#contribution-week" x="390"/>
+    <use href="#contribution-week" x="405"/>
+    <use href="#contribution-week" x="420"/>
+    <use href="#contribution-week" x="435"/>
+    <use href="#contribution-week" x="450"/>
+    <use href="#contribution-week" x="465"/>
+    <use href="#contribution-week" x="480"/>
+    <use href="#contribution-week" x="495"/>
+    <use href="#contribution-week" x="510"/>
+    <use href="#contribution-week" x="525"/>
+    <use href="#contribution-week" x="540"/>
+    <use href="#contribution-week" x="555"/>
+    <use href="#contribution-week" x="570"/>
+    <use href="#contribution-week" x="585"/>
+    <use href="#contribution-week" x="600"/>
+    <use href="#contribution-week" x="615"/>
+    <use href="#contribution-week" x="630"/>
+    <use href="#contribution-week" x="645"/>
+    <use href="#contribution-week" x="660"/>
+    <use href="#contribution-week" x="675"/>
+    <use href="#contribution-week" x="690"/>
+    <use href="#contribution-week" x="705"/>
+    <use href="#contribution-week" x="720"/>
+    <use href="#contribution-week" x="735"/>
+    <use href="#contribution-week" x="750"/>
+    <use href="#contribution-week" x="765"/>
+    <use href="#contribution-week" x="780"/>
+  </g>
 
   <text class="meta" x="20" y="22">CI / .github/workflows/deploy.yml</text>
   <line class="header-rule" x1="282" y1="18" x2="690" y2="18"/>
@@ -435,7 +488,7 @@
     <text class="meta state-running" x="940" y="22" text-anchor="end">IN PROGRESS / RUN #204</text>
     <text class="meta state-complete" x="940" y="22" text-anchor="end">COMPLETED / RUN #204</text>
   </g>
-  <text class="job-label" x="20" y="52">JOB: BUILD-AND-DEPLOY Â· UBUNTU-LATEST</text>
+  <text class="job-label" x="20" y="52">JOB: BUILD-AND-DEPLOY Ã‚Â· UBUNTU-LATEST</text>
 
   <g class="trigger" aria-label="Push to main trigger">
     <rect class="trigger-box" x="12" y="108" width="51" height="26" rx="13"/>
@@ -537,6 +590,6 @@
     <circle class="result-check" cx="276" cy="222.5" r="8.5"/>
     <path d="m272 222.5 2.7 2.8 5.4-6.3" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
     <text class="result-title" x="294" y="220">BUILD-AND-DEPLOY COMPLETED</text>
-    <text class="result-sub" x="294" y="231">main@HEAD Â· production Â· completed in 42s</text>
+    <text class="result-sub" x="294" y="231">main@HEAD Ã‚Â· production Ã‚Â· completed in 42s</text>
   </g>
 </svg>
