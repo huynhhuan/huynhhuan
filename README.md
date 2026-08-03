@@ -49,16 +49,20 @@ I build and operate practical web systems end to end — from application code t
 <img src="./profile/aws-contribution-graph.svg?v=a754f39" width="100%" alt="Animated GitHub contribution graph assembling into the AWS logo" />
 
 <details>
-<summary><strong>🔥 More about me — code, cloud &amp; everything between</strong>&nbsp; <img src="https://komarev.com/ghpvc/?username=huynhhuan&amp;label=PROFILE+VIEWS&amp;color=F97316&amp;style=flat-square" alt="Huynh Ba Huan profile views" /></summary>
+<summary><strong>⚡ More about me — live engineering activity</strong></summary>
 <br />
 
-<img src="./profile/about-command-center.svg?v=1" width="100%" alt="Huynh Ba Huan engineering command center connecting application code, CI/CD, cloud infrastructure, and observability" />
+> I enjoy the full engineering path: building the application, automating its delivery, and keeping it reliable in production.
 
-<p align="center"><i>I am most interested in the point where application code becomes a reliable production service.</i></p>
+- 🔭 Building web applications and production-ready AWS infrastructure.
+- 🌱 Deepening Kubernetes, GitOps, observability, and cloud security.
+- 🤝 Open to DevOps, Cloud Operations, and backend engineering opportunities.
+- 📍 Based in Da Nang, Vietnam · UTC+7.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/DevOps%20%26%20Cloud%20Operations-F97316?style=flat-square&amp;logo=amazonwebservices&amp;logoColor=white" alt="DevOps and Cloud Operations" />
-  <img src="https://img.shields.io/badge/Backend%20%26%20Web%20Engineering-EF4444?style=flat-square&amp;logo=codeigniter&amp;logoColor=white" alt="Backend and Web Engineering" />
-  <img src="https://img.shields.io/badge/Open%20to%20Opportunities-C2410C?style=flat-square&amp;logo=github&amp;logoColor=white" alt="Open to opportunities" />
+  <a href="https://github.com/DenverCoder1/github-readme-stats"><img width="49%" src="https://denvercoder1-github-readme-stats.vercel.app/api?username=huynhhuan&amp;show_icons=true&amp;include_all_commits=true&amp;hide_rank=true&amp;hide_border=true&amp;bg_color=00000000&amp;title_color=F97316&amp;text_color=8B949E&amp;icon_color=EF4444&amp;ring_color=F59E0B" alt="Huynh Ba Huan live GitHub statistics" /></a>
+  <a href="https://github.com/DenverCoder1/github-readme-streak-stats"><img width="49%" src="https://streak-stats.demolab.com?user=huynhhuan&amp;hide_border=true&amp;background=00000000&amp;ring=F97316&amp;fire=EF4444&amp;currStreakLabel=F97316&amp;sideLabels=8B949E&amp;dates=8B949E&amp;currStreakNum=F59E0B&amp;sideNums=F59E0B" alt="Huynh Ba Huan live GitHub contribution streak" /></a>
 </p>
+
+<a href="https://github.com/ashutosh00710/github-readme-activity-graph"><img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=huynhhuan&amp;bg_color=00000000&amp;color=8B949E&amp;line=F97316&amp;point=EF4444&amp;area=true&amp;area_color=F59E0B&amp;hide_border=true&amp;custom_title=Contribution%20activity" alt="Huynh Ba Huan live GitHub contribution activity graph" /></a>
 </details>
