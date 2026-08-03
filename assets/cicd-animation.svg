@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="250" viewBox="0 0 960 250" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="823" height="250" viewBox="0 0 823 250" role="img" aria-labelledby="title desc">
   <title id="title">GitHub Actions CI/CD pipeline animation</title>
   <desc id="desc">A push to main triggers a sequential GitHub Actions workflow across an exact GitHub contribution calendar of fifty-three weeks by seven days: Checkout, Setup, Install, Test, Build, Scan, and Deploy.</desc>
   <defs>
@@ -46,7 +46,14 @@
       .meta,.job-label,.step-label,.duration,.trigger-text,.run-state,.result-title,.result-sub {
         font-family:'Fira Code','JetBrains Mono',Consolas,monospace;
       }
-      .grid { fill:#8C959F; fill-opacity:.11; }
+      .grid {
+        fill:#8C959F;
+        fill-opacity:.14;
+        stroke:#8C959F;
+        stroke-opacity:.09;
+        stroke-width:1;
+        shape-rendering:geometricPrecision;
+      }
       .header-rule { stroke:#8C959F; stroke-opacity:.22; }
       .meta { fill:#8C959F; font-size:10px; font-weight:700; letter-spacing:1.25px; }
       .job-label { fill:#8C959F; font-size:9px; font-weight:700; letter-spacing:1px; }
@@ -417,14 +424,14 @@
       @media (prefers-color-scheme:dark) {
         .meta,.job-label,.result-sub { fill:#9DA7B3; }
         .header-rule { stroke-opacity:.3; }
-        .grid { fill-opacity:.15; }
+        .grid { fill-opacity:.18; stroke-opacity:.12; }
         .status-disc { fill:#0D1117; }
         .result-title { fill:#56D364; }
       }
     </style>
   </defs>
 
-  <g class="grid" transform="translate(85 71)" aria-label="GitHub contribution grid with 53 weeks and 7 days">
+  <g class="grid" transform="translate(15 71)" aria-label="GitHub contribution grid with 53 weeks and 7 days">
     <use href="#contribution-week" x="0"/>
     <use href="#contribution-week" x="15"/>
     <use href="#contribution-week" x="30"/>
@@ -480,15 +487,15 @@
     <use href="#contribution-week" x="780"/>
   </g>
 
-  <text class="meta" x="20" y="22">CI / .github/workflows/deploy.yml</text>
-  <line class="header-rule" x1="282" y1="18" x2="690" y2="18"/>
-  <circle class="run-dot" cx="713" cy="18" r="3.2"/>
+  <text class="meta" x="15" y="22">CI / .github/workflows/deploy.yml</text>
+  <line class="header-rule" x1="250" y1="18" x2="565" y2="18"/>
+  <circle class="run-dot" cx="588" cy="18" r="3.2"/>
   <g class="run-state">
-    <text class="meta state-queued" x="940" y="22" text-anchor="end">QUEUED / RUN #204</text>
-    <text class="meta state-running" x="940" y="22" text-anchor="end">IN PROGRESS / RUN #204</text>
-    <text class="meta state-complete" x="940" y="22" text-anchor="end">COMPLETED / RUN #204</text>
+    <text class="meta state-queued" x="808" y="22" text-anchor="end">QUEUED / RUN #204</text>
+    <text class="meta state-running" x="808" y="22" text-anchor="end">IN PROGRESS / RUN #204</text>
+    <text class="meta state-complete" x="808" y="22" text-anchor="end">COMPLETED / RUN #204</text>
   </g>
-  <text class="job-label" x="20" y="52">JOB: BUILD-AND-DEPLOY Ã‚Â· UBUNTU-LATEST</text>
+  <text class="job-label" x="15" y="52">JOB: BUILD-AND-DEPLOY · UBUNTU-LATEST</text>
 
   <g class="trigger" aria-label="Push to main trigger">
     <rect class="trigger-box" x="12" y="108" width="51" height="26" rx="13"/>
@@ -496,100 +503,100 @@
   </g>
 
   <g aria-label="Sequential workflow connections">
-    <path class="rail" d="M63 121 H67"/>
-    <path class="rail" d="M123 121 H197"/>
-    <path class="rail" d="M253 121 H327"/>
-    <path class="rail" d="M383 121 H457"/>
-    <path class="rail" d="M513 121 H587"/>
-    <path class="rail" d="M643 121 H717"/>
-    <path class="rail" d="M773 121 H847"/>
-    <path class="edge edge-trigger" pathLength="1" d="M63 121 H67"/>
-    <path class="edge edge-checkout-setup" pathLength="1" d="M123 121 H197"/>
-    <path class="edge edge-setup-install" pathLength="1" d="M253 121 H327"/>
-    <path class="edge edge-install-test" pathLength="1" d="M383 121 H457"/>
-    <path class="edge edge-test-build" pathLength="1" d="M513 121 H587"/>
-    <path class="edge edge-build-scan" pathLength="1" d="M643 121 H717"/>
-    <path class="edge edge-scan-deploy" pathLength="1" d="M773 121 H847"/>
+    <path class="rail" d="M63 121 H72"/>
+    <path class="rail" d="M128 121 H187"/>
+    <path class="rail" d="M243 121 H302"/>
+    <path class="rail" d="M358 121 H417"/>
+    <path class="rail" d="M473 121 H532"/>
+    <path class="rail" d="M588 121 H647"/>
+    <path class="rail" d="M703 121 H762"/>
+    <path class="edge edge-trigger" pathLength="1" d="M63 121 H72"/>
+    <path class="edge edge-checkout-setup" pathLength="1" d="M128 121 H187"/>
+    <path class="edge edge-setup-install" pathLength="1" d="M243 121 H302"/>
+    <path class="edge edge-install-test" pathLength="1" d="M358 121 H417"/>
+    <path class="edge edge-test-build" pathLength="1" d="M473 121 H532"/>
+    <path class="edge edge-build-scan" pathLength="1" d="M588 121 H647"/>
+    <path class="edge edge-scan-deploy" pathLength="1" d="M703 121 H762"/>
   </g>
 
   
     <g class="step step-checkout" aria-label="CHECKOUT">
-      <circle class="runner" cx="95" cy="121" r="35"/>
-      <rect class="node" x="67" y="93" width="56" height="56" rx="11"/>
-      <use class="icon" href="#icon-checkout" x="83" y="109" width="24" height="24"/>
-      <circle class="status-disc" cx="118" cy="98" r="8.5"/>
-      <path class="status-check" pathLength="1" d="M114 98l2.7 2.8 5.2-6.1"/>
-      <text class="step-label" x="95" y="174">CHECKOUT</text>
-      <text class="duration" x="95" y="187">1s</text>
+      <circle class="runner" cx="100" cy="121" r="35"/>
+      <rect class="node" x="72" y="93" width="56" height="56" rx="11"/>
+      <use class="icon" href="#icon-checkout" x="88" y="109" width="24" height="24"/>
+      <circle class="status-disc" cx="123" cy="98" r="8.5"/>
+      <path class="status-check" pathLength="1" d="M119 98l2.7 2.8 5.2-6.1"/>
+      <text class="step-label" x="100" y="174">CHECKOUT</text>
+      <text class="duration" x="100" y="187">1s</text>
     </g>
 
     <g class="step step-setup" aria-label="SETUP">
-      <circle class="runner" cx="225" cy="121" r="35"/>
-      <rect class="node" x="197" y="93" width="56" height="56" rx="11"/>
-      <use class="icon" href="#icon-setup" x="213" y="109" width="24" height="24"/>
-      <circle class="status-disc" cx="248" cy="98" r="8.5"/>
-      <path class="status-check" pathLength="1" d="M244 98l2.7 2.8 5.2-6.1"/>
-      <text class="step-label" x="225" y="174">SETUP</text>
-      <text class="duration" x="225" y="187">2s</text>
+      <circle class="runner" cx="215" cy="121" r="35"/>
+      <rect class="node" x="187" y="93" width="56" height="56" rx="11"/>
+      <use class="icon" href="#icon-setup" x="203" y="109" width="24" height="24"/>
+      <circle class="status-disc" cx="238" cy="98" r="8.5"/>
+      <path class="status-check" pathLength="1" d="M234 98l2.7 2.8 5.2-6.1"/>
+      <text class="step-label" x="215" y="174">SETUP</text>
+      <text class="duration" x="215" y="187">2s</text>
     </g>
 
     <g class="step step-install" aria-label="INSTALL">
-      <circle class="runner" cx="355" cy="121" r="35"/>
-      <rect class="node" x="327" y="93" width="56" height="56" rx="11"/>
-      <use class="icon" href="#icon-install" x="343" y="109" width="24" height="24"/>
-      <circle class="status-disc" cx="378" cy="98" r="8.5"/>
-      <path class="status-check" pathLength="1" d="M374 98l2.7 2.8 5.2-6.1"/>
-      <text class="step-label" x="355" y="174">INSTALL</text>
-      <text class="duration" x="355" y="187">5s</text>
+      <circle class="runner" cx="330" cy="121" r="35"/>
+      <rect class="node" x="302" y="93" width="56" height="56" rx="11"/>
+      <use class="icon" href="#icon-install" x="318" y="109" width="24" height="24"/>
+      <circle class="status-disc" cx="353" cy="98" r="8.5"/>
+      <path class="status-check" pathLength="1" d="M349 98l2.7 2.8 5.2-6.1"/>
+      <text class="step-label" x="330" y="174">INSTALL</text>
+      <text class="duration" x="330" y="187">5s</text>
     </g>
 
     <g class="step step-test" aria-label="TEST">
-      <circle class="runner" cx="485" cy="121" r="35"/>
-      <rect class="node" x="457" y="93" width="56" height="56" rx="11"/>
-      <use class="icon" href="#icon-test" x="473" y="109" width="24" height="24"/>
-      <circle class="status-disc" cx="508" cy="98" r="8.5"/>
-      <path class="status-check" pathLength="1" d="M504 98l2.7 2.8 5.2-6.1"/>
-      <text class="step-label" x="485" y="174">TEST</text>
-      <text class="duration" x="485" y="187">8s</text>
+      <circle class="runner" cx="445" cy="121" r="35"/>
+      <rect class="node" x="417" y="93" width="56" height="56" rx="11"/>
+      <use class="icon" href="#icon-test" x="433" y="109" width="24" height="24"/>
+      <circle class="status-disc" cx="468" cy="98" r="8.5"/>
+      <path class="status-check" pathLength="1" d="M464 98l2.7 2.8 5.2-6.1"/>
+      <text class="step-label" x="445" y="174">TEST</text>
+      <text class="duration" x="445" y="187">8s</text>
     </g>
 
     <g class="step step-build" aria-label="BUILD">
-      <circle class="runner" cx="615" cy="121" r="35"/>
-      <rect class="node" x="587" y="93" width="56" height="56" rx="11"/>
-      <use class="icon" href="#icon-build" x="603" y="109" width="24" height="24"/>
-      <circle class="status-disc" cx="638" cy="98" r="8.5"/>
-      <path class="status-check" pathLength="1" d="M634 98l2.7 2.8 5.2-6.1"/>
-      <text class="step-label" x="615" y="174">BUILD</text>
-      <text class="duration" x="615" y="187">7s</text>
+      <circle class="runner" cx="560" cy="121" r="35"/>
+      <rect class="node" x="532" y="93" width="56" height="56" rx="11"/>
+      <use class="icon" href="#icon-build" x="548" y="109" width="24" height="24"/>
+      <circle class="status-disc" cx="583" cy="98" r="8.5"/>
+      <path class="status-check" pathLength="1" d="M579 98l2.7 2.8 5.2-6.1"/>
+      <text class="step-label" x="560" y="174">BUILD</text>
+      <text class="duration" x="560" y="187">7s</text>
     </g>
 
     <g class="step step-scan" aria-label="SCAN">
-      <circle class="runner" cx="745" cy="121" r="35"/>
-      <rect class="node" x="717" y="93" width="56" height="56" rx="11"/>
-      <use class="icon" href="#icon-scan" x="733" y="109" width="24" height="24"/>
-      <circle class="status-disc" cx="768" cy="98" r="8.5"/>
-      <path class="status-check" pathLength="1" d="M764 98l2.7 2.8 5.2-6.1"/>
-      <text class="step-label" x="745" y="174">SCAN</text>
-      <text class="duration" x="745" y="187">6s</text>
+      <circle class="runner" cx="675" cy="121" r="35"/>
+      <rect class="node" x="647" y="93" width="56" height="56" rx="11"/>
+      <use class="icon" href="#icon-scan" x="663" y="109" width="24" height="24"/>
+      <circle class="status-disc" cx="698" cy="98" r="8.5"/>
+      <path class="status-check" pathLength="1" d="M694 98l2.7 2.8 5.2-6.1"/>
+      <text class="step-label" x="675" y="174">SCAN</text>
+      <text class="duration" x="675" y="187">6s</text>
     </g>
 
     <g class="step step-deploy" aria-label="DEPLOY">
-      <circle class="runner" cx="875" cy="121" r="35"/>
-      <rect class="node" x="847" y="93" width="56" height="56" rx="11"/>
-      <use class="icon" href="#icon-deploy" x="863" y="109" width="24" height="24"/>
-      <circle class="status-disc" cx="898" cy="98" r="8.5"/>
-      <path class="status-check" pathLength="1" d="M894 98l2.7 2.8 5.2-6.1"/>
-      <text class="step-label" x="875" y="174">DEPLOY</text>
-      <text class="duration" x="875" y="187">13s</text>
+      <circle class="runner" cx="790" cy="121" r="35"/>
+      <rect class="node" x="762" y="93" width="56" height="56" rx="11"/>
+      <use class="icon" href="#icon-deploy" x="778" y="109" width="24" height="24"/>
+      <circle class="status-disc" cx="813" cy="98" r="8.5"/>
+      <path class="status-check" pathLength="1" d="M809 98l2.7 2.8 5.2-6.1"/>
+      <text class="step-label" x="790" y="174">DEPLOY</text>
+      <text class="duration" x="790" y="187">13s</text>
     </g>
 
-  <line class="scan-line" x1="727" y1="121" x2="763" y2="121"/>
+  <line class="scan-line" x1="657" y1="121" x2="693" y2="121"/>
 
   <g class="result" aria-label="Workflow completed successfully">
-    <rect class="result-pill" x="254" y="207" width="452" height="31" rx="15.5"/>
-    <circle class="result-check" cx="276" cy="222.5" r="8.5"/>
-    <path d="m272 222.5 2.7 2.8 5.4-6.3" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    <text class="result-title" x="294" y="220">BUILD-AND-DEPLOY COMPLETED</text>
-    <text class="result-sub" x="294" y="231">main@HEAD Ã‚Â· production Ã‚Â· completed in 42s</text>
+    <rect class="result-pill" x="186" y="207" width="451" height="31" rx="15.5"/>
+    <circle class="result-check" cx="208" cy="222.5" r="8.5"/>
+    <path d="m204 222.5 2.7 2.8 5.4-6.3" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text class="result-title" x="226" y="220">BUILD-AND-DEPLOY COMPLETED</text>
+    <text class="result-sub" x="226" y="231">main@HEAD · production · completed in 42s</text>
   </g>
 </svg>

@@ -26,7 +26,7 @@ I build and operate practical web systems end to end — from application code t
 
 A GitHub Actions-inspired delivery path from push to production across a 53-week contribution grid.
 
-<img src="./assets/cicd-animation.svg?v=actions5" width="100%" alt="Sequential GitHub Actions CI/CD pipeline across a 53-week by 7-day contribution grid" />
+<img src="./assets/cicd-animation.svg?v=actions6" width="100%" alt="Sequential GitHub Actions CI/CD pipeline aligned to the AWS 53-week by 7-day contribution grid" />
 
 ## 🧰 Language and Tools
 
