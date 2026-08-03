@@ -59,18 +59,6 @@ I build and operate practical web systems end to end — from application code t
 - 🤝 Open to DevOps, Cloud Operations, and backend engineering opportunities.
 - 📍 Based in Da Nang, Vietnam · UTC+7.
 
-<!-- LIVE-DELIVERY:START -->
-#### ⚡ Live Delivery Feed
-
-<sub>GitHub-native signals · refreshed automatically when engineering activity changes.</sub>
-
-| Signal | Live state |
-|:--|:--|
-| `pipeline` | 🟢 **passing** · [Build and Push Image](https://github.com/huynhhuan/bahuan-aws-accelerator-p2/actions/runs/27804971395) · `bahuan-aws-accelerator-p2` · 19 Jun 2026 · 11:14 ICT |
-| `latest push` | [`TF4-Phase3-TechX/tf4-phase3-repo`](https://github.com/TF4-Phase3-TechX/tf4-phase3-repo) · [`fe6ab4a`](https://github.com/TF4-Phase3-TechX/tf4-phase3-repo/commit/fe6ab4ad0c005b22eb7cf8bcc770cd27a351a80e) · Merge branch 'cdo07/docs/task-64-ai-auditability-evidence' of remote into cdo07/docs/… · 28 Jul 2026 · 21:35 ICT |
-| `owned repo` | [`huynhhuan/bahuan-aws-accelerator-p2`](https://github.com/huynhhuan/bahuan-aws-accelerator-p2) · HCL · last pushed 19 Jun 2026 · 19:18 ICT |
-<!-- LIVE-DELIVERY:END -->
-
 <p align="center">
   <a href="https://github.com/DenverCoder1/github-readme-stats"><img width="49%" src="https://denvercoder1-github-readme-stats.vercel.app/api?username=huynhhuan&amp;show_icons=true&amp;include_all_commits=true&amp;hide_rank=true&amp;hide_border=true&amp;bg_color=00000000&amp;title_color=F97316&amp;text_color=8B949E&amp;icon_color=EF4444&amp;ring_color=F59E0B" alt="Huynh Ba Huan live GitHub statistics" /></a>
   <a href="https://github.com/DenverCoder1/github-readme-streak-stats"><img width="49%" src="https://streak-stats.demolab.com?user=huynhhuan&amp;hide_border=true&amp;background=00000000&amp;ring=F97316&amp;fire=EF4444&amp;currStreakLabel=F97316&amp;sideLabels=8B949E&amp;dates=8B949E&amp;currStreakNum=F59E0B&amp;sideNums=F59E0B" alt="Huynh Ba Huan live GitHub contribution streak" /></a>
