@@ -504,19 +504,19 @@
 
   <g aria-label="Sequential workflow connections">
     <path class="rail" d="M63 121 H72"/>
-    <path class="rail" d="M128 121 H187"/>
-    <path class="rail" d="M243 121 H302"/>
-    <path class="rail" d="M358 121 H417"/>
-    <path class="rail" d="M473 121 H532"/>
-    <path class="rail" d="M588 121 H647"/>
-    <path class="rail" d="M703 121 H762"/>
+    <path class="rail" d="M128 121 H185"/>
+    <path class="rail" d="M241 121 H298"/>
+    <path class="rail" d="M354 121 H411"/>
+    <path class="rail" d="M467 121 H524"/>
+    <path class="rail" d="M580 121 H637"/>
+    <path class="rail" d="M693 121 H750"/>
     <path class="edge edge-trigger" pathLength="1" d="M63 121 H72"/>
-    <path class="edge edge-checkout-setup" pathLength="1" d="M128 121 H187"/>
-    <path class="edge edge-setup-install" pathLength="1" d="M243 121 H302"/>
-    <path class="edge edge-install-test" pathLength="1" d="M358 121 H417"/>
-    <path class="edge edge-test-build" pathLength="1" d="M473 121 H532"/>
-    <path class="edge edge-build-scan" pathLength="1" d="M588 121 H647"/>
-    <path class="edge edge-scan-deploy" pathLength="1" d="M703 121 H762"/>
+    <path class="edge edge-checkout-setup" pathLength="1" d="M128 121 H185"/>
+    <path class="edge edge-setup-install" pathLength="1" d="M241 121 H298"/>
+    <path class="edge edge-install-test" pathLength="1" d="M354 121 H411"/>
+    <path class="edge edge-test-build" pathLength="1" d="M467 121 H524"/>
+    <path class="edge edge-build-scan" pathLength="1" d="M580 121 H637"/>
+    <path class="edge edge-scan-deploy" pathLength="1" d="M693 121 H750"/>
   </g>
 
   
@@ -531,66 +531,66 @@
     </g>
 
     <g class="step step-setup" aria-label="SETUP">
-      <circle class="runner" cx="215" cy="121" r="35"/>
-      <rect class="node" x="187" y="93" width="56" height="56" rx="11"/>
-      <use class="icon" href="#icon-setup" x="203" y="109" width="24" height="24"/>
-      <circle class="status-disc" cx="238" cy="98" r="8.5"/>
-      <path class="status-check" pathLength="1" d="M234 98l2.7 2.8 5.2-6.1"/>
-      <text class="step-label" x="215" y="174">SETUP</text>
-      <text class="duration" x="215" y="187">2s</text>
+      <circle class="runner" cx="213" cy="121" r="35"/>
+      <rect class="node" x="185" y="93" width="56" height="56" rx="11"/>
+      <use class="icon" href="#icon-setup" x="201" y="109" width="24" height="24"/>
+      <circle class="status-disc" cx="236" cy="98" r="8.5"/>
+      <path class="status-check" pathLength="1" d="M232 98l2.7 2.8 5.2-6.1"/>
+      <text class="step-label" x="213" y="174">SETUP</text>
+      <text class="duration" x="213" y="187">2s</text>
     </g>
 
     <g class="step step-install" aria-label="INSTALL">
-      <circle class="runner" cx="330" cy="121" r="35"/>
-      <rect class="node" x="302" y="93" width="56" height="56" rx="11"/>
-      <use class="icon" href="#icon-install" x="318" y="109" width="24" height="24"/>
-      <circle class="status-disc" cx="353" cy="98" r="8.5"/>
-      <path class="status-check" pathLength="1" d="M349 98l2.7 2.8 5.2-6.1"/>
-      <text class="step-label" x="330" y="174">INSTALL</text>
-      <text class="duration" x="330" y="187">5s</text>
+      <circle class="runner" cx="326" cy="121" r="35"/>
+      <rect class="node" x="298" y="93" width="56" height="56" rx="11"/>
+      <use class="icon" href="#icon-install" x="314" y="109" width="24" height="24"/>
+      <circle class="status-disc" cx="349" cy="98" r="8.5"/>
+      <path class="status-check" pathLength="1" d="M345 98l2.7 2.8 5.2-6.1"/>
+      <text class="step-label" x="326" y="174">INSTALL</text>
+      <text class="duration" x="326" y="187">5s</text>
     </g>
 
     <g class="step step-test" aria-label="TEST">
-      <circle class="runner" cx="445" cy="121" r="35"/>
-      <rect class="node" x="417" y="93" width="56" height="56" rx="11"/>
-      <use class="icon" href="#icon-test" x="433" y="109" width="24" height="24"/>
-      <circle class="status-disc" cx="468" cy="98" r="8.5"/>
-      <path class="status-check" pathLength="1" d="M464 98l2.7 2.8 5.2-6.1"/>
-      <text class="step-label" x="445" y="174">TEST</text>
-      <text class="duration" x="445" y="187">8s</text>
+      <circle class="runner" cx="439" cy="121" r="35"/>
+      <rect class="node" x="411" y="93" width="56" height="56" rx="11"/>
+      <use class="icon" href="#icon-test" x="427" y="109" width="24" height="24"/>
+      <circle class="status-disc" cx="462" cy="98" r="8.5"/>
+      <path class="status-check" pathLength="1" d="M458 98l2.7 2.8 5.2-6.1"/>
+      <text class="step-label" x="439" y="174">TEST</text>
+      <text class="duration" x="439" y="187">8s</text>
     </g>
 
     <g class="step step-build" aria-label="BUILD">
-      <circle class="runner" cx="560" cy="121" r="35"/>
-      <rect class="node" x="532" y="93" width="56" height="56" rx="11"/>
-      <use class="icon" href="#icon-build" x="548" y="109" width="24" height="24"/>
-      <circle class="status-disc" cx="583" cy="98" r="8.5"/>
-      <path class="status-check" pathLength="1" d="M579 98l2.7 2.8 5.2-6.1"/>
-      <text class="step-label" x="560" y="174">BUILD</text>
-      <text class="duration" x="560" y="187">7s</text>
+      <circle class="runner" cx="552" cy="121" r="35"/>
+      <rect class="node" x="524" y="93" width="56" height="56" rx="11"/>
+      <use class="icon" href="#icon-build" x="540" y="109" width="24" height="24"/>
+      <circle class="status-disc" cx="575" cy="98" r="8.5"/>
+      <path class="status-check" pathLength="1" d="M571 98l2.7 2.8 5.2-6.1"/>
+      <text class="step-label" x="552" y="174">BUILD</text>
+      <text class="duration" x="552" y="187">7s</text>
     </g>
 
     <g class="step step-scan" aria-label="SCAN">
-      <circle class="runner" cx="675" cy="121" r="35"/>
-      <rect class="node" x="647" y="93" width="56" height="56" rx="11"/>
-      <use class="icon" href="#icon-scan" x="663" y="109" width="24" height="24"/>
-      <circle class="status-disc" cx="698" cy="98" r="8.5"/>
-      <path class="status-check" pathLength="1" d="M694 98l2.7 2.8 5.2-6.1"/>
-      <text class="step-label" x="675" y="174">SCAN</text>
-      <text class="duration" x="675" y="187">6s</text>
+      <circle class="runner" cx="665" cy="121" r="35"/>
+      <rect class="node" x="637" y="93" width="56" height="56" rx="11"/>
+      <use class="icon" href="#icon-scan" x="653" y="109" width="24" height="24"/>
+      <circle class="status-disc" cx="688" cy="98" r="8.5"/>
+      <path class="status-check" pathLength="1" d="M684 98l2.7 2.8 5.2-6.1"/>
+      <text class="step-label" x="665" y="174">SCAN</text>
+      <text class="duration" x="665" y="187">6s</text>
     </g>
 
     <g class="step step-deploy" aria-label="DEPLOY">
-      <circle class="runner" cx="790" cy="121" r="35"/>
-      <rect class="node" x="762" y="93" width="56" height="56" rx="11"/>
-      <use class="icon" href="#icon-deploy" x="778" y="109" width="24" height="24"/>
-      <circle class="status-disc" cx="813" cy="98" r="8.5"/>
-      <path class="status-check" pathLength="1" d="M809 98l2.7 2.8 5.2-6.1"/>
-      <text class="step-label" x="790" y="174">DEPLOY</text>
-      <text class="duration" x="790" y="187">13s</text>
+      <circle class="runner" cx="778" cy="121" r="35"/>
+      <rect class="node" x="750" y="93" width="56" height="56" rx="11"/>
+      <use class="icon" href="#icon-deploy" x="766" y="109" width="24" height="24"/>
+      <circle class="status-disc" cx="801" cy="98" r="8.5"/>
+      <path class="status-check" pathLength="1" d="M797 98l2.7 2.8 5.2-6.1"/>
+      <text class="step-label" x="778" y="174">DEPLOY</text>
+      <text class="duration" x="778" y="187">13s</text>
     </g>
 
-  <line class="scan-line" x1="657" y1="121" x2="693" y2="121"/>
+  <line class="scan-line" x1="647" y1="121" x2="683" y2="121"/>
 
   <g class="result" aria-label="Workflow completed successfully">
     <rect class="result-pill" x="186" y="207" width="451" height="31" rx="15.5"/>
