@@ -47,3 +47,33 @@ I build and operate practical web systems end to end — from application code t
 </p>
 
 <img src="./profile/aws-contribution-graph.svg?v=a754f39" width="100%" alt="Animated GitHub contribution graph assembling into the AWS logo" />
+
+<details>
+<summary><b>✨ More about me</b></summary>
+<br />
+
+<table>
+  <tr>
+    <td width="33%" align="center" valign="top">
+      🧭<br /><strong>Learn by building</strong><br />
+      <sub>I turn new ideas into working systems, then improve them through testing and feedback.</sub>
+    </td>
+    <td width="34%" align="center" valign="top">
+      🔗<br /><strong>Connect the layers</strong><br />
+      <sub>I enjoy bridging application code, cloud infrastructure, and automated delivery.</sub>
+    </td>
+    <td width="33%" align="center" valign="top">
+      🛡️<br /><strong>Build for operations</strong><br />
+      <sub>I value security, observability, reliability, and workflows a team can maintain.</sub>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/DevOps%20%26%20Cloud%20Operations-F97316?style=flat-square&logo=amazonwebservices&logoColor=white" alt="DevOps and Cloud Operations" />
+  <img src="https://img.shields.io/badge/Backend%20%26%20Web%20Engineering-EF4444?style=flat-square&logo=codeigniter&logoColor=white" alt="Backend and Web Engineering" />
+  <img src="https://img.shields.io/badge/Open%20to%20Opportunities-C2410C?style=flat-square&logo=github&logoColor=white" alt="Open to opportunities" />
+</p>
+
+<p align="center"><i>Open to opportunities where I can grow across DevOps, Cloud Operations, and backend engineering.</i></p>
+</details>
