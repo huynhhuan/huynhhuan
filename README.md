@@ -69,8 +69,6 @@ I build and operate practical web systems end to end — from application code t
 
 ## 🎧 HUAN.FM
 
-Pixel music for late-night builds. The README card is animated; open it for the full interactive player.
-
 <a href="https://huynhhuan.github.io/huynhhuan/">
   <img src="./assets/huan-fm-card.svg?v=1" width="100%" alt="Open HUAN.FM — an interactive orange-red pixel music player with Jamendo API support" />
 </a>
