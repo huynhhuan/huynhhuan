@@ -1,603 +1,195 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="823" height="250" viewBox="0 0 823 250" role="img" aria-labelledby="title desc">
-  <title id="title">GitHub Actions CI/CD pipeline animation</title>
-  <desc id="desc">A push to main triggers a sequential GitHub Actions workflow across an exact GitHub contribution calendar of fifty-three weeks by seven days: Checkout, Setup, Install, Test, Build, Scan, and Deploy.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="823" height="430" viewBox="0 0 823 430" role="img" aria-labelledby="title desc" shape-rendering="crispEdges">
+  <title id="title">GitHub Actions CI/CD pipeline in animated 2D pixel art</title>
+  <desc id="desc">A pixel-art GitHub Actions job screen. A small runner moves through eight steps that change from queued to running to successful before production deployment completes.</desc>
+
   <defs>
-    <g id="contribution-week">
-      <rect y="0" width="11" height="11" rx="2"/>
-      <rect y="15" width="11" height="11" rx="2"/>
-      <rect y="30" width="11" height="11" rx="2"/>
-      <rect y="45" width="11" height="11" rx="2"/>
-      <rect y="60" width="11" height="11" rx="2"/>
-      <rect y="75" width="11" height="11" rx="2"/>
-      <rect y="90" width="11" height="11" rx="2"/>
-    </g>
-    <filter id="soft-glow" x="-80%" y="-80%" width="260%" height="260%">
-      <feGaussianBlur stdDeviation="2.6" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    
-    <symbol id="icon-checkout" viewBox="0 0 24 24">
-      <path d="M12 3v12m0 0-4-4m4 4 4-4M5 19h14"/>
-    </symbol>
-    <symbol id="icon-setup" viewBox="0 0 24 24">
-      <path d="M12 3l2 2.2 3-.4.8 2.9 2.7 1.4-1.3 2.7 1.3 2.7-2.7 1.4-.8 2.9-3-.4-2 2.2-2-2.2-3 .4-.8-2.9-2.7-1.4 1.3-2.7-1.3-2.7 2.7-1.4.8-2.9 3 .4L12 3Z"/>
-      <circle cx="12" cy="12" r="3"/>
-    </symbol>
-    <symbol id="icon-install" viewBox="0 0 24 24">
-      <path d="m4 7 8-4 8 4-8 4-8-4Zm0 0v10l8 4 8-4V7M12 11v10"/>
-      <path d="M8 5l8 4"/>
-    </symbol>
-    <symbol id="icon-test" viewBox="0 0 24 24">
-      <path d="M9 3h6m-5 0v6l-5 9a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9V3M8 15h8"/>
-    </symbol>
-    <symbol id="icon-build" viewBox="0 0 24 24">
-      <path d="m5 7 7-4 7 4v10l-7 4-7-4V7Zm0 0 7 4 7-4M12 11v10"/>
-    </symbol>
-    <symbol id="icon-scan" viewBox="0 0 24 24">
-      <path d="M12 3l7 3v5c0 4.7-2.8 8-7 10-4.2-2-7-5.3-7-10V6l7-3Z"/>
-      <path d="m9 12 2 2 4-5"/>
-    </symbol>
-    <symbol id="icon-deploy" viewBox="0 0 24 24">
-      <path d="M14 5c2.5-2.5 5.5-2 5.5-2s.5 3-2 5.5L13 13l-4-4 5-4Z"/>
-      <path d="m9 9-4 1-2 3 6 2 2 6 3-2 1-4M7 17l-3 3"/>
-      <circle cx="16" cy="6.5" r="1.3"/>
-    </symbol>
+    <pattern id="pixel-grid" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M8 0H0V8" fill="none" stroke="#21262d" stroke-width="1" opacity=".42"/>
+    </pattern>
+    <pattern id="scan-grid" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="4" fill="#0d1117"/>
+      <rect width="2" height="2" fill="#161b22"/>
+    </pattern>
     <style>
-      .meta,.job-label,.step-label,.duration,.trigger-text,.run-state,.result-title,.result-sub {
-        font-family:'Fira Code','JetBrains Mono',Consolas,monospace;
-      }
-      .grid {
-        fill:#8C959F;
-        fill-opacity:.14;
-        stroke:#8C959F;
-        stroke-opacity:.09;
-        stroke-width:1;
-        opacity:.62;
-        shape-rendering:geometricPrecision;
-      }
-      .header-rule { stroke:#8C959F; stroke-opacity:.22; }
-      .meta { fill:#8C959F; font-size:10px; font-weight:700; letter-spacing:1.25px; }
-      .job-label { fill:#8C959F; font-size:9px; font-weight:700; letter-spacing:1px; }
-      .run-dot { fill:#2F81F7; transform-box:fill-box; transform-origin:center; animation:run-dot 16s ease-in-out infinite; }
-      @keyframes run-dot {
-        0%,3%,100% { opacity:.3; transform:scale(.7); }
-        6%,86% { opacity:1; transform:scale(1); }
-        90%,94% { opacity:.55; transform:scale(.8); }
-      }
-      .state-queued { animation:queued 16s ease-in-out infinite; }
-      .state-running { animation:run-label 16s ease-in-out infinite; }
-      .state-complete { fill:#3FB950; animation:complete 16s ease-in-out infinite; }
-      @keyframes queued { 0%,4%{opacity:1} 7%,100%{opacity:0} }
-      @keyframes run-label { 0%,4%{opacity:0} 7%,83%{opacity:1} 85%,100%{opacity:0} }
-      @keyframes complete { 0%,86%{opacity:0} 88%,95%{opacity:1} 99%,100%{opacity:0} }
-      .trigger { color:#2F81F7; animation:trigger 16s cubic-bezier(.2,.8,.2,1) infinite; }
-      .trigger-box { fill:currentColor; fill-opacity:.1; stroke:currentColor; stroke-width:1.3; }
-      .trigger-text { fill:currentColor; font-size:9px; font-weight:800; text-anchor:middle; }
-      @keyframes trigger {
-        0%,1% { color:#8C959F; opacity:.55; transform:scale(.94); }
-        3%,94% { color:#2F81F7; opacity:1; transform:scale(1); }
-        98%,100% { color:#8C959F; opacity:.45; transform:scale(.96); }
-      }
-      .rail { fill:none; stroke:#8C959F; stroke-opacity:.24; stroke-width:2; stroke-linecap:round; }
-      .edge { fill:none; stroke:#3FB950; stroke-width:2.4; stroke-linecap:round; stroke-dasharray:1; stroke-dashoffset:1; filter:url(#soft-glow); }
-      .step { color:#8C959F; transform-box:fill-box; transform-origin:center; }
-      .node { fill:currentColor; fill-opacity:.09; stroke:currentColor; stroke-width:1.5; }
-      .icon { fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; transform-box:fill-box; transform-origin:center; }
-      .runner { fill:none; stroke:currentColor; stroke-width:2.5; stroke-linecap:round; stroke-dasharray:22 198; transform-box:fill-box; transform-origin:center; }
-      .status-disc { fill:#0D1117; stroke:currentColor; stroke-width:1.3; }
-      .status-check { fill:none; stroke:#3FB950; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:1; stroke-dashoffset:1; transform-box:fill-box; transform-origin:center; }
-      .step-label { fill:currentColor; font-size:9px; font-weight:800; letter-spacing:1px; text-anchor:middle; }
-      .duration { fill:currentColor; font-size:8px; font-weight:650; text-anchor:middle; transform-box:fill-box; transform-origin:center; }
-      
-      .step-checkout { animation:step-checkout 16s cubic-bezier(.18,.84,.22,1) infinite both; }
-      .step-checkout .runner { animation:runner-checkout 16s linear infinite both; }
-      .step-checkout .status-check { animation:check-checkout 16s cubic-bezier(.18,.86,.22,1) infinite both; }
-      .step-checkout .duration { animation:duration-checkout 16s ease-in-out infinite both; }
-      .step-checkout .icon { animation:icon-checkout 16s cubic-bezier(.18,.84,.22,1) infinite both; }
-      @keyframes step-checkout {
-        0%,5% { color:#8C959F; opacity:.68; transform:translateY(0) scale(1); filter:none; }
-        6% { color:#2F81F7; opacity:1; transform:translateY(1px) scale(.96); filter:none; }
-        8% { color:#2F81F7; opacity:1; transform:translateY(-1px) scale(1.035); filter:drop-shadow(0 0 5px #2F81F766); }
-        13% { color:#2F81F7; opacity:1; transform:translateY(0) scale(1); filter:drop-shadow(0 0 6px #2F81F744); }
-        15% { color:#3FB950; opacity:1; transform:scale(1.07); filter:drop-shadow(0 0 7px #3FB95055); }
-        18%,94% { color:#3FB950; opacity:1; transform:scale(1); filter:drop-shadow(0 0 2px #3FB95022); }
-        98%,100% { color:#8C959F; opacity:.48; transform:translateY(1px) scale(.98); filter:none; }
-      }
-      @keyframes runner-checkout {
-        0%,5% { opacity:0; stroke-dashoffset:0; transform:rotate(-90deg); }
-        6% { opacity:1; stroke-dashoffset:0; transform:rotate(-90deg); }
-        13% { opacity:1; stroke-dashoffset:-160; transform:rotate(250deg); }
-        15%,100% { opacity:0; stroke-dashoffset:-190; transform:rotate(290deg); }
-      }
-      @keyframes check-checkout {
-        0%,14% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
-        15% { opacity:1; stroke-dashoffset:0; transform:scale(1.18); }
-        18%,94% { opacity:1; stroke-dashoffset:0; transform:scale(1); }
-        98%,100% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
-      }
-      @keyframes duration-checkout {
-        0%,14% { opacity:0; transform:translateY(2px); }
-        18%,94% { opacity:.72; transform:translateY(0); }
-        98%,100% { opacity:0; transform:translateY(1px); }
-      }
-      @keyframes icon-checkout {
-        0%,5% { transform:none; }
-        8% { transform:translateY(-2px); }
-        13% { transform:none; }
-        100% { transform:none; }
-      }
+      :root { color-scheme:dark; }
+      text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+      .bg { fill:#010409; }
+      .screen { fill:#0d1117; stroke:#30363d; stroke-width:2; }
+      .pixel-shadow { fill:#000; opacity:.72; }
+      .grid-overlay { fill:url(#pixel-grid); }
+      .divider { fill:#30363d; }
+      .ink { fill:#e6edf3; }
+      .muted { fill:#8b949e; }
+      .blue { fill:#58a6ff; }
+      .green { fill:#3fb950; }
+      .orange { fill:#f0883e; }
+      .title { font-size:15px; font-weight:800; letter-spacing:.5px; }
+      .subtitle { font-size:9px; }
+      .tiny { font-size:8px; }
+      .small { font-size:9px; }
+      .label { font-size:10px; font-weight:700; }
+      .step-label { fill:#e6edf3; font-size:10px; font-weight:700; }
+      .duration { fill:#8b949e; font-size:8px; text-anchor:end; opacity:0; }
+      .pixel-button { fill:#161b22; stroke:#484f58; }
+      .pixel-button-text { fill:#c9d1d9; font-size:8px; font-weight:700; }
+      .sidebar-select { fill:#161b22; stroke:#30363d; }
+      .row { color:#6e7681; }
+      .row-box { fill:#0d1117; stroke:#30363d; }
+      .active-box { fill:#0c2d6b; stroke:#2f81f7; opacity:0; }
+      .active-bracket { fill:#58a6ff; opacity:0; }
+      .queue-box { fill:#161b22; stroke:currentColor; }
+      .queue-dot { fill:currentColor; opacity:.62; }
+      .success { opacity:0; }
+      .success-box { fill:#238636; stroke:#3fb950; }
+      .pixel-check { fill:#fff; }
+      .activity { opacity:0; }
+      .activity rect { fill:#58a6ff; animation:blink .54s steps(1,end) infinite; }
+      .activity rect:nth-child(2) { animation-delay:.18s; }
+      .activity rect:nth-child(3) { animation-delay:.36s; }
+      .row,.active-box,.active-bracket,.success,.duration,.activity { animation-duration:20s; animation-timing-function:steps(1,end); animation-iteration-count:infinite; }
+      .s1{animation-name:state1}.s1 .active-box,.s1 .active-bracket,.s1 .activity{animation-name:active1}.s1 .success,.s1 .duration{animation-name:done1}
+      .s2{animation-name:state2}.s2 .active-box,.s2 .active-bracket,.s2 .activity{animation-name:active2}.s2 .success,.s2 .duration{animation-name:done2}
+      .s3{animation-name:state3}.s3 .active-box,.s3 .active-bracket,.s3 .activity{animation-name:active3}.s3 .success,.s3 .duration{animation-name:done3}
+      .s4{animation-name:state4}.s4 .active-box,.s4 .active-bracket,.s4 .activity{animation-name:active4}.s4 .success,.s4 .duration{animation-name:done4}
+      .s5{animation-name:state5}.s5 .active-box,.s5 .active-bracket,.s5 .activity{animation-name:active5}.s5 .success,.s5 .duration{animation-name:done5}
+      .s6{animation-name:state6}.s6 .active-box,.s6 .active-bracket,.s6 .activity{animation-name:active6}.s6 .success,.s6 .duration{animation-name:done6}
+      .s7{animation-name:state7}.s7 .active-box,.s7 .active-bracket,.s7 .activity{animation-name:active7}.s7 .success,.s7 .duration{animation-name:done7}
+      .s8{animation-name:state8}.s8 .active-box,.s8 .active-bracket,.s8 .activity{animation-name:active8}.s8 .success,.s8 .duration{animation-name:done8}
 
-      .step-setup { animation:step-setup 16s cubic-bezier(.22,.76,.16,1) infinite both; }
-      .step-setup .runner { animation:runner-setup 16s linear infinite both; }
-      .step-setup .status-check { animation:check-setup 16s cubic-bezier(.18,.86,.22,1) infinite both; }
-      .step-setup .duration { animation:duration-setup 16s ease-in-out infinite both; }
-      .step-setup .icon { animation:icon-setup 16s cubic-bezier(.22,.76,.16,1) infinite both; }
-      @keyframes step-setup {
-        0%,15% { color:#8C959F; opacity:.68; transform:translateY(0) scale(1); filter:none; }
-        16% { color:#2F81F7; opacity:1; transform:translateY(1px) scale(.96); filter:none; }
-        18% { color:#2F81F7; opacity:1; transform:translateY(-1px) scale(1.035); filter:drop-shadow(0 0 5px #2F81F766); }
-        24% { color:#2F81F7; opacity:1; transform:translateY(0) scale(1); filter:drop-shadow(0 0 6px #2F81F744); }
-        26% { color:#3FB950; opacity:1; transform:scale(1.07); filter:drop-shadow(0 0 7px #3FB95055); }
-        29%,94% { color:#3FB950; opacity:1; transform:scale(1); filter:drop-shadow(0 0 2px #3FB95022); }
-        98%,100% { color:#8C959F; opacity:.48; transform:translateY(1px) scale(.98); filter:none; }
-      }
-      @keyframes runner-setup {
-        0%,15% { opacity:0; stroke-dashoffset:0; transform:rotate(-90deg); }
-        16% { opacity:1; stroke-dashoffset:0; transform:rotate(-90deg); }
-        24% { opacity:1; stroke-dashoffset:-160; transform:rotate(250deg); }
-        26%,100% { opacity:0; stroke-dashoffset:-190; transform:rotate(290deg); }
-      }
-      @keyframes check-setup {
-        0%,25% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
-        26% { opacity:1; stroke-dashoffset:0; transform:scale(1.18); }
-        29%,94% { opacity:1; stroke-dashoffset:0; transform:scale(1); }
-        98%,100% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
-      }
-      @keyframes duration-setup {
-        0%,25% { opacity:0; transform:translateY(2px); }
-        29%,94% { opacity:.72; transform:translateY(0); }
-        98%,100% { opacity:0; transform:translateY(1px); }
-      }
-      @keyframes icon-setup {
-        0%,15% { transform:none; }
-        18% { transform:rotate(24deg); }
-        24% { transform:none; }
-        100% { transform:none; }
-      }
+      @keyframes blink { 0%,49%{opacity:.22}50%,100%{opacity:1} }
+      @keyframes state1{0%,4%{color:#6e7681}5%,13%{color:#58a6ff}14%,95%{color:#3fb950}98%,100%{color:#6e7681}}
+      @keyframes state2{0%,13%{color:#6e7681}14%,22%{color:#58a6ff}23%,95%{color:#3fb950}98%,100%{color:#6e7681}}
+      @keyframes state3{0%,22%{color:#6e7681}23%,31%{color:#58a6ff}32%,95%{color:#3fb950}98%,100%{color:#6e7681}}
+      @keyframes state4{0%,31%{color:#6e7681}32%,40%{color:#58a6ff}41%,95%{color:#3fb950}98%,100%{color:#6e7681}}
+      @keyframes state5{0%,40%{color:#6e7681}41%,49%{color:#58a6ff}50%,95%{color:#3fb950}98%,100%{color:#6e7681}}
+      @keyframes state6{0%,49%{color:#6e7681}50%,58%{color:#58a6ff}59%,95%{color:#3fb950}98%,100%{color:#6e7681}}
+      @keyframes state7{0%,58%{color:#6e7681}59%,69%{color:#58a6ff}70%,95%{color:#3fb950}98%,100%{color:#6e7681}}
+      @keyframes state8{0%,69%{color:#6e7681}70%,81%{color:#58a6ff}82%,95%{color:#3fb950}98%,100%{color:#6e7681}}
+      @keyframes active1{0%,4%,14%,100%{opacity:0}5%,13%{opacity:1}}
+      @keyframes active2{0%,13%,23%,100%{opacity:0}14%,22%{opacity:1}}
+      @keyframes active3{0%,22%,32%,100%{opacity:0}23%,31%{opacity:1}}
+      @keyframes active4{0%,31%,41%,100%{opacity:0}32%,40%{opacity:1}}
+      @keyframes active5{0%,40%,50%,100%{opacity:0}41%,49%{opacity:1}}
+      @keyframes active6{0%,49%,59%,100%{opacity:0}50%,58%{opacity:1}}
+      @keyframes active7{0%,58%,70%,100%{opacity:0}59%,69%{opacity:1}}
+      @keyframes active8{0%,69%,82%,100%{opacity:0}70%,81%{opacity:1}}
+      @keyframes done1{0%,13%{opacity:0}14%,95%{opacity:1}98%,100%{opacity:0}}
+      @keyframes done2{0%,22%{opacity:0}23%,95%{opacity:1}98%,100%{opacity:0}}
+      @keyframes done3{0%,31%{opacity:0}32%,95%{opacity:1}98%,100%{opacity:0}}
+      @keyframes done4{0%,40%{opacity:0}41%,95%{opacity:1}98%,100%{opacity:0}}
+      @keyframes done5{0%,49%{opacity:0}50%,95%{opacity:1}98%,100%{opacity:0}}
+      @keyframes done6{0%,58%{opacity:0}59%,95%{opacity:1}98%,100%{opacity:0}}
+      @keyframes done7{0%,69%{opacity:0}70%,95%{opacity:1}98%,100%{opacity:0}}
+      @keyframes done8{0%,81%{opacity:0}82%,95%{opacity:1}98%,100%{opacity:0}}
 
-      .step-install { animation:step-install 16s cubic-bezier(.16,.88,.28,1) infinite both; }
-      .step-install .runner { animation:runner-install 16s linear infinite both; }
-      .step-install .status-check { animation:check-install 16s cubic-bezier(.18,.86,.22,1) infinite both; }
-      .step-install .duration { animation:duration-install 16s ease-in-out infinite both; }
-      .step-install .icon { animation:icon-install 16s cubic-bezier(.16,.88,.28,1) infinite both; }
-      @keyframes step-install {
-        0%,26% { color:#8C959F; opacity:.68; transform:translateY(0) scale(1); filter:none; }
-        27% { color:#2F81F7; opacity:1; transform:translateY(1px) scale(.96); filter:none; }
-        29% { color:#2F81F7; opacity:1; transform:translateY(-1px) scale(1.035); filter:drop-shadow(0 0 5px #2F81F766); }
-        36% { color:#2F81F7; opacity:1; transform:translateY(0) scale(1); filter:drop-shadow(0 0 6px #2F81F744); }
-        38% { color:#3FB950; opacity:1; transform:scale(1.07); filter:drop-shadow(0 0 7px #3FB95055); }
-        41%,94% { color:#3FB950; opacity:1; transform:scale(1); filter:drop-shadow(0 0 2px #3FB95022); }
-        98%,100% { color:#8C959F; opacity:.48; transform:translateY(1px) scale(.98); filter:none; }
+      .progress { transform-box:fill-box; transform-origin:left center; animation:progress 20s steps(16,end) infinite; }
+      @keyframes progress { 0%,4%{transform:scaleX(.02)}81%,95%{transform:scaleX(1)}98%,100%{transform:scaleX(.02)} }
+      .runner { animation:runner-path 20s steps(1,end) infinite; }
+      @keyframes runner-path {
+        0%,13%{transform:translateY(0)}14%,22%{transform:translateY(31px)}23%,31%{transform:translateY(62px)}32%,40%{transform:translateY(93px)}
+        41%,49%{transform:translateY(124px)}50%,58%{transform:translateY(155px)}59%,69%{transform:translateY(186px)}70%,95%{transform:translateY(217px)}98%,100%{transform:translateY(0)}
       }
-      @keyframes runner-install {
-        0%,26% { opacity:0; stroke-dashoffset:0; transform:rotate(-90deg); }
-        27% { opacity:1; stroke-dashoffset:0; transform:rotate(-90deg); }
-        36% { opacity:1; stroke-dashoffset:-160; transform:rotate(250deg); }
-        38%,100% { opacity:0; stroke-dashoffset:-190; transform:rotate(290deg); }
-      }
-      @keyframes check-install {
-        0%,37% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
-        38% { opacity:1; stroke-dashoffset:0; transform:scale(1.18); }
-        41%,94% { opacity:1; stroke-dashoffset:0; transform:scale(1); }
-        98%,100% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
-      }
-      @keyframes duration-install {
-        0%,37% { opacity:0; transform:translateY(2px); }
-        41%,94% { opacity:.72; transform:translateY(0); }
-        98%,100% { opacity:0; transform:translateY(1px); }
-      }
-      @keyframes icon-install {
-        0%,26% { transform:none; }
-        29% { transform:scale(.9); }
-        36% { transform:none; }
-        100% { transform:none; }
-      }
-
-      .step-test { animation:step-test 16s cubic-bezier(.2,.74,.18,1) infinite both; }
-      .step-test .runner { animation:runner-test 16s linear infinite both; }
-      .step-test .status-check { animation:check-test 16s cubic-bezier(.18,.86,.22,1) infinite both; }
-      .step-test .duration { animation:duration-test 16s ease-in-out infinite both; }
-      .step-test .icon { animation:icon-test 16s cubic-bezier(.2,.74,.18,1) infinite both; }
-      @keyframes step-test {
-        0%,38% { color:#8C959F; opacity:.68; transform:translateY(0) scale(1); filter:none; }
-        39% { color:#2F81F7; opacity:1; transform:translateY(1px) scale(.96); filter:none; }
-        41% { color:#2F81F7; opacity:1; transform:translateY(-1px) scale(1.035); filter:drop-shadow(0 0 5px #2F81F766); }
-        49% { color:#2F81F7; opacity:1; transform:translateY(0) scale(1); filter:drop-shadow(0 0 6px #2F81F744); }
-        51% { color:#3FB950; opacity:1; transform:scale(1.07); filter:drop-shadow(0 0 7px #3FB95055); }
-        54%,94% { color:#3FB950; opacity:1; transform:scale(1); filter:drop-shadow(0 0 2px #3FB95022); }
-        98%,100% { color:#8C959F; opacity:.48; transform:translateY(1px) scale(.98); filter:none; }
-      }
-      @keyframes runner-test {
-        0%,38% { opacity:0; stroke-dashoffset:0; transform:rotate(-90deg); }
-        39% { opacity:1; stroke-dashoffset:0; transform:rotate(-90deg); }
-        49% { opacity:1; stroke-dashoffset:-160; transform:rotate(250deg); }
-        51%,100% { opacity:0; stroke-dashoffset:-190; transform:rotate(290deg); }
-      }
-      @keyframes check-test {
-        0%,50% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
-        51% { opacity:1; stroke-dashoffset:0; transform:scale(1.18); }
-        54%,94% { opacity:1; stroke-dashoffset:0; transform:scale(1); }
-        98%,100% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
-      }
-      @keyframes duration-test {
-        0%,50% { opacity:0; transform:translateY(2px); }
-        54%,94% { opacity:.72; transform:translateY(0); }
-        98%,100% { opacity:0; transform:translateY(1px); }
-      }
-      @keyframes icon-test {
-        0%,38% { transform:none; }
-        41% { transform:translateY(-2px) rotate(-2deg); }
-        49% { transform:none; }
-        100% { transform:none; }
-      }
-
-      .step-build { animation:step-build 16s cubic-bezier(.24,.8,.2,1) infinite both; }
-      .step-build .runner { animation:runner-build 16s linear infinite both; }
-      .step-build .status-check { animation:check-build 16s cubic-bezier(.18,.86,.22,1) infinite both; }
-      .step-build .duration { animation:duration-build 16s ease-in-out infinite both; }
-      .step-build .icon { animation:icon-build 16s cubic-bezier(.24,.8,.2,1) infinite both; }
-      @keyframes step-build {
-        0%,51% { color:#8C959F; opacity:.68; transform:translateY(0) scale(1); filter:none; }
-        52% { color:#2F81F7; opacity:1; transform:translateY(1px) scale(.96); filter:none; }
-        54% { color:#2F81F7; opacity:1; transform:translateY(-1px) scale(1.035); filter:drop-shadow(0 0 5px #2F81F766); }
-        61% { color:#2F81F7; opacity:1; transform:translateY(0) scale(1); filter:drop-shadow(0 0 6px #2F81F744); }
-        63% { color:#3FB950; opacity:1; transform:scale(1.07); filter:drop-shadow(0 0 7px #3FB95055); }
-        66%,94% { color:#3FB950; opacity:1; transform:scale(1); filter:drop-shadow(0 0 2px #3FB95022); }
-        98%,100% { color:#8C959F; opacity:.48; transform:translateY(1px) scale(.98); filter:none; }
-      }
-      @keyframes runner-build {
-        0%,51% { opacity:0; stroke-dashoffset:0; transform:rotate(-90deg); }
-        52% { opacity:1; stroke-dashoffset:0; transform:rotate(-90deg); }
-        61% { opacity:1; stroke-dashoffset:-160; transform:rotate(250deg); }
-        63%,100% { opacity:0; stroke-dashoffset:-190; transform:rotate(290deg); }
-      }
-      @keyframes check-build {
-        0%,62% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
-        63% { opacity:1; stroke-dashoffset:0; transform:scale(1.18); }
-        66%,94% { opacity:1; stroke-dashoffset:0; transform:scale(1); }
-        98%,100% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
-      }
-      @keyframes duration-build {
-        0%,62% { opacity:0; transform:translateY(2px); }
-        66%,94% { opacity:.72; transform:translateY(0); }
-        98%,100% { opacity:0; transform:translateY(1px); }
-      }
-      @keyframes icon-build {
-        0%,51% { transform:none; }
-        54% { transform:rotate(6deg) scale(.96); }
-        61% { transform:none; }
-        100% { transform:none; }
-      }
-
-      .step-scan { animation:step-scan 16s cubic-bezier(.17,.86,.24,1) infinite both; }
-      .step-scan .runner { animation:runner-scan 16s linear infinite both; }
-      .step-scan .status-check { animation:check-scan 16s cubic-bezier(.18,.86,.22,1) infinite both; }
-      .step-scan .duration { animation:duration-scan 16s ease-in-out infinite both; }
-      .step-scan .icon { animation:icon-scan 16s cubic-bezier(.17,.86,.24,1) infinite both; }
-      @keyframes step-scan {
-        0%,63% { color:#8C959F; opacity:.68; transform:translateY(0) scale(1); filter:none; }
-        64% { color:#2F81F7; opacity:1; transform:translateY(1px) scale(.96); filter:none; }
-        66% { color:#2F81F7; opacity:1; transform:translateY(-1px) scale(1.035); filter:drop-shadow(0 0 5px #2F81F766); }
-        73% { color:#2F81F7; opacity:1; transform:translateY(0) scale(1); filter:drop-shadow(0 0 6px #2F81F744); }
-        75% { color:#3FB950; opacity:1; transform:scale(1.07); filter:drop-shadow(0 0 7px #3FB95055); }
-        78%,94% { color:#3FB950; opacity:1; transform:scale(1); filter:drop-shadow(0 0 2px #3FB95022); }
-        98%,100% { color:#8C959F; opacity:.48; transform:translateY(1px) scale(.98); filter:none; }
-      }
-      @keyframes runner-scan {
-        0%,63% { opacity:0; stroke-dashoffset:0; transform:rotate(-90deg); }
-        64% { opacity:1; stroke-dashoffset:0; transform:rotate(-90deg); }
-        73% { opacity:1; stroke-dashoffset:-160; transform:rotate(250deg); }
-        75%,100% { opacity:0; stroke-dashoffset:-190; transform:rotate(290deg); }
-      }
-      @keyframes check-scan {
-        0%,74% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
-        75% { opacity:1; stroke-dashoffset:0; transform:scale(1.18); }
-        78%,94% { opacity:1; stroke-dashoffset:0; transform:scale(1); }
-        98%,100% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
-      }
-      @keyframes duration-scan {
-        0%,74% { opacity:0; transform:translateY(2px); }
-        78%,94% { opacity:.72; transform:translateY(0); }
-        98%,100% { opacity:0; transform:translateY(1px); }
-      }
-      @keyframes icon-scan {
-        0%,63% { transform:none; }
-        66% { transform:scale(1.04); }
-        73% { transform:none; }
-        100% { transform:none; }
-      }
-
-      .step-deploy { animation:step-deploy 16s cubic-bezier(.14,.9,.24,1) infinite both; }
-      .step-deploy .runner { animation:runner-deploy 16s linear infinite both; }
-      .step-deploy .status-check { animation:check-deploy 16s cubic-bezier(.18,.86,.22,1) infinite both; }
-      .step-deploy .duration { animation:duration-deploy 16s ease-in-out infinite both; }
-      .step-deploy .icon { animation:icon-deploy 16s cubic-bezier(.14,.9,.24,1) infinite both; }
-      @keyframes step-deploy {
-        0%,75% { color:#8C959F; opacity:.68; transform:translateY(0) scale(1); filter:none; }
-        76% { color:#2F81F7; opacity:1; transform:translateY(1px) scale(.96); filter:none; }
-        78% { color:#2F81F7; opacity:1; transform:translateY(-1px) scale(1.035); filter:drop-shadow(0 0 5px #2F81F766); }
-        86% { color:#2F81F7; opacity:1; transform:translateY(0) scale(1); filter:drop-shadow(0 0 6px #2F81F744); }
-        88% { color:#3FB950; opacity:1; transform:scale(1.07); filter:drop-shadow(0 0 7px #3FB95055); }
-        91%,94% { color:#3FB950; opacity:1; transform:scale(1); filter:drop-shadow(0 0 2px #3FB95022); }
-        98%,100% { color:#8C959F; opacity:.48; transform:translateY(1px) scale(.98); filter:none; }
-      }
-      @keyframes runner-deploy {
-        0%,75% { opacity:0; stroke-dashoffset:0; transform:rotate(-90deg); }
-        76% { opacity:1; stroke-dashoffset:0; transform:rotate(-90deg); }
-        86% { opacity:1; stroke-dashoffset:-160; transform:rotate(250deg); }
-        88%,100% { opacity:0; stroke-dashoffset:-190; transform:rotate(290deg); }
-      }
-      @keyframes check-deploy {
-        0%,87% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
-        88% { opacity:1; stroke-dashoffset:0; transform:scale(1.18); }
-        91%,94% { opacity:1; stroke-dashoffset:0; transform:scale(1); }
-        98%,100% { opacity:0; stroke-dashoffset:1; transform:scale(.6); }
-      }
-      @keyframes duration-deploy {
-        0%,87% { opacity:0; transform:translateY(2px); }
-        91%,94% { opacity:.72; transform:translateY(0); }
-        98%,100% { opacity:0; transform:translateY(1px); }
-      }
-      @keyframes icon-deploy {
-        0%,75% { transform:none; }
-        78% { transform:translateY(-4px) rotate(2deg); }
-        86% { transform:none; }
-        100% { transform:none; }
-      }
-      
-      .edge-trigger { animation:edge-trigger 16s cubic-bezier(.22,.72,.18,1) infinite both; }
-      @keyframes edge-trigger {
-        0%,3% { opacity:0; stroke-dashoffset:1; }
-        6%,94% { opacity:1; stroke-dashoffset:0; }
-        98%,100% { opacity:0; stroke-dashoffset:1; }
-      }
-
-      .edge-checkout-setup { animation:edge-checkout-setup 16s cubic-bezier(.22,.72,.18,1) infinite both; }
-      @keyframes edge-checkout-setup {
-        0%,13% { opacity:0; stroke-dashoffset:1; }
-        16%,94% { opacity:1; stroke-dashoffset:0; }
-        98%,100% { opacity:0; stroke-dashoffset:1; }
-      }
-
-      .edge-setup-install { animation:edge-setup-install 16s cubic-bezier(.22,.72,.18,1) infinite both; }
-      @keyframes edge-setup-install {
-        0%,24% { opacity:0; stroke-dashoffset:1; }
-        27%,94% { opacity:1; stroke-dashoffset:0; }
-        98%,100% { opacity:0; stroke-dashoffset:1; }
-      }
-
-      .edge-install-test { animation:edge-install-test 16s cubic-bezier(.22,.72,.18,1) infinite both; }
-      @keyframes edge-install-test {
-        0%,36% { opacity:0; stroke-dashoffset:1; }
-        39%,94% { opacity:1; stroke-dashoffset:0; }
-        98%,100% { opacity:0; stroke-dashoffset:1; }
-      }
-
-      .edge-test-build { animation:edge-test-build 16s cubic-bezier(.22,.72,.18,1) infinite both; }
-      @keyframes edge-test-build {
-        0%,49% { opacity:0; stroke-dashoffset:1; }
-        52%,94% { opacity:1; stroke-dashoffset:0; }
-        98%,100% { opacity:0; stroke-dashoffset:1; }
-      }
-
-      .edge-build-scan { animation:edge-build-scan 16s cubic-bezier(.22,.72,.18,1) infinite both; }
-      @keyframes edge-build-scan {
-        0%,61% { opacity:0; stroke-dashoffset:1; }
-        64%,94% { opacity:1; stroke-dashoffset:0; }
-        98%,100% { opacity:0; stroke-dashoffset:1; }
-      }
-
-      .edge-scan-deploy { animation:edge-scan-deploy 16s cubic-bezier(.22,.72,.18,1) infinite both; }
-      @keyframes edge-scan-deploy {
-        0%,73% { opacity:0; stroke-dashoffset:1; }
-        76%,94% { opacity:1; stroke-dashoffset:0; }
-        98%,100% { opacity:0; stroke-dashoffset:1; }
-      }
-      .scan-line { stroke:#2F81F7; stroke-width:1.5; stroke-linecap:round; opacity:0; animation:scan-line 16s ease-in-out infinite; }
-      @keyframes scan-line {
-        0%,63% { opacity:0; transform:translateY(-10px); }
-        65% { opacity:.95; transform:translateY(-9px); }
-        72% { opacity:.95; transform:translateY(10px); }
-        74%,100% { opacity:0; transform:translateY(10px); }
-      }
-      .result { transform-box:fill-box; transform-origin:center; animation:result 16s cubic-bezier(.18,.86,.22,1) infinite both; }
-      @keyframes result {
-        0%,87% { opacity:0; transform:translateY(5px) scale(.98); }
-        89% { opacity:1; transform:translateY(-1px) scale(1.02); }
-        91%,95% { opacity:1; transform:translateY(0) scale(1); }
-        99%,100% { opacity:0; transform:translateY(3px) scale(.99); }
-      }
-      .result-pill { fill:#3FB950; fill-opacity:.1; stroke:#3FB950; stroke-opacity:.45; }
-      .result-check { fill:#3FB950; }
-      .result-title { fill:#238636; font-size:11px; font-weight:800; letter-spacing:.9px; }
-      .result-sub { fill:#8C959F; font-size:8px; font-weight:600; letter-spacing:.35px; }
-      .failed { color:#F85149; }
-      @media (prefers-color-scheme:dark) {
-        .meta,.job-label,.result-sub { fill:#9DA7B3; }
-        .header-rule { stroke-opacity:.3; }
-        .grid { fill-opacity:.18; stroke-opacity:.12; }
-        .status-disc { fill:#0D1117; }
-        .result-title { fill:#56D364; }
-      }
+      .runner-leg-a { animation:walk-a .42s steps(1,end) infinite; }
+      .runner-leg-b { animation:walk-b .42s steps(1,end) infinite; }
+      @keyframes walk-a { 0%,49%{transform:translateX(0)}50%,100%{transform:translateX(3px)} }
+      @keyframes walk-b { 0%,49%{transform:translateX(3px)}50%,100%{transform:translateX(0)} }
+      .run-live { animation:live 20s steps(1,end) infinite; }
+      .run-done { animation:finished 20s steps(1,end) infinite; }
+      @keyframes live { 0%,81%{opacity:1}82%,100%{opacity:0} }
+      @keyframes finished { 0%,81%{opacity:0}82%,95%{opacity:1}98%,100%{opacity:0} }
+      .success-banner { animation:banner 20s steps(1,end) infinite; }
+      @keyframes banner { 0%,81%{opacity:0;transform:translateY(8px)}82%,95%{opacity:1;transform:translateY(0)}98%,100%{opacity:0;transform:translateY(8px)} }
+      .cursor { animation:cursor .8s steps(1,end) infinite; }
+      @keyframes cursor { 0%,49%{opacity:1}50%,100%{opacity:0} }
     </style>
   </defs>
 
-  <g class="grid" transform="translate(15 71)" aria-label="GitHub contribution grid with 53 weeks and 7 days">
-    <use href="#contribution-week" x="0"/>
-    <use href="#contribution-week" x="15"/>
-    <use href="#contribution-week" x="30"/>
-    <use href="#contribution-week" x="45"/>
-    <use href="#contribution-week" x="60"/>
-    <use href="#contribution-week" x="75"/>
-    <use href="#contribution-week" x="90"/>
-    <use href="#contribution-week" x="105"/>
-    <use href="#contribution-week" x="120"/>
-    <use href="#contribution-week" x="135"/>
-    <use href="#contribution-week" x="150"/>
-    <use href="#contribution-week" x="165"/>
-    <use href="#contribution-week" x="180"/>
-    <use href="#contribution-week" x="195"/>
-    <use href="#contribution-week" x="210"/>
-    <use href="#contribution-week" x="225"/>
-    <use href="#contribution-week" x="240"/>
-    <use href="#contribution-week" x="255"/>
-    <use href="#contribution-week" x="270"/>
-    <use href="#contribution-week" x="285"/>
-    <use href="#contribution-week" x="300"/>
-    <use href="#contribution-week" x="315"/>
-    <use href="#contribution-week" x="330"/>
-    <use href="#contribution-week" x="345"/>
-    <use href="#contribution-week" x="360"/>
-    <use href="#contribution-week" x="375"/>
-    <use href="#contribution-week" x="390"/>
-    <use href="#contribution-week" x="405"/>
-    <use href="#contribution-week" x="420"/>
-    <use href="#contribution-week" x="435"/>
-    <use href="#contribution-week" x="450"/>
-    <use href="#contribution-week" x="465"/>
-    <use href="#contribution-week" x="480"/>
-    <use href="#contribution-week" x="495"/>
-    <use href="#contribution-week" x="510"/>
-    <use href="#contribution-week" x="525"/>
-    <use href="#contribution-week" x="540"/>
-    <use href="#contribution-week" x="555"/>
-    <use href="#contribution-week" x="570"/>
-    <use href="#contribution-week" x="585"/>
-    <use href="#contribution-week" x="600"/>
-    <use href="#contribution-week" x="615"/>
-    <use href="#contribution-week" x="630"/>
-    <use href="#contribution-week" x="645"/>
-    <use href="#contribution-week" x="660"/>
-    <use href="#contribution-week" x="675"/>
-    <use href="#contribution-week" x="690"/>
-    <use href="#contribution-week" x="705"/>
-    <use href="#contribution-week" x="720"/>
-    <use href="#contribution-week" x="735"/>
-    <use href="#contribution-week" x="750"/>
-    <use href="#contribution-week" x="765"/>
-    <use href="#contribution-week" x="780"/>
+  <rect class="bg" width="823" height="430"/>
+  <rect class="pixel-shadow" x="8" y="8" width="807" height="414"/>
+  <rect class="screen" x="2" y="2" width="807" height="414"/>
+  <rect class="grid-overlay" x="4" y="4" width="803" height="410" opacity=".22"/>
+
+  <!-- Pixel-art GitHub Actions header -->
+  <g aria-label="Workflow header">
+    <rect x="18" y="18" width="28" height="28" fill="#161b22" stroke="#484f58"/>
+    <rect x="24" y="23" width="5" height="5" fill="#8b949e"/><rect x="35" y="23" width="5" height="5" fill="#8b949e"/><rect x="35" y="34" width="5" height="5" fill="#8b949e"/>
+    <rect x="28" y="25" width="8" height="2" fill="#8b949e"/><rect x="33" y="27" width="2" height="8" fill="#8b949e"/><rect x="28" y="36" width="8" height="2" fill="#8b949e"/>
+    <text class="ink title" x="58" y="30">ACTIONS // DEPLOY PRODUCTION</text>
+    <text class="muted subtitle" x="58" y="45">BUILD AND DEPLOY TO AMAZON EKS</text>
+    <rect class="pixel-button" x="662" y="18" width="128" height="25"/>
+    <text class="pixel-button-text" x="726" y="34" text-anchor="middle">WORKFLOW_DISPATCH</text>
+    <text class="blue small" x="20" y="68">&gt; MAIN</text><text class="muted small" x="83" y="68">/ 8F3A1C7 / RUN #204 / MANUAL</text>
+    <g class="run-live"><rect x="681" y="57" width="8" height="8" fill="#58a6ff"/><text class="blue small" x="697" y="65">RUNNING</text></g>
+    <g class="run-done"><rect x="674" y="56" width="10" height="10" fill="#238636"/><rect x="677" y="61" width="2" height="2" fill="#fff"/><rect x="679" y="63" width="2" height="2" fill="#fff"/><rect x="681" y="59" width="2" height="4" fill="#fff"/><text class="green small" x="691" y="65">SUCCESS</text></g>
+  </g>
+  <rect class="divider" x="4" y="80" width="803" height="2"/>
+
+  <!-- Jobs sidebar -->
+  <g aria-label="Jobs sidebar">
+    <rect x="4" y="82" width="205" height="278" fill="#0d1117"/>
+    <text class="ink label" x="18" y="104">JOBS</text>
+    <rect class="sidebar-select" x="12" y="115" width="184" height="47"/>
+    <rect x="12" y="115" width="4" height="47" fill="#2f81f7"/>
+    <g class="run-live"><rect x="26" y="130" width="14" height="14" fill="#0d1117" stroke="#58a6ff"/><rect x="29" y="127" width="8" height="3" fill="#58a6ff"/><rect x="29" y="144" width="8" height="3" fill="#58a6ff"/></g>
+    <g class="run-done"><rect x="26" y="130" width="14" height="14" fill="#238636"/><rect x="29" y="136" width="3" height="3" fill="#fff"/><rect x="32" y="139" width="3" height="3" fill="#fff"/><rect x="35" y="133" width="3" height="6" fill="#fff"/></g>
+    <text class="ink label" x="49" y="134">BUILD-AND-DEPLOY</text><text class="muted tiny" x="49" y="149">UBUNTU-LATEST</text>
+    <text class="muted tiny" x="18" y="188">RUN_DETAILS</text>
+    <text class="ink small" x="18" y="210">STATUS</text><text class="blue small run-live" x="101" y="210">IN_PROGRESS</text><text class="green small run-done" x="101" y="210">SUCCESS</text>
+    <text class="ink small" x="18" y="231">DURATION</text><text class="muted small" x="126" y="231">04:12</text>
+    <text class="ink small" x="18" y="252">ARTIFACTS</text><text class="blue small" x="126" y="252">01</text>
+    <rect x="18" y="271" width="174" height="2" fill="#30363d"/>
+    <text class="muted tiny" x="18" y="294">ENVIRONMENT</text>
+    <rect x="18" y="306" width="12" height="12" fill="#f0883e"/><rect x="22" y="309" width="4" height="6" fill="#0d1117"/><rect x="20" y="311" width="8" height="2" fill="#0d1117"/>
+    <text class="ink small" x="38" y="316">PRODUCTION</text><text class="muted tiny" x="18" y="339">AWS / AP-SOUTHEAST-1</text>
+  </g>
+  <rect class="divider" x="209" y="82" width="2" height="278"/>
+
+  <!-- Pixel log pane -->
+  <g transform="translate(211 82)" aria-label="Sequential GitHub Actions job steps">
+    <rect width="596" height="278" fill="#0d1117"/>
+    <text class="ink label" x="18" y="22">BUILD-AND-DEPLOY.LOG</text>
+    <text class="muted tiny" x="18" y="37">RUNNER: GITHUB ACTIONS 17</text>
+    <rect x="18" y="47" width="560" height="8" fill="#161b22" stroke="#30363d"/>
+    <rect class="progress" x="20" y="49" width="556" height="4" fill="#2f81f7"/>
+    <g fill="#0d1117">
+      <rect x="52" y="48" width="3" height="6"/><rect x="87" y="48" width="3" height="6"/><rect x="122" y="48" width="3" height="6"/><rect x="157" y="48" width="3" height="6"/>
+      <rect x="192" y="48" width="3" height="6"/><rect x="227" y="48" width="3" height="6"/><rect x="262" y="48" width="3" height="6"/><rect x="297" y="48" width="3" height="6"/>
+      <rect x="332" y="48" width="3" height="6"/><rect x="367" y="48" width="3" height="6"/><rect x="402" y="48" width="3" height="6"/><rect x="437" y="48" width="3" height="6"/>
+      <rect x="472" y="48" width="3" height="6"/><rect x="507" y="48" width="3" height="6"/><rect x="542" y="48" width="3" height="6"/>
+    </g>
+
+    <g class="row s1" transform="translate(18 65)"><rect class="row-box" width="560" height="27"/><rect class="active-box" width="560" height="27"/><rect class="active-bracket" width="4" height="27"/><rect class="queue-box" x="13" y="7" width="13" height="13"/><rect class="queue-dot" x="18" y="12" width="3" height="3"/><g class="success"><rect class="success-box" x="13" y="7" width="13" height="13"/><rect class="pixel-check" x="16" y="13" width="3" height="3"/><rect class="pixel-check" x="19" y="16" width="3" height="3"/><rect class="pixel-check" x="22" y="10" width="3" height="6"/></g><text class="step-label" x="37" y="18">01 SET UP JOB</text><g class="activity" transform="translate(438 11)"><rect width="4" height="4"/><rect x="8" width="4" height="4"/><rect x="16" width="4" height="4"/></g><text class="duration" x="547" y="18">00:02</text></g>
+    <g class="row s2" transform="translate(18 96)"><rect class="row-box" width="560" height="27"/><rect class="active-box" width="560" height="27"/><rect class="active-bracket" width="4" height="27"/><rect class="queue-box" x="13" y="7" width="13" height="13"/><rect class="queue-dot" x="18" y="12" width="3" height="3"/><g class="success"><rect class="success-box" x="13" y="7" width="13" height="13"/><rect class="pixel-check" x="16" y="13" width="3" height="3"/><rect class="pixel-check" x="19" y="16" width="3" height="3"/><rect class="pixel-check" x="22" y="10" width="3" height="6"/></g><text class="step-label" x="37" y="18">02 CHECKOUT REPOSITORY</text><g class="activity" transform="translate(438 11)"><rect width="4" height="4"/><rect x="8" width="4" height="4"/><rect x="16" width="4" height="4"/></g><text class="duration" x="547" y="18">00:03</text></g>
+    <g class="row s3" transform="translate(18 127)"><rect class="row-box" width="560" height="27"/><rect class="active-box" width="560" height="27"/><rect class="active-bracket" width="4" height="27"/><rect class="queue-box" x="13" y="7" width="13" height="13"/><rect class="queue-dot" x="18" y="12" width="3" height="3"/><g class="success"><rect class="success-box" x="13" y="7" width="13" height="13"/><rect class="pixel-check" x="16" y="13" width="3" height="3"/><rect class="pixel-check" x="19" y="16" width="3" height="3"/><rect class="pixel-check" x="22" y="10" width="3" height="6"/></g><text class="step-label" x="37" y="18">03 CONFIGURE AWS CREDENTIALS</text><g class="activity" transform="translate(438 11)"><rect width="4" height="4"/><rect x="8" width="4" height="4"/><rect x="16" width="4" height="4"/></g><text class="duration" x="547" y="18">00:04</text></g>
+    <g class="row s4" transform="translate(18 158)"><rect class="row-box" width="560" height="27"/><rect class="active-box" width="560" height="27"/><rect class="active-bracket" width="4" height="27"/><rect class="queue-box" x="13" y="7" width="13" height="13"/><rect class="queue-dot" x="18" y="12" width="3" height="3"/><g class="success"><rect class="success-box" x="13" y="7" width="13" height="13"/><rect class="pixel-check" x="16" y="13" width="3" height="3"/><rect class="pixel-check" x="19" y="16" width="3" height="3"/><rect class="pixel-check" x="22" y="10" width="3" height="6"/></g><text class="step-label" x="37" y="18">04 TERRAFORM VALIDATE + PLAN</text><g class="activity" transform="translate(438 11)"><rect width="4" height="4"/><rect x="8" width="4" height="4"/><rect x="16" width="4" height="4"/></g><text class="duration" x="547" y="18">00:18</text></g>
+    <g class="row s5" transform="translate(18 189)"><rect class="row-box" width="560" height="27"/><rect class="active-box" width="560" height="27"/><rect class="active-bracket" width="4" height="27"/><rect class="queue-box" x="13" y="7" width="13" height="13"/><rect class="queue-dot" x="18" y="12" width="3" height="3"/><g class="success"><rect class="success-box" x="13" y="7" width="13" height="13"/><rect class="pixel-check" x="16" y="13" width="3" height="3"/><rect class="pixel-check" x="19" y="16" width="3" height="3"/><rect class="pixel-check" x="22" y="10" width="3" height="6"/></g><text class="step-label" x="37" y="18">05 BUILD + PUSH CONTAINER</text><g class="activity" transform="translate(438 11)"><rect width="4" height="4"/><rect x="8" width="4" height="4"/><rect x="16" width="4" height="4"/></g><text class="duration" x="547" y="18">01:08</text></g>
+    <g class="row s6" transform="translate(18 220)"><rect class="row-box" width="560" height="27"/><rect class="active-box" width="560" height="27"/><rect class="active-bracket" width="4" height="27"/><rect class="queue-box" x="13" y="7" width="13" height="13"/><rect class="queue-dot" x="18" y="12" width="3" height="3"/><g class="success"><rect class="success-box" x="13" y="7" width="13" height="13"/><rect class="pixel-check" x="16" y="13" width="3" height="3"/><rect class="pixel-check" x="19" y="16" width="3" height="3"/><rect class="pixel-check" x="22" y="10" width="3" height="6"/></g><text class="step-label" x="37" y="18">06 SECURITY SCAN</text><g class="activity" transform="translate(438 11)"><rect width="4" height="4"/><rect x="8" width="4" height="4"/><rect x="16" width="4" height="4"/></g><text class="duration" x="547" y="18">00:31</text></g>
+    <g class="row s7" transform="translate(18 251)"><rect class="row-box" width="560" height="27"/><rect class="active-box" width="560" height="27"/><rect class="active-bracket" width="4" height="27"/><rect class="queue-box" x="13" y="7" width="13" height="13"/><rect class="queue-dot" x="18" y="12" width="3" height="3"/><g class="success"><rect class="success-box" x="13" y="7" width="13" height="13"/><rect class="pixel-check" x="16" y="13" width="3" height="3"/><rect class="pixel-check" x="19" y="16" width="3" height="3"/><rect class="pixel-check" x="22" y="10" width="3" height="6"/></g><text class="step-label" x="37" y="18">07 DEPLOY TO AMAZON EKS</text><g class="activity" transform="translate(438 11)"><rect width="4" height="4"/><rect x="8" width="4" height="4"/><rect x="16" width="4" height="4"/></g><text class="duration" x="547" y="18">01:42</text></g>
+    <g class="row s8" transform="translate(18 282)"><rect class="row-box" width="560" height="27"/><rect class="active-box" width="560" height="27"/><rect class="active-bracket" width="4" height="27"/><rect class="queue-box" x="13" y="7" width="13" height="13"/><rect class="queue-dot" x="18" y="12" width="3" height="3"/><g class="success"><rect class="success-box" x="13" y="7" width="13" height="13"/><rect class="pixel-check" x="16" y="13" width="3" height="3"/><rect class="pixel-check" x="19" y="16" width="3" height="3"/><rect class="pixel-check" x="22" y="10" width="3" height="6"/></g><text class="step-label" x="37" y="18">08 POST-DEPLOY HEALTH CHECK</text><g class="activity" transform="translate(438 11)"><rect width="4" height="4"/><rect x="8" width="4" height="4"/><rect x="16" width="4" height="4"/></g><text class="duration" x="547" y="18">00:24</text></g>
+
+    <!-- Tiny 8-bit runner travels to the active step -->
+    <g class="runner" transform="translate(538 69)" aria-label="Pixel Actions runner">
+      <rect x="0" y="0" width="12" height="3" fill="#58a6ff"/><rect x="-3" y="3" width="18" height="9" fill="#1f6feb"/>
+      <rect x="0" y="5" width="3" height="3" fill="#fff"/><rect x="9" y="5" width="3" height="3" fill="#fff"/>
+      <rect x="0" y="12" width="12" height="6" fill="#58a6ff"/><rect x="-3" y="13" width="3" height="3" fill="#f0883e"/><rect x="12" y="13" width="3" height="3" fill="#f0883e"/>
+      <rect class="runner-leg-a" x="0" y="18" width="4" height="4" fill="#8b949e"/><rect class="runner-leg-b" x="8" y="18" width="4" height="4" fill="#8b949e"/>
+    </g>
   </g>
 
-  <text class="meta" x="15" y="22">CI / .github/workflows/deploy.yml</text>
-  <line class="header-rule" x1="250" y1="18" x2="565" y2="18"/>
-  <circle class="run-dot" cx="588" cy="18" r="3.2"/>
-  <g class="run-state">
-    <text class="meta state-queued" x="808" y="22" text-anchor="end">QUEUED / RUN #204</text>
-    <text class="meta state-running" x="808" y="22" text-anchor="end">IN PROGRESS / RUN #204</text>
-    <text class="meta state-complete" x="808" y="22" text-anchor="end">COMPLETED / RUN #204</text>
-  </g>
-  <text class="job-label" x="15" y="52">JOB: BUILD-AND-DEPLOY · UBUNTU-LATEST</text>
+  <rect class="divider" x="4" y="360" width="803" height="2"/>
 
-  <g class="trigger" aria-label="Push to main trigger">
-    <rect class="trigger-box" x="12" y="108" width="51" height="26" rx="13"/>
-    <text class="trigger-text" x="37.5" y="125">PUSH</text>
-  </g>
-
-  <g aria-label="Sequential workflow connections">
-    <path class="rail" d="M63 121 H72"/>
-    <path class="rail" d="M128 121 H185"/>
-    <path class="rail" d="M241 121 H298"/>
-    <path class="rail" d="M354 121 H411"/>
-    <path class="rail" d="M467 121 H524"/>
-    <path class="rail" d="M580 121 H637"/>
-    <path class="rail" d="M693 121 H750"/>
-    <path class="edge edge-trigger" pathLength="1" d="M63 121 H72"/>
-    <path class="edge edge-checkout-setup" pathLength="1" d="M128 121 H185"/>
-    <path class="edge edge-setup-install" pathLength="1" d="M241 121 H298"/>
-    <path class="edge edge-install-test" pathLength="1" d="M354 121 H411"/>
-    <path class="edge edge-test-build" pathLength="1" d="M467 121 H524"/>
-    <path class="edge edge-build-scan" pathLength="1" d="M580 121 H637"/>
-    <path class="edge edge-scan-deploy" pathLength="1" d="M693 121 H750"/>
-  </g>
-
-  
-    <g class="step step-checkout" aria-label="CHECKOUT">
-      <circle class="runner" cx="100" cy="121" r="35"/>
-      <rect class="node" x="72" y="93" width="56" height="56" rx="11"/>
-      <use class="icon" href="#icon-checkout" x="88" y="109" width="24" height="24"/>
-      <circle class="status-disc" cx="123" cy="98" r="8.5"/>
-      <path class="status-check" pathLength="1" d="M119 98l2.7 2.8 5.2-6.1"/>
-      <text class="step-label" x="100" y="174">CHECKOUT</text>
-      <text class="duration" x="100" y="187">1s</text>
+  <!-- Pixel console footer -->
+  <g transform="translate(4 362)">
+    <rect width="803" height="52" fill="url(#scan-grid)"/>
+    <g class="run-live">
+      <text class="blue small" x="18" y="20">&gt; EXECUTING WORKFLOW...</text>
+      <text class="muted tiny" x="18" y="38">$ GITHUB_ACTIONS=TRUE ./DEPLOY.SH</text><rect class="cursor" x="239" y="31" width="7" height="9" fill="#58a6ff"/>
     </g>
-
-    <g class="step step-setup" aria-label="SETUP">
-      <circle class="runner" cx="213" cy="121" r="35"/>
-      <rect class="node" x="185" y="93" width="56" height="56" rx="11"/>
-      <use class="icon" href="#icon-setup" x="201" y="109" width="24" height="24"/>
-      <circle class="status-disc" cx="236" cy="98" r="8.5"/>
-      <path class="status-check" pathLength="1" d="M232 98l2.7 2.8 5.2-6.1"/>
-      <text class="step-label" x="213" y="174">SETUP</text>
-      <text class="duration" x="213" y="187">2s</text>
+    <g class="success-banner">
+      <rect x="12" y="8" width="524" height="36" fill="#0f2d1b" stroke="#3fb950"/>
+      <rect x="22" y="18" width="14" height="14" fill="#238636"/><rect x="25" y="24" width="3" height="3" fill="#fff"/><rect x="28" y="27" width="3" height="3" fill="#fff"/><rect x="31" y="21" width="3" height="6" fill="#fff"/>
+      <text class="green label" x="46" y="23">DEPLOYMENT SUCCESSFUL!</text><text class="muted tiny" x="46" y="36">PRODUCTION / AMAZON EKS / 04:12</text>
     </g>
-
-    <g class="step step-install" aria-label="INSTALL">
-      <circle class="runner" cx="326" cy="121" r="35"/>
-      <rect class="node" x="298" y="93" width="56" height="56" rx="11"/>
-      <use class="icon" href="#icon-install" x="314" y="109" width="24" height="24"/>
-      <circle class="status-disc" cx="349" cy="98" r="8.5"/>
-      <path class="status-check" pathLength="1" d="M345 98l2.7 2.8 5.2-6.1"/>
-      <text class="step-label" x="326" y="174">INSTALL</text>
-      <text class="duration" x="326" y="187">5s</text>
-    </g>
-
-    <g class="step step-test" aria-label="TEST">
-      <circle class="runner" cx="439" cy="121" r="35"/>
-      <rect class="node" x="411" y="93" width="56" height="56" rx="11"/>
-      <use class="icon" href="#icon-test" x="427" y="109" width="24" height="24"/>
-      <circle class="status-disc" cx="462" cy="98" r="8.5"/>
-      <path class="status-check" pathLength="1" d="M458 98l2.7 2.8 5.2-6.1"/>
-      <text class="step-label" x="439" y="174">TEST</text>
-      <text class="duration" x="439" y="187">8s</text>
-    </g>
-
-    <g class="step step-build" aria-label="BUILD">
-      <circle class="runner" cx="552" cy="121" r="35"/>
-      <rect class="node" x="524" y="93" width="56" height="56" rx="11"/>
-      <use class="icon" href="#icon-build" x="540" y="109" width="24" height="24"/>
-      <circle class="status-disc" cx="575" cy="98" r="8.5"/>
-      <path class="status-check" pathLength="1" d="M571 98l2.7 2.8 5.2-6.1"/>
-      <text class="step-label" x="552" y="174">BUILD</text>
-      <text class="duration" x="552" y="187">7s</text>
-    </g>
-
-    <g class="step step-scan" aria-label="SCAN">
-      <circle class="runner" cx="665" cy="121" r="35"/>
-      <rect class="node" x="637" y="93" width="56" height="56" rx="11"/>
-      <use class="icon" href="#icon-scan" x="653" y="109" width="24" height="24"/>
-      <circle class="status-disc" cx="688" cy="98" r="8.5"/>
-      <path class="status-check" pathLength="1" d="M684 98l2.7 2.8 5.2-6.1"/>
-      <text class="step-label" x="665" y="174">SCAN</text>
-      <text class="duration" x="665" y="187">6s</text>
-    </g>
-
-    <g class="step step-deploy" aria-label="DEPLOY">
-      <circle class="runner" cx="778" cy="121" r="35"/>
-      <rect class="node" x="750" y="93" width="56" height="56" rx="11"/>
-      <use class="icon" href="#icon-deploy" x="766" y="109" width="24" height="24"/>
-      <circle class="status-disc" cx="801" cy="98" r="8.5"/>
-      <path class="status-check" pathLength="1" d="M797 98l2.7 2.8 5.2-6.1"/>
-      <text class="step-label" x="778" y="174">DEPLOY</text>
-      <text class="duration" x="778" y="187">13s</text>
-    </g>
-
-  <line class="scan-line" x1="647" y1="121" x2="683" y2="121"/>
-
-  <g class="result" aria-label="Workflow completed successfully">
-    <rect class="result-pill" x="186" y="207" width="451" height="31" rx="15.5"/>
-    <circle class="result-check" cx="208" cy="222.5" r="8.5"/>
-    <path d="m204 222.5 2.7 2.8 5.4-6.3" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    <text class="result-title" x="226" y="220">BUILD-AND-DEPLOY COMPLETED</text>
-    <text class="result-sub" x="226" y="231">main@HEAD · production · completed in 42s</text>
+    <text class="muted tiny" x="784" y="31" text-anchor="end">.GITHUB/WORKFLOWS/DEPLOY.YML</text>
   </g>
 </svg>
