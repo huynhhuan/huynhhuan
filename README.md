@@ -66,3 +66,11 @@ I build and operate practical web systems end to end — from application code t
 
 <a href="https://github.com/ashutosh00710/github-readme-activity-graph"><img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=huynhhuan&amp;bg_color=00000000&amp;color=8B949E&amp;line=F97316&amp;point=EF4444&amp;area=true&amp;area_color=F59E0B&amp;hide_border=true&amp;custom_title=Contribution%20activity" alt="Huynh Ba Huan live GitHub contribution activity graph" /></a>
 </details>
+
+## 🎧 HUAN.FM
+
+Pixel music for late-night builds. The README card is animated; open it for the full interactive player.
+
+<a href="https://huynhhuan.github.io/huynhhuan/">
+  <img src="./assets/huan-fm-card.svg?v=1" width="100%" alt="Open HUAN.FM — an interactive orange-red pixel music player with Jamendo API support" />
+</a>

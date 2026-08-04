@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="823" height="220" viewBox="0 0 823 220" role="img" aria-labelledby="title desc" shape-rendering="crispEdges">
+  <title id="title">HUAN.FM interactive pixel music player</title>
+  <desc id="desc">An animated orange and red pixel-art music card. Open the player for playback controls and a Jamendo-powered playlist.</desc>
+  <defs>
+    <linearGradient id="brand" x1="0" x2="1">
+      <stop offset="0" stop-color="#f59e0b"/>
+      <stop offset=".52" stop-color="#f97316"/>
+      <stop offset="1" stop-color="#ef4444"/>
+    </linearGradient>
+    <pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M8 0H0V8" fill="none" stroke="#30363d" stroke-width="1" opacity=".34"/>
+    </pattern>
+    <style>
+      :root{color-scheme:dark}
+      text{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace}
+      .ink{fill:#e6edf3}.muted{fill:#8b949e}.orange{fill:#f97316}.amber{fill:#f59e0b}.red{fill:#ef4444}
+      .title{font-size:25px;font-weight:900;letter-spacing:2px}.label{font-size:10px;font-weight:800;letter-spacing:1.4px}.small{font-size:9px;letter-spacing:1px}
+      .eq{transform-box:fill-box;transform-origin:center bottom;animation:eq var(--speed) steps(4,end) infinite alternate}
+      .disc{transform-box:fill-box;transform-origin:center;animation:spin 8s steps(32,end) infinite}
+      .pulse{animation:pulse 1.6s steps(4,end) infinite}.cursor{animation:blink .85s steps(1,end) infinite}
+      .scan{animation:scan 5s linear infinite}.progress{transform-box:fill-box;transform-origin:left center;animation:progress 9s steps(24,end) infinite}
+      @keyframes eq{from{transform:scaleY(.28)}to{transform:scaleY(1)}}
+      @keyframes spin{to{transform:rotate(360deg)}}
+      @keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
+      @keyframes blink{0%,48%{opacity:1}49%,100%{opacity:0}}
+      @keyframes scan{from{transform:translateX(-220px)}to{transform:translateX(860px)}}
+      @keyframes progress{0%{transform:scaleX(.03)}82%{transform:scaleX(1)}83%,100%{transform:scaleX(.03)}}
+      @media(prefers-reduced-motion:reduce){*{animation-duration:1ms!important;animation-iteration-count:1!important}}
+    </style>
+  </defs>
+
+  <rect width="823" height="220" fill="#010409"/>
+  <rect x="8" y="8" width="807" height="204" fill="#000" opacity=".72"/>
+  <rect x="2" y="2" width="807" height="204" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+  <rect x="4" y="4" width="803" height="200" fill="url(#grid)" opacity=".55"/>
+  <rect class="scan" x="0" y="4" width="120" height="200" fill="url(#brand)" opacity=".035"/>
+
+  <!-- Pixel album art -->
+  <g transform="translate(18 18)">
+    <rect x="5" y="5" width="164" height="164" fill="#000" opacity=".8"/>
+    <rect width="164" height="164" fill="#161b22" stroke="#484f58" stroke-width="2"/>
+    <g class="disc">
+      <rect x="20" y="20" width="124" height="124" fill="#0d1117"/>
+      <rect x="32" y="20" width="100" height="124" fill="#21150e"/>
+      <rect x="20" y="32" width="124" height="100" fill="#21150e"/>
+      <rect x="44" y="32" width="76" height="100" fill="#f59e0b"/>
+      <rect x="32" y="44" width="100" height="76" fill="#f59e0b"/>
+      <rect x="52" y="44" width="60" height="76" fill="#f97316"/>
+      <rect x="44" y="52" width="76" height="60" fill="#f97316"/>
+      <rect x="64" y="56" width="36" height="52" fill="#ef4444"/>
+      <rect x="56" y="64" width="52" height="36" fill="#ef4444"/>
+      <rect x="72" y="72" width="20" height="20" fill="#0d1117"/>
+      <rect x="78" y="78" width="8" height="8" fill="#e6edf3"/>
+    </g>
+    <rect x="10" y="10" width="62" height="20" fill="#0d1117" stroke="#f97316"/>
+    <text class="amber small" x="18" y="24">HUAN.FM</text>
+  </g>
+
+  <!-- Player metadata -->
+  <g transform="translate(207 20)">
+    <rect width="4" height="18" fill="url(#brand)"/>
+    <text class="orange label" x="14" y="12">NOW PLAYING // INTERACTIVE PIXEL STREAM</text>
+    <text class="ink title" x="0" y="57">CODE TO CLOUD RADIO</text>
+    <text class="muted small" x="0" y="79">OPEN MUSIC · JAMENDO API READY · BUILT FOR LATE-NIGHT DEPLOYS</text>
+
+    <g transform="translate(0 98)" aria-hidden="true">
+      <rect class="eq" style="--speed:.72s" width="7" height="18" y="16" fill="#f59e0b"/>
+      <rect class="eq" style="--speed:.49s" x="12" width="7" height="29" y="5" fill="#f97316"/>
+      <rect class="eq" style="--speed:.88s" x="24" width="7" height="22" y="12" fill="#ef4444"/>
+      <rect class="eq" style="--speed:.57s" x="36" width="7" height="34" fill="#f97316"/>
+      <rect class="eq" style="--speed:.76s" x="48" width="7" height="25" y="9" fill="#f59e0b"/>
+      <rect class="eq" style="--speed:.46s" x="60" width="7" height="31" y="3" fill="#ef4444"/>
+      <rect class="eq" style="--speed:.82s" x="72" width="7" height="20" y="14" fill="#f97316"/>
+      <rect class="eq" style="--speed:.53s" x="84" width="7" height="27" y="7" fill="#f59e0b"/>
+      <rect x="110" y="14" width="285" height="6" fill="#21262d" stroke="#30363d"/>
+      <rect class="progress" x="112" y="16" width="281" height="2" fill="url(#brand)"/>
+      <text class="muted small" x="110" y="34">00:42</text><text class="muted small" x="368" y="34">03:16</text>
+    </g>
+
+    <!-- Controls are visual in README; the whole card opens the real player -->
+    <g transform="translate(424 93)">
+      <rect x="0" y="0" width="40" height="40" fill="#161b22" stroke="#484f58"/>
+      <path d="M26 11h4v18h-4v-3h-4v-3h-4v-6h4v-3h4v-3zm-16 0h4v18h-4z" fill="#8b949e"/>
+      <g class="pulse">
+        <rect x="50" y="-4" width="52" height="48" fill="url(#brand)"/>
+        <path d="M70 8h6v5h5v4h5v6h-5v4h-5v5h-6V8z" fill="#0d1117"/>
+      </g>
+      <rect x="112" y="0" width="40" height="40" fill="#161b22" stroke="#484f58"/>
+      <path d="M122 11h4v3h4v3h4v6h-4v3h-4v3h-4V11zm14 0h4v18h-4z" fill="#8b949e"/>
+    </g>
+  </g>
+
+  <g transform="translate(207 174)">
+    <rect width="584" height="19" fill="#161b22" stroke="#30363d"/>
+    <rect width="177" height="19" fill="#21150e" stroke="#f97316"/>
+    <text class="amber small" x="10" y="13">▶ OPEN FULL PLAYER</text>
+    <text class="muted small" x="192" y="13">PLAY · PAUSE · NEXT · SHUFFLE · REPEAT · VOLUME</text>
+    <rect class="cursor" x="568" y="6" width="7" height="7" fill="#f97316"/>
+  </g>
+</svg>
