@@ -10,6 +10,11 @@
       <rect width="4" height="4" fill="#0d1117"/>
       <rect width="2" height="2" fill="#161b22"/>
     </pattern>
+    <linearGradient id="brand-flow" x1="0" x2="1">
+      <stop offset="0" stop-color="#f59e0b"/>
+      <stop offset=".52" stop-color="#f97316"/>
+      <stop offset="1" stop-color="#ef4444"/>
+    </linearGradient>
     <style>
       :root { color-scheme:dark; }
       text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
@@ -20,9 +25,9 @@
       .divider { fill:#30363d; }
       .ink { fill:#e6edf3; }
       .muted { fill:#8b949e; }
-      .blue { fill:#58a6ff; }
+      .blue { fill:#f97316; }
       .green { fill:#3fb950; }
-      .orange { fill:#f0883e; }
+      .orange { fill:#f59e0b; }
       .title { font-size:15px; font-weight:800; letter-spacing:.5px; }
       .subtitle { font-size:9px; }
       .tiny { font-size:8px; }
@@ -35,17 +40,17 @@
       .sidebar-select { fill:#161b22; stroke:#30363d; }
       .row { color:#6e7681; }
       .row-box { fill:#0d1117; stroke:#30363d; }
-      .active-box { fill:#0c2d6b; stroke:#2f81f7; opacity:0; }
-      .active-bracket { fill:#58a6ff; opacity:0; }
+      .active-box { fill:#3b1d0b; stroke:#ef4444; opacity:0; }
+      .active-bracket { fill:#f59e0b; opacity:0; }
       .queue-box { fill:#161b22; stroke:currentColor; }
       .queue-dot { fill:currentColor; opacity:.62; }
       .success { opacity:0; }
       .success-box { fill:#238636; stroke:#3fb950; }
       .pixel-check { fill:#fff; }
       .activity { opacity:0; }
-      .activity rect { fill:#58a6ff; animation:blink .54s steps(1,end) infinite; }
-      .activity rect:nth-child(2) { animation-delay:.18s; }
-      .activity rect:nth-child(3) { animation-delay:.36s; }
+      .activity rect { fill:#f59e0b; animation:blink .54s steps(1,end) infinite; }
+      .activity rect:nth-child(2) { fill:#f97316; animation-delay:.18s; }
+      .activity rect:nth-child(3) { fill:#ef4444; animation-delay:.36s; }
       .row,.active-box,.active-bracket,.success,.duration,.activity { animation-duration:20s; animation-timing-function:steps(1,end); animation-iteration-count:infinite; }
       .s1{animation-name:state1}.s1 .active-box,.s1 .active-bracket,.s1 .activity{animation-name:active1}.s1 .success,.s1 .duration{animation-name:done1}
       .s2{animation-name:state2}.s2 .active-box,.s2 .active-bracket,.s2 .activity{animation-name:active2}.s2 .success,.s2 .duration{animation-name:done2}
@@ -57,14 +62,14 @@
       .s8{animation-name:state8}.s8 .active-box,.s8 .active-bracket,.s8 .activity{animation-name:active8}.s8 .success,.s8 .duration{animation-name:done8}
 
       @keyframes blink { 0%,49%{opacity:.22}50%,100%{opacity:1} }
-      @keyframes state1{0%,4%{color:#6e7681}5%,13%{color:#58a6ff}14%,95%{color:#3fb950}98%,100%{color:#6e7681}}
-      @keyframes state2{0%,13%{color:#6e7681}14%,22%{color:#58a6ff}23%,95%{color:#3fb950}98%,100%{color:#6e7681}}
-      @keyframes state3{0%,22%{color:#6e7681}23%,31%{color:#58a6ff}32%,95%{color:#3fb950}98%,100%{color:#6e7681}}
-      @keyframes state4{0%,31%{color:#6e7681}32%,40%{color:#58a6ff}41%,95%{color:#3fb950}98%,100%{color:#6e7681}}
-      @keyframes state5{0%,40%{color:#6e7681}41%,49%{color:#58a6ff}50%,95%{color:#3fb950}98%,100%{color:#6e7681}}
-      @keyframes state6{0%,49%{color:#6e7681}50%,58%{color:#58a6ff}59%,95%{color:#3fb950}98%,100%{color:#6e7681}}
-      @keyframes state7{0%,58%{color:#6e7681}59%,69%{color:#58a6ff}70%,95%{color:#3fb950}98%,100%{color:#6e7681}}
-      @keyframes state8{0%,69%{color:#6e7681}70%,81%{color:#58a6ff}82%,95%{color:#3fb950}98%,100%{color:#6e7681}}
+      @keyframes state1{0%,4%{color:#6e7681}5%,13%{color:#f97316}14%,95%{color:#3fb950}98%,100%{color:#6e7681}}
+      @keyframes state2{0%,13%{color:#6e7681}14%,22%{color:#f97316}23%,95%{color:#3fb950}98%,100%{color:#6e7681}}
+      @keyframes state3{0%,22%{color:#6e7681}23%,31%{color:#f97316}32%,95%{color:#3fb950}98%,100%{color:#6e7681}}
+      @keyframes state4{0%,31%{color:#6e7681}32%,40%{color:#f97316}41%,95%{color:#3fb950}98%,100%{color:#6e7681}}
+      @keyframes state5{0%,40%{color:#6e7681}41%,49%{color:#f97316}50%,95%{color:#3fb950}98%,100%{color:#6e7681}}
+      @keyframes state6{0%,49%{color:#6e7681}50%,58%{color:#f97316}59%,95%{color:#3fb950}98%,100%{color:#6e7681}}
+      @keyframes state7{0%,58%{color:#6e7681}59%,69%{color:#f97316}70%,95%{color:#3fb950}98%,100%{color:#6e7681}}
+      @keyframes state8{0%,69%{color:#6e7681}70%,81%{color:#f97316}82%,95%{color:#3fb950}98%,100%{color:#6e7681}}
       @keyframes active1{0%,4%,14%,100%{opacity:0}5%,13%{opacity:1}}
       @keyframes active2{0%,13%,23%,100%{opacity:0}14%,22%{opacity:1}}
       @keyframes active3{0%,22%,32%,100%{opacity:0}23%,31%{opacity:1}}
@@ -119,7 +124,7 @@
     <rect class="pixel-button" x="662" y="18" width="128" height="25"/>
     <text class="pixel-button-text" x="726" y="34" text-anchor="middle">WORKFLOW_DISPATCH</text>
     <text class="blue small" x="20" y="68">&gt; MAIN</text><text class="muted small" x="83" y="68">/ 8F3A1C7 / RUN #204 / MANUAL</text>
-    <g class="run-live"><rect x="681" y="57" width="8" height="8" fill="#58a6ff"/><text class="blue small" x="697" y="65">RUNNING</text></g>
+    <g class="run-live"><rect x="681" y="57" width="8" height="8" fill="#f97316"/><text class="blue small" x="697" y="65">RUNNING</text></g>
     <g class="run-done"><rect x="674" y="56" width="10" height="10" fill="#238636"/><rect x="677" y="61" width="2" height="2" fill="#fff"/><rect x="679" y="63" width="2" height="2" fill="#fff"/><rect x="681" y="59" width="2" height="4" fill="#fff"/><text class="green small" x="691" y="65">SUCCESS</text></g>
   </g>
   <rect class="divider" x="4" y="80" width="803" height="2"/>
@@ -129,8 +134,8 @@
     <rect x="4" y="82" width="205" height="278" fill="#0d1117"/>
     <text class="ink label" x="18" y="104">JOBS</text>
     <rect class="sidebar-select" x="12" y="115" width="184" height="47"/>
-    <rect x="12" y="115" width="4" height="47" fill="#2f81f7"/>
-    <g class="run-live"><rect x="26" y="130" width="14" height="14" fill="#0d1117" stroke="#58a6ff"/><rect x="29" y="127" width="8" height="3" fill="#58a6ff"/><rect x="29" y="144" width="8" height="3" fill="#58a6ff"/></g>
+    <rect x="12" y="115" width="4" height="47" fill="#f97316"/>
+    <g class="run-live"><rect x="26" y="130" width="14" height="14" fill="#0d1117" stroke="#ef4444"/><rect x="29" y="127" width="8" height="3" fill="#f59e0b"/><rect x="29" y="144" width="8" height="3" fill="#f97316"/></g>
     <g class="run-done"><rect x="26" y="130" width="14" height="14" fill="#238636"/><rect x="29" y="136" width="3" height="3" fill="#fff"/><rect x="32" y="139" width="3" height="3" fill="#fff"/><rect x="35" y="133" width="3" height="6" fill="#fff"/></g>
     <text class="ink label" x="49" y="134">BUILD-AND-DEPLOY</text><text class="muted tiny" x="49" y="149">UBUNTU-LATEST</text>
     <text class="muted tiny" x="18" y="188">RUN_DETAILS</text>
@@ -139,7 +144,7 @@
     <text class="ink small" x="18" y="252">ARTIFACTS</text><text class="blue small" x="126" y="252">01</text>
     <rect x="18" y="271" width="174" height="2" fill="#30363d"/>
     <text class="muted tiny" x="18" y="294">ENVIRONMENT</text>
-    <rect x="18" y="306" width="12" height="12" fill="#f0883e"/><rect x="22" y="309" width="4" height="6" fill="#0d1117"/><rect x="20" y="311" width="8" height="2" fill="#0d1117"/>
+    <rect x="18" y="306" width="12" height="12" fill="#f59e0b"/><rect x="22" y="309" width="4" height="6" fill="#0d1117"/><rect x="20" y="311" width="8" height="2" fill="#0d1117"/>
     <text class="ink small" x="38" y="316">PRODUCTION</text><text class="muted tiny" x="18" y="339">AWS / AP-SOUTHEAST-1</text>
   </g>
   <rect class="divider" x="209" y="82" width="2" height="278"/>
@@ -150,7 +155,7 @@
     <text class="ink label" x="18" y="22">BUILD-AND-DEPLOY.LOG</text>
     <text class="muted tiny" x="18" y="37">RUNNER: GITHUB ACTIONS 17</text>
     <rect x="18" y="47" width="560" height="8" fill="#161b22" stroke="#30363d"/>
-    <rect class="progress" x="20" y="49" width="556" height="4" fill="#2f81f7"/>
+    <rect class="progress" x="20" y="49" width="556" height="4" fill="url(#brand-flow)"/>
     <g fill="#0d1117">
       <rect x="52" y="48" width="3" height="6"/><rect x="87" y="48" width="3" height="6"/><rect x="122" y="48" width="3" height="6"/><rect x="157" y="48" width="3" height="6"/>
       <rect x="192" y="48" width="3" height="6"/><rect x="227" y="48" width="3" height="6"/><rect x="262" y="48" width="3" height="6"/><rect x="297" y="48" width="3" height="6"/>
@@ -169,9 +174,9 @@
 
     <!-- Tiny 8-bit runner travels to the active step -->
     <g class="runner" transform="translate(538 69)" aria-label="Pixel Actions runner">
-      <rect x="0" y="0" width="12" height="3" fill="#58a6ff"/><rect x="-3" y="3" width="18" height="9" fill="#1f6feb"/>
+      <rect x="0" y="0" width="12" height="3" fill="#f59e0b"/><rect x="-3" y="3" width="18" height="9" fill="#f97316"/>
       <rect x="0" y="5" width="3" height="3" fill="#fff"/><rect x="9" y="5" width="3" height="3" fill="#fff"/>
-      <rect x="0" y="12" width="12" height="6" fill="#58a6ff"/><rect x="-3" y="13" width="3" height="3" fill="#f0883e"/><rect x="12" y="13" width="3" height="3" fill="#f0883e"/>
+      <rect x="0" y="12" width="12" height="6" fill="#ef4444"/><rect x="-3" y="13" width="3" height="3" fill="#f59e0b"/><rect x="12" y="13" width="3" height="3" fill="#f59e0b"/>
       <rect class="runner-leg-a" x="0" y="18" width="4" height="4" fill="#8b949e"/><rect class="runner-leg-b" x="8" y="18" width="4" height="4" fill="#8b949e"/>
     </g>
   </g>
@@ -183,7 +188,7 @@
     <rect width="803" height="52" fill="url(#scan-grid)"/>
     <g class="run-live">
       <text class="blue small" x="18" y="20">&gt; EXECUTING WORKFLOW...</text>
-      <text class="muted tiny" x="18" y="38">$ GITHUB_ACTIONS=TRUE ./DEPLOY.SH</text><rect class="cursor" x="239" y="31" width="7" height="9" fill="#58a6ff"/>
+      <text class="muted tiny" x="18" y="38">$ GITHUB_ACTIONS=TRUE ./DEPLOY.SH</text><rect class="cursor" x="239" y="31" width="7" height="9" fill="#f97316"/>
     </g>
     <g class="success-banner">
       <rect x="12" y="8" width="524" height="36" fill="#0f2d1b" stroke="#3fb950"/>

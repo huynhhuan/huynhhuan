@@ -22,7 +22,7 @@ I build and operate practical web systems end to end — from application code t
 - ☁️ **Cloud and platform:** AWS infrastructure, Terraform, containers, Kubernetes, CI/CD, and GitOps.
 - 🛡️ **Reliability:** Cloud security, observable delivery, and maintainable production workflows.
 
-<img src="./assets/cicd-animation.svg?v=pixel-actions1" width="100%" alt="Animated 2D pixel-art GitHub Actions workflow deploying infrastructure and an application to Amazon EKS" />
+<img src="./assets/cicd-animation.svg?v=pixel-actions2" width="100%" alt="Animated 2D pixel-art GitHub Actions workflow deploying infrastructure and an application to Amazon EKS" />
 
 ## 🧰 Language and Tools
 
